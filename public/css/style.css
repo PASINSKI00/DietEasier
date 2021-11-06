@@ -1,0 +1,95 @@
+:root {
+    --chosen-yellow: #ffcd01;
+    --chosen-black: #212121;
+    --chosen-white: #ffffff;
+    --chosen-red: #c62024;
+    --chosen-gray: #555555;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    width: 100%;
+}
+
+.container {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    
+}
+
+/* --- navbar ---*/
+nav {
+    background-color: var(--chosen-yellow);
+    height: 13vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    height: 60%;
+}
+
+.login-buttons{
+    width: 20%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.text-button {
+    font-size: 1.8em;
+    background: none;
+    border: none;
+}
+/* ----------------- */
+
+/* --- header ---*/
+header {
+    width: 100%;
+    font-size: 3em;
+    text-align: center;
+    margin: 2em 0;
+}
+
+header h1 {
+    font-size: 1em;
+    display: inline;
+    text-align: center;
+}
+/* ----------------- */
+
+footer {
+    width: 100%;
+    height: 30vh;
+    padding: 3em 0;
+    background-color: var(--chosen-black);
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+footer p {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+footer ul {
+    width: 20%;
+    color: white;
+}
+
+footer ul li {
+    list-style-type: none;
+
+    border-bottom: 1px solid var(--chosen-gray);
+    padding: 0.2em 0;
+    margin: 0.3em 0
+}
