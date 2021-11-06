@@ -3,10 +3,13 @@
     --chosen-black: #212121;
     --chosen-white: #ffffff;
     --chosen-red: #c62024;
+    --chosen-red-hover: #b51013;
     --chosen-gray: #555555;
     
     --chosen-text-black: #212121;
     --chosen-text-white: #ffffff;
+
+    --transition-speed: 400ms;
 }
 
 body {
@@ -15,6 +18,18 @@ body {
 
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+}
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--chosen-black);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--chosen-yellow);
 }
 
 .container {
@@ -26,6 +41,33 @@ body {
     background-color: var(--chosen-white);
 }
 
+
+/* HOVER EFFECTS ----------------------------------------------------------------------------------*/
+.raise {
+    transition: all var(--transition-speed) ease;
+}
+
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--chosen-black);
+  transform: translateY(-0.1em);
+}
+
+.enlarge {
+    transition: all var(--transition-speed) ease;
+}
+
+.enlarge:hover, .enlarge:focus {
+    transform: scale(1.2);
+}
+
+.bold {
+    transition: all var(--transition-speed) linear;
+}
+
+.bold:hover, .bold:focus {
+    font-weight: 700;
+}
 
 /* NAVBAR ------------------------------------------------------------------------------------ */
 nav {
@@ -46,6 +88,24 @@ nav img{
 }
 
 
+/* OVERLAY ------------------------------------------------------------------------------------ */
+.overlay{
+	width: 100%;
+	height: 100%;
+
+    display: none;
+	position: fixed;
+	top: 0px;
+    left: 0px;
+    
+	background-color: #000;
+	opacity: 0.7;
+}
+
+
+/* LOG IN ------------------------------------------------------------------------------------- */
+/* REGISTER ----------------------------------------------------------------------------------- */
+
 /* FOOTER ------------------------------------------------------------------------------------ */
 footer {
     width: 100%;
@@ -65,6 +125,7 @@ footer p {
 
 footer ul {
     width: clamp(300px, 30%, 500px);
+    padding: 0 5vw;
 
     color: var(--chosen-text-white);
 }
@@ -76,6 +137,21 @@ footer ul li {
     font-size: clamp(0.7em, 1vw + 0.8em, 1.8em);
     list-style-type: none;
     border-bottom: 1px solid var(--chosen-gray);
+}
+
+
+/* WAVES */
+.spacer {
+    aspect-ratio: 900/600;
+    width: 100%;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer1 {
+    background-image: url('../img/layered-waves-haikei-white-to-black_2.svg');
 }
 
 
