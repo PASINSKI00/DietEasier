@@ -10,6 +10,8 @@
     --chosen-text-white: #ffffff;
 
     --transition-speed: 400ms;
+
+    --rem: clamp(1rem, 2vw, 10rem);
 }
 
 body {
@@ -85,6 +87,7 @@ nav {
     
     position: sticky;
     top: 0;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -96,6 +99,18 @@ nav img{
     height: clamp(60px, 60%, 60%);
 }
 
+.login-buttons{
+    width: 20%;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.text-button {
+    font-size: clamp(1.3em, 1vw + 0.9em, 2.5em);
+    background: none;
+    border: none;
+}
 
 /* OVERLAY ------------------------------------------------------------------------------------ */
 .overlay{
@@ -256,7 +271,7 @@ footer ul li {
 }
 
 .layer1 {
-    background-image: url('../img/layered-waves-haikei-white-to-black_2.svg');
+    background-image: url('../img/layered-waves-haikei-white-to-black.svg');
 }
 
 
@@ -273,6 +288,15 @@ footer ul li {
     nav img{
         height: clamp(50px, 35%, 60%);
     }
+
+    .login-buttons{
+        width: 40%;
+        justify-content: flex-end;
+    }
+
+    .text-button {
+        font-size: clamp(1.4em, 1vw + 1.2em, 2.5em);
+    }
 }
 
 @media only screen and (max-width: 420px) {
@@ -283,4 +307,7 @@ footer ul li {
         top: -55px;
     }
 
+    .text-button {
+        font-size: clamp(1.2em, 1vw + 0.95em, 2em);
+    }
 }

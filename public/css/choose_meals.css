@@ -1,0 +1,138 @@
+/* NAVBAR ------------------------------------------------------------------------ */
+#search-meal {
+    width: clamp(420px, 45%, 600px);
+    height: clamp(40px, 80%, 80px);
+    padding-left: 1em;
+    
+    
+    color: white;
+    font-size: clamp(1.5em, 1vw + 1.1em, 2.7em);
+    font-weight: 700;
+    text-shadow: 0.1em 0.1em 5px var(--chosen-black);
+    border-radius: 3em;
+    border: none;
+
+    background-color: var(--chosen-red);
+}
+
+::placeholder {
+    color: white;
+}
+
+
+/* ASIDE ------------------------------------------------------------------------ */
+#side-bar {
+    width: 22%;
+    height: 100vh;
+
+    font-size: clamp(1.5rem, 2vw , 1.8rem);
+    color: var(--chosen-text-white);
+    background-color: var(--chosen-black);
+}
+
+#side-bar h2{
+    margin: 1rem 0 0 0;
+    padding: 0 0 0 1rem;
+    font-size: clamp(2.1rem, 3vw ,2.7rem);
+}
+
+#side-bar ul{
+    margin: 0.5rem 1rem 0 0;
+    padding: 0 0 0 3rem;
+    list-style-type: none;
+    font-size: clamp(1.4rem, 2vw ,1.8rem);
+}
+
+#side-bar ul li{
+    padding: 0.3rem;
+    border-bottom: 1px solid var(--chosen-gray);
+}
+
+/* MAIN ---------------------------------------------------------------------------------*/
+#meals {
+    width: 78%;
+    height: 100vh;
+
+    background-color: var(--chosen-white);
+}
+
+.meal {
+    width: 30%;
+    margin: 3%;
+
+    display: flex;
+    flex-flow: row wrap;
+
+    border: 1px solid var(--chosen-black);
+    border-radius: 1em;
+}
+
+.meal-title {
+    width: 100%;
+    padding: 2%;
+
+    font-size: 1.3em;
+    text-align: center;
+    border-bottom: 1px solid var(--chosen-gray);
+    border-radius: 0.7em 0.7em 0 0;
+    background-color: var(--chosen-yellow);
+}
+
+.beside-picture {
+    width: 50%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+}
+
+.meal img {
+    width: 50%;
+    object-fit: cover;
+
+    border-radius: 0 0 0 1em;
+}
+
+.meal-ingridients{
+    font-size: 1.2em;
+}
+
+.meal button {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    font-size: 2em;
+    font-weight: 700;
+    border: none;
+    border-radius: 0 0 0.5em 0;
+    border-top: 1px solid var(--chosen-gray);
+    background-color: var(--chosen-yellow);
+}
+
+.meal button p {
+    margin: 0;
+}
+
+/* MEDIA ------------------------------------------------------------------------------------- */
+@media only screen and (max-width: 970px) {
+    /* NAVBAR  ----------------------------------------------------------------------------------- */
+    #search-meal{
+        width: clamp(400px, 80%, 900px);
+        height: 45%;
+        margin: 0 auto;
+        
+        order: 2;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+      /* NAVBAR  ----------------------------------------------------------------------------------- */
+      #search-meal{
+        width: clamp(330px, 80%, 900px);
+        height: clamp(50px, 30%, 80px);
+    }
+}

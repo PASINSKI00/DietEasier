@@ -18,23 +18,6 @@
     background-color: var(--chosen-red-hover);
 }
 
-.login-buttons{
-    width: 20%;
-
-    display: flex;
-    justify-content: space-around;
-}
-
-.text-button {
-    font-size: clamp(1.3em, 1vw + 0.9em, 2.5em);
-    background: none;
-    border: none;
-}
-
-.text-button:hover{
-    
-}
-
 
 /* HEADER ------------------------------------------------------------------------------------ */
 header {
@@ -129,15 +112,6 @@ header p::first-line {
         margin: 0 auto;
         
         order: 2;
-    }
-
-    .login-buttons{
-        width: 40%;
-        justify-content: flex-end;
-    }
-
-    .text-button {
-        font-size: clamp(1.4em, 1vw + 1.2em, 2.5em);
     }
 }
 
