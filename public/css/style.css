@@ -11,7 +11,7 @@
 
     --transition-speed: 400ms;
 
-    --rem: clamp(1rem, 2vw, 10rem);
+    font-size: clamp(16px, 2vw, 24px);
 }
 
 body {
@@ -19,11 +19,10 @@ body {
     margin: 0;
 
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
 }
 
 body::-webkit-scrollbar {
-    width: 0.25rem;
+    width: 0.5rem;
 }
 
 body::-webkit-scrollbar-track {
@@ -51,8 +50,8 @@ body::-webkit-scrollbar-thumb {
 
 .raise:hover,
 .raise:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--chosen-black);
-  transform: translateY(-0.1em);
+  box-shadow: 0 0.5rem 0.5rem -0.4rem var(--chosen-black);
+  transform: translateY(-0.2rem);
 }
 
 .enlarge {
@@ -64,7 +63,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .bold {
-    transition: all var(--transition-speed) linear;
+    transition: all var(--transition-speed) ease;
 }
 
 .bold:hover, .bold:focus {
@@ -75,12 +74,26 @@ body::-webkit-scrollbar-thumb {
 /* ICONS -----------------------------------------------------------------------------*/
 .fa-times{
     margin: 0;
-    padding: 1.5rem 1.5rem 0 0;
+    padding: 1.2rem 1.2rem 0 0;
     align-self: flex-end;
-    font-size: 3rem;
+    font-size: 1rem;
+}
+
+.fa-plus{
+    padding: 0 0.5rem 0 0;
+}
+
+.exit-icon {
+    align-self: flex-end;
 }
 
 /* NAVBAR ------------------------------------------------------------------------------------ */
+a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 nav {
     width: 100%;
     height: clamp(60px,12vh, 80px);
@@ -97,6 +110,7 @@ nav {
 
 nav img{
     height: clamp(60px, 60%, 60%);
+    padding-left: 1rem;
 }
 
 .login-buttons{
@@ -107,7 +121,7 @@ nav img{
 }
 
 .text-button {
-    font-size: clamp(1.3em, 1vw + 0.9em, 2.5em);
+    font-size: 1.4rem;
     background: none;
     border: none;
 }
@@ -146,12 +160,8 @@ nav img{
     background-color: var(--chosen-white);
 }
 
-.exit-icon {
-    align-self: flex-end;
-}
-
 .login h1 {
-    font-size: 2.5rem;
+    font-size: 1rem;
     margin: 0.3rem auto 2rem auto;
 }
 
@@ -166,9 +176,9 @@ nav img{
 .login input{
     width: 70%;
     padding: 0.8rem;
-    margin: 1.5rem;
+    margin: 1rem;
 
-    font-size: 1.5rem;
+    font-size: 1rem;
     border: none;
     border-bottom: 1px solid var(--chosen-gray);
 }
@@ -181,7 +191,7 @@ nav img{
     justify-self: flex-end;
     
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 1rem;
     letter-spacing: 0.1rem;
     border: none;
     border-radius: 2rem;
@@ -216,7 +226,7 @@ nav img{
     padding: 0.5rem;
     margin: 0.8rem;
 
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .login button {
@@ -226,10 +236,15 @@ nav img{
     
 }
 
+/* OVERLAY LOGIN REGISTER -------------------------------------------------*/
+.overlay, .login, .signup {
+    display: none;
+}
+
 /* FOOTER ------------------------------------------------------------------------------------ */
 footer {
     width: 100%;
-    padding: 4em 0;
+    padding: 4rem 0;
     
     display: flex;
     flex-flow: row wrap;
@@ -239,22 +254,22 @@ footer {
 }
 
 footer p {
-    font-size: clamp(1em, 1vw + 0.8em, 1.8em);
+    font-size: 1.6rem;
     text-align: center;
 }
 
 footer ul {
     width: clamp(300px, 30%, 500px);
-    padding: 0 5vw;
+    padding: 0 2rem;
 
     color: var(--chosen-text-white);
 }
 
 footer ul li {
-    padding: 0.2em 0;
-    margin: 0.3em 0;
+    padding: 0.2rem 0;
+    margin: 0.3rem 0;
     
-    font-size: clamp(0.7em, 1vw + 0.8em, 1.8em);
+    font-size: 1.3rem;
     list-style-type: none;
     border-bottom: 1px solid var(--chosen-gray);
 }
@@ -290,12 +305,12 @@ footer ul li {
     }
 
     .login-buttons{
-        width: 40%;
+        width: 50%;
         justify-content: flex-end;
     }
-
+    
     .text-button {
-        font-size: clamp(1.4em, 1vw + 1.2em, 2.5em);
+        font-size: 1.7rem;
     }
 }
 
@@ -307,7 +322,15 @@ footer ul li {
         top: -55px;
     }
 
+    nav img {
+        padding-left: 0;
+    }
+
+    .login-buttons{
+        width: 45%;
+    }
+
     .text-button {
-        font-size: clamp(1.2em, 1vw + 0.95em, 2em);
+        font-size: 1rem;
     }
 }

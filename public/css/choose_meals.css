@@ -2,79 +2,149 @@
 #search-meal {
     width: clamp(420px, 45%, 600px);
     height: clamp(40px, 80%, 80px);
-    padding-left: 1em;
+    padding-left: 1.5rem;
     
     
     color: white;
-    font-size: clamp(1.5em, 1vw + 1.1em, 2.7em);
+    font-size: 1.8rem;
     font-weight: 700;
-    text-shadow: 0.1em 0.1em 5px var(--chosen-black);
-    border-radius: 3em;
+    text-shadow: 0.1rem 0.1rem 5px var(--chosen-black);
+    border-radius: 3rem;
     border: none;
+    opacity: 0.9;
 
     background-color: var(--chosen-red);
 }
 
-::placeholder {
+input::placeholder {
     color: white;
 }
 
+input:focus::placeholder{
+    opacity: 0.5;
+}
 
-/* ASIDE ------------------------------------------------------------------------ */
+#search-meal:focus {
+    outline: none;
+    opacity: 1;
+}
+
+/* SECOND CONTAINER -------------------------------------------------------------- */
+#second-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+/* ASIDE SIDE-BAR ------------------------------------------------------------------------ */
 #side-bar {
-    width: 22%;
-    height: 100vh;
+    width: clamp(0px, 22%, 350px);
+    height: 92vh;
 
-    font-size: clamp(1.5rem, 2vw , 1.8rem);
+
+position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+
     color: var(--chosen-text-white);
     background-color: var(--chosen-black);
 }
 
 #side-bar h2{
-    margin: 1rem 0 0 0;
+    margin:0 0 0 0;
+    padding: 1.2rem 1rem 0 1rem;
+    font-size: 1.5rem;
+}
+
+#side-bar .list{
+    margin: 0.5rem 1rem 0.5rem 0;
     padding: 0 0 0 1rem;
-    font-size: clamp(2.1rem, 3vw ,2.7rem);
-}
-
-#side-bar ul{
-    margin: 0.5rem 1rem 0 0;
-    padding: 0 0 0 3rem;
     list-style-type: none;
-    font-size: clamp(1.4rem, 2vw ,1.8rem);
+    font-size: 1.4rem;
 }
 
-#side-bar ul li{
-    padding: 0.3rem;
-    border-bottom: 1px solid var(--chosen-gray);
+#side-bar .list input{
+    color: var(--chosen-red);
+    display: none;
 }
+
+#side-bar .list label{
+    margin-left: 0.5rem;
+}
+
+input + label{
+    transition: all var(--transition-speed) ease;
+}
+
+:hover + label {
+    transform: scale(1.1);
+}
+
+:checked + label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--chosen-red);
+    opacity: 0.8;
+ }
+
+
+
+ #side-bar input[type=submit] {
+    width: 80%;
+    height: 2rem;
+    margin: 0 auto;
+
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+
+    font-size: 1rem;
+    border-radius: 1rem;
+    align-self: flex-end;
+ }
 
 /* MAIN ---------------------------------------------------------------------------------*/
 #meals {
-    width: 78%;
-    height: 100vh;
+    width: 100%;
+    height: 92vh;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    overflow-y: scroll;
 
     background-color: var(--chosen-white);
 }
 
+#meals::-webkit-scrollbar {
+    display: none;
+}
+
 .meal {
-    width: 30%;
-    margin: 3%;
+    width: 40%;
+    margin: 4%;
 
     display: flex;
     flex-flow: row wrap;
 
     border: 1px solid var(--chosen-black);
-    border-radius: 1em;
+    border-radius: 1rem;
 }
 
 .meal-title {
     width: 100%;
-    padding: 2%;
+    padding: 0.2rem;
 
-    font-size: 1.3em;
+    font-size: 1rem;
     text-align: center;
     border-bottom: 1px solid var(--chosen-gray);
-    border-radius: 0.7em 0.7em 0 0;
+    border-radius: 1rem 1rem 0 0;
     background-color: var(--chosen-yellow);
 }
 
@@ -89,26 +159,32 @@
     width: 50%;
     object-fit: cover;
 
-    border-radius: 0 0 0 1em;
+    border-radius: 0 0 0 1rem;
 }
 
 .meal-ingridients{
-    font-size: 1.2em;
+    height: calc(100% - 1.7rem);    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 1rem;
 }
 
 .meal button {
     width: 100%;
     margin: 0;
-    padding: 0;
-    
+    padding: 0.2rem;
+
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    justify-self: flex-end;
     
-    font-size: 2em;
-    font-weight: 700;
+    font-size: 1rem;
     border: none;
-    border-radius: 0 0 0.5em 0;
+    border-radius: 0 0 1rem 0;
     border-top: 1px solid var(--chosen-gray);
     background-color: var(--chosen-yellow);
 }
@@ -117,7 +193,111 @@
     margin: 0;
 }
 
+
+/* ASIDE MEAL-ASSIGNER ------------------------------------------------------------------------- */
+#meal-assigner {
+    width: 25rem;
+    margin: 0.5rem;
+
+    position: relative;
+    
+    display: flex;
+    flex-flow: column wrap;
+
+    text-align: center;
+}
+
+#meal-assigner h1{
+    margin: 0;
+    padding: 0.25rem;
+    border: 1px solid var(--chosen-gray);
+    border-radius: 1rem 1rem 0 0;
+    background-color: var(--chosen-yellow);
+}
+
+#day-numbers{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+
+    border: 1px solid var(--chosen-gray);
+}
+
+.day-number {
+    width: 33%;
+    padding: 0.1rem;
+    
+    font-size: 1.3rem;
+    border: 1px solid var(--chosen-gray);
+}
+
+#meal-pictures {
+    width: 100%;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+    border: 1px solid var(--chosen-gray);
+}
+
+.meal-picture {
+    width: 40%;
+    margin: 0.5rem 0 0 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    aspect-ratio: 1/1;
+    
+    border: 1px solid var(--chosen-gray);
+}
+
+.meal-picture img{
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.meal-picture i{
+    position: absolute;
+    padding: auto;
+    z-index: 0;
+}
+
+.meal-picture:last-child {
+    margin-bottom: 0.5rem;
+}
+
+.meal-picture:nth-last-child(2) {
+    margin-bottom: 0.5rem;
+}
+
+#meal-assigner a button{
+    width: 80%;
+    margin: 0 auto;
+
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+
+    font-size: 2rem;
+    border-radius: 2rem;
+    border: none;
+    color: var(--chosen-text-white);
+    text-shadow: 1px 2px 10px var(--chosen-black);
+    background-color: var(--chosen-red);
+}
+
+
 /* MEDIA ------------------------------------------------------------------------------------- */
+@media only screen and (max-width: 1300px) {
+    .meal{
+        width: 100%;
+    }
+}
 @media only screen and (max-width: 970px) {
     /* NAVBAR  ----------------------------------------------------------------------------------- */
     #search-meal{
