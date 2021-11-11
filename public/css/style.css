@@ -94,9 +94,10 @@ a {
     justify-content: center;
     align-items: center;
 }
-nav {
+
+.navbar-top {
     width: 100%;
-    height: clamp(60px,12vh, 80px);
+    height: 4rem;
     
     position: sticky;
     top: 0;
@@ -108,8 +109,9 @@ nav {
     background-color: var(--chosen-yellow);
 }
 
-nav img{
-    height: clamp(60px, 60%, 60%);
+.navbar-top img{
+    height: 60%;
+    min-height: 60px;
     padding-left: 1rem;
 }
 
@@ -293,14 +295,14 @@ footer ul li {
 /* MEDIA ------------------------------------------------------------------------------------- */
 @media only screen and (max-width: 970px) {
     /* NAVBAR ------------------------------------------------------------------------------------ */
-    nav {
+    .navbar-top {
         height: 120px;
         
         top: -60px;
         flex-flow: row wrap;
     }
 
-    nav img{
+    .navbar-top img{
         height: clamp(50px, 35%, 60%);
     }
 
@@ -316,13 +318,13 @@ footer ul li {
 
 @media only screen and (max-width: 420px) {
     /* NAVBAR ------------------------------------------------------------------------------------ */
-    nav {
+    .navbar-top {
         height: 110px;
 
         top: -55px;
     }
 
-    nav img {
+    .navbar-top img {
         padding-left: 0;
     }
 
