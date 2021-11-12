@@ -105,11 +105,15 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    
     background-color: var(--chosen-yellow);
 }
 
-.navbar-top img{
+.navbar-top a {
+    height: 100%;
+}
+
+.navbar-logo{
     height: 60%;
     min-height: 60px;
     padding-left: 1rem;
@@ -256,7 +260,7 @@ footer {
 }
 
 footer p {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     text-align: center;
 }
 
@@ -271,7 +275,7 @@ footer ul li {
     padding: 0.2rem 0;
     margin: 0.3rem 0;
     
-    font-size: 1.3rem;
+    font-size: 0.8rem;
     list-style-type: none;
     border-bottom: 1px solid var(--chosen-gray);
 }
@@ -291,19 +295,104 @@ footer ul li {
     background-image: url('../img/layered-waves-haikei-white-to-black.svg');
 }
 
+/* SIDE-NAVABR --------------------------------------------------------------- */
+.side-navbar {
+    width: 5rem;
+    height: calc(100vh - 4rem);
+    margin: 0;
+    padding: 0;
+
+    position: fixed;
+    top: 4rem;
+    left: 0;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    transition: all var(--transition-speed) cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    list-style-type: none;
+    background-color: var(--chosen-black);
+
+    z-index: 1;
+}
+
+.side-navbar-item {
+    width: 100%;
+}
+
+.side-navbar-item:last-child {
+    margin-top: auto;
+}
+
+.side-navbar-link {
+    width: 100%;
+    height: 5rem;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    text-decoration: none;
+    color: var(--chosen-text-white);
+    opacity: 0.7;
+}
+
+.side-navbar-link-text {
+    display: none;
+}
+
+.side-navbar-link i{
+    width: 5rem;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+}
+
+.side-navbar-link:hover{
+    opacity: 1;
+    color: var(--chosen-red);
+}
+
+.side-navbar:hover {
+    width: 15rem;
+}
+
+.side-navbar:hover .side-navbar-link-text{
+    display: block;
+    font-size: 1.2rem;
+} 
+
+.active {
+    color: var(--chosen-red);
+    opacity: 1;
+}
+
 
 /* MEDIA ------------------------------------------------------------------------------------- */
 @media only screen and (max-width: 970px) {
     /* NAVBAR ------------------------------------------------------------------------------------ */
     .navbar-top {
-        height: 120px;
+        height: 8.5rem;
         
-        top: -60px;
+        top: -4.25rem;
         flex-flow: row wrap;
     }
 
-    .navbar-top img{
-        height: clamp(50px, 35%, 60%);
+    .navbar-top a {
+        height: 4rem;
+        width: 50%;
+    }
+
+    .navbar-logo{
+        margin-right: auto;
     }
 
     .login-buttons{
@@ -314,25 +403,77 @@ footer ul li {
     .text-button {
         font-size: 1.7rem;
     }
+
+    .side-navbar {
+        width: 100%;
+        height: 5rem;
+
+        top: unset;
+        bottom: 0;
+
+        flex-flow: row nowrap;
+    }
+
+    .side-navbar:hover .side-navbar-link-text{
+        display: none;
+    }
+
+    .side-navbar:hover{
+        width: 100%;
+    }
+
+    footer ul {
+        width: 70%;
+    }
+
+    footer p, footer ul li{
+        font-size: 1.6rem;
+    }
+
 }
 
 @media only screen and (max-width: 420px) {
     /* NAVBAR ------------------------------------------------------------------------------------ */
     .navbar-top {
-        height: 110px;
+        height: 8rem;
 
-        top: -55px;
+        top: -4rem;
     }
 
-    .navbar-top img {
-        padding-left: 0;
+    .navbar-top a {
+        height: 4rem;
+        width: 50%;
+    }
+
+    .navbar-logo {
+        width: 100%;
+        object-fit: scale-down;
     }
 
     .login-buttons{
-        width: 45%;
+        width: 50%;
     }
 
     .text-button {
-        font-size: 1rem;
+        font-size: 1.4rem;
     }
+
+    .side-navbar-item{
+        width: 20%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .side-navbar-link{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .side-navbar-link i{
+        width: 50%;
+    }
+
 }

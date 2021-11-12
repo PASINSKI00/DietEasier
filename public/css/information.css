@@ -1,0 +1,178 @@
+.main-informations{
+    width: 100%;
+    margin-left: 5rem;
+    padding: 0;
+
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
+.goal {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 0;
+
+    font-size: 2rem;
+    text-align: center;
+}
+
+.goal form{
+    display: inline;
+}
+
+.goal input{
+    display: none;
+}
+
+.goal label{
+    padding: 0.5rem;
+
+    opacity: 0;
+    border-radius: 0.5rem;
+    background-color: var(--chosen-yellow);
+}
+
+.goal input + label{
+    opacity: 0.5;
+    padding: 0.2rem;
+}
+
+.goal input:checked + label{
+    padding: 0.5rem;
+    
+    font-weight: 700;
+    opacity: 1;
+    color: var(--chosen-text-black);
+}
+
+.informations {
+    width: 50%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.information {
+    width: 20rem;
+    margin: 0.4rem;
+    padding: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 1rem;
+    background-color: var(--chosen-yellow);
+}
+
+.info-text {
+    padding-left: 1rem;
+}
+
+.information input{
+    width: 30%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+    font-size: 1rem;
+    color: var(--chosen-red);
+    border: none;
+    border-radius: 0 0.3rem 0.3rem 0;
+    background-color: var(--chosen-black);
+}
+
+input::placeholder {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.calculations {
+   width: 50%;
+
+   display: flex;
+   flex-flow: column nowrap;
+   align-items: center;
+}
+
+.calculation {
+    width: 15rem;
+    margin: 0.4rem;
+    padding: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--chosen-white);
+    border-bottom: 1px solid var(--chosen-text-black)
+}
+
+.calc-number {
+    width: 20%;
+    padding: 0.5rem;
+}
+
+
+/* MEDIA ------------------------------------------------------------------------------------- */
+@media only screen and (max-width: 970px) {
+    .main-informations{
+        margin-left: 0;
+
+        flex-flow: column nowrap;
+        align-items: center;
+
+        font-size: 1.5rem;
+    }
+
+    .goal {
+        font-size: 2.5rem;
+    }
+
+    .informations{
+        width: 90%;
+
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    .information {
+        width: 100%;
+
+        font-size: 2rem;
+    }
+
+    .calculations {
+        width: 90%;
+        margin-top: 3rem;
+        margin-bottom: 10rem;
+    }
+
+    .calculation {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .goal{
+        padding-bottom: 4rem;
+    }
+
+    .goal form{
+        display: block;
+        padding: 1rem 0;
+    }
+
+    .information{
+        font-size: 1.5rem;
+    }
+
+    .info-text{
+        padding-right: 0.2rem;
+    }
+   
+}

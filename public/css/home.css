@@ -140,13 +140,10 @@ header p::first-line {
 @media only screen and (max-width: 420px) {
       /* NAVBAR  ----------------------------------------------------------------------------------- */
       #home-navbar-button{
-        width: clamp(330px, 80%, 900px);
-        height: clamp(50px, 30%, 80px);
-    }
+        width: 90%;
+        height: 3rem;
 
-    .text-button {
-        font-size: 1rem;
+        margin-bottom: 0.5rem;
     }
-
 
 }
