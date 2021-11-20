@@ -88,12 +88,12 @@ header p::first-line {
 }
 
 #home-main-button{
-    width: clamp(300px, 45%, 1400px);
-    height: clamp(50px, 30%, 80px);
+    width: 25rem;
+    height: 4rem;
     padding: 0 15px;
     
     color: white;
-    font-size: 2.2rem;
+    font-size: 3rem;
     font-weight: 700;
     text-shadow: 0.1rem 0.1rem 5px var(--chosen-black);
     background-color: var(--chosen-red);

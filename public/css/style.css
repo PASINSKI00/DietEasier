@@ -156,23 +156,30 @@ a {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: flex-start;
-
+    
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 
+    z-index: 10;
     border-radius: 30px;
     background-color: var(--chosen-white);
 }
 
+#log-in{
+    transition: opacity 2s;
+    opacity: 0;
+}
+
 .login h1 {
-    font-size: 1rem;
-    margin: 0.3rem auto 2rem auto;
+    font-size: 35px;
+    margin: 5px auto 10px auto;
 }
 
 .login form {
     width: 100%;
+    margin-top: 50px;
 
     display: flex;
     flex-flow: column nowrap;
@@ -181,35 +188,41 @@ a {
 
 .login input{
     width: 70%;
-    padding: 0.8rem;
-    margin: 1rem;
+    padding: 7px;
+    margin: 25px;
 
-    font-size: 1rem;
+    font-size: 25px;
     border: none;
     border-bottom: 1px solid var(--chosen-gray);
 }
 
-.login button {
+.login-button{
     width: 70%;
-    padding: 0.7rem;
-    margin: 4rem 0 1rem 0;
+    padding: 10px;
+    margin: 30px 0 15px 0;
     
     justify-self: flex-end;
     
     font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 0.1rem;
+    font-size: 40px;
     border: none;
     border-radius: 2rem;
     background-color: var(--chosen-yellow);
 }
 
 .texts {
+    width: 100%;
+    height: 15%;
     text-align: center;
-    margin-bottom: 1rem;
+
+    position: absolute;
+    bottom: 0px;
+    
+    font-size: 22px;
 }
 
 .login a{
+    display: inline;
     text-decoration: none;
     color: var(--chosen-text-black);
 }
@@ -222,24 +235,40 @@ a {
     font-weight: 700;
 }
 
+.login-href-links {
+    font-weight: 700;
+    transition: all 0.2s ease-in;
+}
+
+.login-href-links:hover {
+    color: var(--chosen-red);
+}
 
 /* REGISTER / SIGNUP ----------------------------------------------------------------------------------- */
 .signup h1 {
-    margin: 0.3rem auto 1rem auto;
+    margin: 5px auto 10px auto;
+}
+
+.signup form{
+    margin: 0 0 0 0;
 }
 
 .signup input {
-    padding: 0.5rem;
-    margin: 0.8rem;
+    padding: 5px;
+    margin: 20px;
 
-    font-size: 1rem;
+    font-size: 22px;
 }
 
-.login button {
-    width: 70%;
-    padding: 0.7rem;
-    margin: 2.5rem 0 1rem 0;
+.register-button {
+    width: 80%;
+    padding: 5px;
+    margin: 20px 0 10px 0;
     
+}
+
+.signup .texts {
+    height: 8%;
 }
 
 /* OVERLAY LOGIN REGISTER -------------------------------------------------*/
@@ -310,7 +339,7 @@ footer ul li {
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
-    transition: all var(--transition-speed) cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    transition: all var(--transition-speed) cubic-bezier(0, 0, 0.09, 0.84);
     list-style-type: none;
     background-color: var(--chosen-black);
 
