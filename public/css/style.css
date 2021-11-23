@@ -80,7 +80,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .fa-plus{
-    padding: 0 0.5rem 0 0;
 }
 
 .exit-icon {
@@ -465,7 +464,7 @@ footer ul li {
     /* NAVBAR ------------------------------------------------------------------------------------ */
     .navbar-top {
         height: 8rem;
-
+        
         top: -4rem;
     }
 
