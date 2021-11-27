@@ -1,5 +1,6 @@
 :root {
     --chosen-yellow: #ffcd01;
+    --chosen-yellow-hover: #eebc00;
     --chosen-black: #212121;
     --chosen-white: #ffffff;
     --chosen-red: #c62024;
@@ -59,7 +60,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .enlarge:hover, .enlarge:focus {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .bold {

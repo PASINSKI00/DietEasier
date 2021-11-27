@@ -9,5 +9,4 @@ Router::get('home', 'DefaultController');
 Router::get('chooseMeals', 'DefaultController');
 Router::run($path);
 
-
 ?>
