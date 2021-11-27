@@ -16,10 +16,10 @@ class Router {
             die("Wrong url!");
         }
 
-
-        //TODO call controller method
         $controller = self::$routes[$action];
         $object = new $controller;
+
+        if($action == "") $action="home";
 
         $object->$action();
     }
