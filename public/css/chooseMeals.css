@@ -1,10 +1,11 @@
 /* NAVBAR --------------------------------------------- */
 #search-meal {
-    width: clamp(420px, 40%, 600px);
-    height: clamp(40px, 60%, 80px);
+    width: 20rem;
+    height: 2.5rem;
     padding-left: 1.5rem;
-    
-    
+    margin-left: auto;
+    margin-right: auto;
+
     color: white;
     font-size: 1.5rem;
     font-weight: 400;

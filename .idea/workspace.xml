@@ -5,22 +5,19 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/Router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/choose_meals.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/chooseMeals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/shopping_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/shoppingList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style_your_accounts.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styleYourAccounts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/what_you_chose.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/whatYouChose.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/your_account.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/yourAccount.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/choose_meals.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/chooseMeals.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/favourites.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/favourites.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/information.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/information.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/meal.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/meal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/order_history.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/orderHistory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/shopping_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/shoppingList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/what_you_chose.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/whatYouChose.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/your_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/yourAccount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/chooseMeals.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/chooseMeals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/chooseMeals.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/chooseMeals.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/favourites.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/favourites.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/information.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/information.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/meal.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/meal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/orderHistory.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/orderHistory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/shoppingList.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/shoppingList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/whatYouChose.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/whatYouChose.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/yourAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/yourAccount.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/AppController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +30,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="2" />
+  </component>
   <component name="ProjectId" id="214abLR8JR7kusenTCOQ03PAOos" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,11 +43,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Studia/5 semestr/Projektowanie Aplikacji Internetowych/lab_06" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/controllers" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\prywa\PhpstormProjects\DietEasier\src\controllers" />
+      <recent name="C:\Users\prywa\PhpstormProjects\DietEasier\public\views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\prywa\PhpstormProjects\DietEasier" />
     </key>
@@ -69,6 +74,9 @@
       <workItem from="1637955933761" duration="80000" />
       <workItem from="1637956061497" duration="95000" />
       <workItem from="1638006597929" duration="3949000" />
+      <workItem from="1638010998640" duration="71000" />
+      <workItem from="1638439201527" duration="9201000" />
+      <workItem from="1638462703488" duration="10849000" />
     </task>
     <task id="LOCAL-00001" summary="(#11)">
       <created>1637955994816</created>

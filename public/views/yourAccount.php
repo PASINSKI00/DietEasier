@@ -72,7 +72,7 @@
         </aside>
 
         <main class="main-your-account">
-            <img class="profile-picture" src="public/img/acoount-profile-picture.jpg">
+            <img class="profile-picture" src="public/img/acoount-profile-picture.jpg" alt="profile-picture">
             <div class="profile-content">
                 <p>Charlie</p>
                 <p>email@email.com</p>

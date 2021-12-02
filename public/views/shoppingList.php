@@ -64,7 +64,7 @@
 
                     <div class="texts">
                         Already have an account?
-                        <span class="login-href-links" onclick="hideLogins(), openLogin()">Log in now</a>
+                        <span class="login-href-links" onclick="hideLogins(), openLogin()">Log in now</span>
                         <br>
                     </div>
                 </div>

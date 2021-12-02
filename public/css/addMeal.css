@@ -1,0 +1,45 @@
+#secondary-container {
+    width: 100%;
+}
+
+.return, button{
+    margin: 1rem;
+    padding: 0.2rem 4rem;
+
+    text-decoration: none;
+    color: var(--chosen-text-black);
+    font-size: 2rem;
+    border-radius: 2rem;
+    border: none;
+    background-color: var(--chosen-yellow);
+}
+
+.addMeal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.addMeal>form{
+    width: 80%;
+    padding: 3rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.addMeal>form>input, .addMeal>form>textarea {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    padding-left: 1rem;
+
+    font-size: 0.8rem;
+    border-radius: 1rem;
+    border: 2px solid var(--chosen-black);
+}
+
+.addMeal>form>*::placeholder {
+    color: var(--chosen-text-black);
+}
+
+

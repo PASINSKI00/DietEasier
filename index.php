@@ -16,6 +16,11 @@ Router::get('settings', 'DefaultController');
 Router::get('shoppingList', 'DefaultController');
 Router::get('whatYouChose', 'DefaultController');
 Router::get('yourAccount', 'DefaultController');
+
+Router::post('loginHome', 'SecurityController');
+Router::post('loginChooseMeals', 'SecurityController');
+Router::post('addMeal', 'MealController');
+
+
 Router::run($path);
 
-?>

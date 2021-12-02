@@ -37,12 +37,20 @@
 
                     <h1>Log in to Your account</h1>
 
-                    <form>
+                    <form action="loginHome" method="POST">
                         <input name="email" type="text" placeholder="E-mail">
                         <input name="password" type="password" placeholder="Password">
-                        <button class="login-button enlarge">Login</button>
+                        <button class="login-button enlarge" type="submit">Login</button>
                     </form>
-
+                    <div class="messages">
+                        <?php
+                            if(isset($messages)){
+                                foreach ($messages as $message){
+                                    echo $message;
+                                }
+                            }
+                        ?>
+                    </div>
                     <div class="texts">
                         Don't have an account yet?
                         <span class="login-href-links" onclick="openSignUp()">Register now</span>
@@ -63,7 +71,15 @@
                         <input name="re-password" type="password" placeholder="Repeat password">
                         <button class="login-button register-button enlarge">Register</button>
                     </form>
-
+                    <div class="messages">
+                        <?php
+                        if(isset($messages)){
+                            foreach ($messages as $message){
+                                echo $message;
+                            }
+                        }
+                        ?>
+                    </div>
                     <div class="texts">
                         Already have an account?
                         <span class="login-href-links">Log in now</span>
@@ -108,8 +124,8 @@
 
         <footer>
             <ul>
-                <p>Contact</p>
-                <li class="bold enlarge">1</li>
+                <p>Functionalities</p>
+                <li class="bold enlarge"><a href="addMeal">Add your own meal</a></li>
                 <li class="bold enlarge">2</li>
                 <li class="bold enlarge">3</li>
                 <li class="bold enlarge">4</li>

@@ -35,12 +35,20 @@
 
                     <h1>Log in to Your account</h1>
 
-                    <form>
+                    <form action="loginMeal" method="POST">
                         <input name="email" type="text" placeholder="E-mail">
                         <input name="password" type="password" placeholder="Password">
-                        <button class="login-button enlarge">Login</button>
+                        <button class="login-button enlarge" type="submit">Login</button>
                     </form>
-
+                    <div class="messages">
+                        <?php
+                        if(isset($messages)){
+                            foreach ($messages as $message){
+                                echo $message;
+                            }
+                        }
+                        ?>
+                    </div>
                     <div class="texts">
                         Don't have an account yet?
                         <span class="login-href-links" onclick="hideLogins(), openSignUp()">Register now</span>
@@ -61,21 +69,28 @@
                         <input name="re-password" type="password" placeholder="Repeat password">
                         <button class="enlarge login-button register-button">Register</button>
                     </form>
-
+                    <div class="messages">
+                        <?php
+                        if(isset($messages)){
+                            foreach ($messages as $message){
+                                echo $message;
+                            }
+                        }
+                        ?>
+                    </div>
                     <div class="texts">
                         Already have an account?
-                        <span class="login-href-links" onclick="hideLogins(), openLogin()">Log in now</a>
+                        <span class="login-href-links" onclick="hideLogins(), openLogin()">Log in now</span>
                         <br>
                     </div>
                 </div>
             </div>
         </nav>
-
         <div id="secondary-container">
                 <div class="meal">
-                    <div class="meal-title">Pancakes with maple syroup and blueberries</div>
+                    <div class="meal-title"><?= $meal->getTitle() ?></div>
 
-                    <img src="public/img/pancakes.jpg">
+                    <img src="public/uploads/<?= $meal->getImage() ?>" alt="picture of a meal">
 
                     <ul class="meal-ingridients-list">
                         <li class="meal-ingridients-list-item">Flour: 150g</li>
@@ -96,16 +111,16 @@
 
                 <div class="recipe">
                     <div class="recipe-title">Recipe</div>
-                    <div class="recipe-content">Do this and that and that and that</div>
+                    <div class="recipe-content"><?= $meal->getRecipe() ?></div>
                 </div>
             
             
                 <div class="additional-information">
                     <div class="additional-information-title">Additional Information</div>
                     <div class="additional-information-content">
-                        <h3>Author:</h3><p> Katy_1234</p>
-                        <h3>Time to prepare:</h3><p>25min</p>
-                        <h3>Description:</h3><p> bla bla bla bla bla bla blaaa bla</p>
+                        <h3>Author:</h3><p> <?= $meal->getAuthor() ?></p>
+                        <h3>Time to prepare:</h3><p><?= $meal->getTime() ?> min</p>
+                        <h3>Description:</h3><p><?= $meal->getDescription() ?></p>
                     </div>
                 </div>
                 
@@ -114,7 +129,7 @@
                     
                     <div class="review">
                         <div class="review-author">
-                            <img src="public/img/acoount-profile-picture.jpg">
+                            <img src="public/img/acoount-profile-picture.jpg" alt="pancakes">
                             <p class="review-author-name">Jack</p>
                         </div>
 
@@ -125,7 +140,7 @@
 
                     <div class="review">
                         <div class="review-author">
-                            <img src="public/img/acoount-profile-picture.jpg">
+                            <img src="public/img/acoount-profile-picture.jpg" alt="pancakes">
                             <p class="review-author-name">Jack</p>
                         </div>
 

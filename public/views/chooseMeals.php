@@ -37,12 +37,20 @@
 
                     <h1>Log in to Your account</h1>
 
-                    <form>
+                    <form action="loginChooseMeals" method="POST">
                         <input name="email" type="text" placeholder="E-mail">
                         <input name="password" type="password" placeholder="Password">
-                        <button class="login-button enlarge">Login</button>
+                        <button class="login-button enlarge" type="submit">Login</button>
                     </form>
-
+                    <div class="messages">
+                        <?php
+                        if(isset($messages)){
+                            foreach ($messages as $message){
+                                echo $message;
+                            }
+                        }
+                        ?>
+                    </div>
                     <div class="texts">
                         Don't have an account yet?
                         <span class="login-href-links" onclick="hideLogins(), openSignUp()">Register now</span>
@@ -63,10 +71,18 @@
                         <input name="re-password" type="password" placeholder="Repeat password">
                         <button class="enlarge login-button register-button">Register</button>
                     </form>
-
+                    <div class="messages">
+                        <?php
+                        if(isset($messages)){
+                            foreach ($messages as $message){
+                                echo $message;
+                            }
+                        }
+                        ?>
+                    </div>
                     <div class="texts">
                         Already have an account?
-                        <span class="login-href-links" onclick="hideLogins(), openLogin()">Log in now</a>
+                        <span class="login-href-links" onclick="hideLogins(), openLogin()">Log in now</span>
                         <br>
                     </div>
                 </div>
