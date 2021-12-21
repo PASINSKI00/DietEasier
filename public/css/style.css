@@ -145,6 +145,10 @@ a {
     border-bottom: 1px solid var(--chosen-gray);
 }
 
+.login input:focus{
+    outline: none;
+}
+
 .login-button{
     width: 70%;
     padding: 10px;
@@ -228,6 +232,12 @@ a {
 /* OVERLAY LOGIN REGISTER -------------------------------------------------*/
 .overlay, .login, .signup {
     display: none;
+}
+
+.no-valid {
+    border-bottom: 1px solid red !important;
+    /*box-shadow: 0 0 0.2rem red;*/
+    outline: none;
 }
 
 /* FOOTER ------------------------------------------------------------------------------------ */
