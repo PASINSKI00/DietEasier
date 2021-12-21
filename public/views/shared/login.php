@@ -3,6 +3,7 @@
     <link rel="stylesheet" text/css" href="/public/css/icons.css">
 
     <script src="public/js/login.js" defer></script>
+    <script src="public/js/register.js" defer></script>
     <script src="public/js/script.js" defer></script>
 </head>
 
@@ -18,7 +19,7 @@
 
     <h1>Log in to Your account</h1>
 
-    <form id="register-form">
+    <form id="login-form">
         <input name="email" type="text" placeholder="E-mail">
         <input name="password" type="password" placeholder="Password">
         <button class="login-button enlarge">Login</button>
@@ -45,11 +46,11 @@
 
     <h1>Create a new account</h1>
 
-    <form>
+    <form id="register-form">
         <input name="name" type="text" placeholder="Name">
         <input name="email" type="text" placeholder="E-mail">
         <input name="password" type="password" placeholder="Password">
-        <input name="re-password" type="password" placeholder="Repeat password">
+        <input name="confirmedPassword" type="password" placeholder="Repeat password">
         <button class="login-button register-button enlarge">Register</button>
     </form>
     <div class="messages">
