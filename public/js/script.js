@@ -1,8 +1,7 @@
 function openLogin() {
     document.getElementById("log-in").style.display = "flex";    
     document.getElementById("overlay").style.display = "block";
-    document.getElementById("log-in").style.opacity = '1'; 
-
+    document.getElementById("log-in").style.opacity = '1';
 }
 
 function openSignUp() {
