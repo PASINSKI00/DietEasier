@@ -14,79 +14,21 @@
 
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/chooseMeals.css">
+    <link rel="stylesheet" type="text/css" href="public/css/hover.css">
 </head>
 
 <body>
     <div class="container">
         <nav class="navbar-top">
-            <a href="home">
-                <img class="navbar-logo" src="public/img/side_logo_transparent.png" alt="company's logo">
+            <a href="home"  class="navbar-logo">
+                <img src="public/img/side_logo_transparent.png" alt="company's logo">
             </a>
             
             <input id="search-meal" class="enlarge" placeholder="Search..."></input>
 
-            <div class="login-buttons">
-                <button class="text-button sign-up enlarge" onclick="openSignUp()">Sign up</button>
-                
-                <button class="text-button log-in enlarge" onclick="openLogin()">Log in</button>
-                   
-                <div class="overlay" id="overlay" onclick="hideLogins()"></div>
-            
-                <div class="login" id="log-in">
-                    <i class="fas fa-times exit-icon" onclick="hideLogins()"></i>
-
-                    <h1>Log in to Your account</h1>
-
-                    <form action="loginChooseMeals" method="POST">
-                        <input name="email" type="text" placeholder="E-mail">
-                        <input name="password" type="password" placeholder="Password">
-                        <button class="login-button enlarge" type="submit">Login</button>
-                    </form>
-                    <div class="messages">
-                        <?php
-                        if(isset($messages)){
-                            foreach ($messages as $message){
-                                echo $message;
-                            }
-                        }
-                        ?>
-                    </div>
-                    <div class="texts">
-                        Don't have an account yet?
-                        <span class="login-href-links" onclick="hideLogins(), openSignUp()">Register now</span>
-                        <br>
-                        <span class="login-href-links">Can't log in?</span>
-                    </div>
-                </div>
-                
-                <div class="login signup" id="sign-up">
-                    <i class="fas fa-times exit-icon" onclick="hideLogins()"></i>
-
-                    <h1>Create a new account</h1>
-
-                    <form>
-                        <input name="name" type="text" placeholder="Name">
-                        <input name="email" type="text" placeholder="E-mail">
-                        <input name="password" type="password" placeholder="Password">
-                        <input name="re-password" type="password" placeholder="Repeat password">
-                        <button class="enlarge login-button register-button">Register</button>
-                    </form>
-                    <div class="messages">
-                        <?php
-                        if(isset($messages)){
-                            foreach ($messages as $message){
-                                echo $message;
-                            }
-                        }
-                        ?>
-                    </div>
-                    <div class="texts">
-                        Already have an account?
-                        <span class="login-href-links" onclick="hideLogins(), openLogin()">Log in now</span>
-                        <br>
-                    </div>
-                </div>
-            </div>
+            <?php
+            require("shared/login.php");
+            ?>
         </nav>
 
         <aside>
@@ -98,14 +40,16 @@
                             <span class="side-navbar-link-text">Sort by</span>
                         </a>
                         <div class="list">
-                            <input type="checkbox" name="cat" id="sort1" value="" class="enlarge"></input>
-                            <label for="sort1">Hello</label><br>
-                            <input type="checkbox" name="cat" id="sort2" value="" class="enlarge"></input>
-                            <label for="sort2">Hello</label><br>
-                            <input type="checkbox" name="cat" id="sort3" value="" class="enlarge"></input>
-                            <label for="sort3">Hello</label><br>
-                            <input type="checkbox" name="cat" id="sort4" value="" class="enlarge"></input>
-                            <label for="sort4">Hello</label><br>
+                            <form action="/chooseMeals/1" method="get">
+                                <input type="checkbox" name="sortBy[0]" id="sort1" value="Price" class="enlarge"></input>
+                                <label for="sort1">Price</label><br>
+                                <input type="checkbox" name="sortBy[1]" id="sort2" value="Protein" class="enlarge"></input>
+                                <label for="sort2">Protein</label><br>
+                                <input type="checkbox" name="sortBy[2]" id="sort3" value="Carbs" class="enlarge"></input>
+                                <label for="sort3">Carbs</label><br>
+                                <input type="checkbox" name="sortBy[3]" id="sort4" value="Fats" class="enlarge"></input>
+                                <label for="sort4">Fats</label><br>
+                            </form>
                         </div>
                     </li>
                     
@@ -115,22 +59,14 @@
                             <span class="side-navbar-link-text">Categories</span>
                         </a>
                         <div class="list">
-                            <input type="checkbox" name="cat" id="cat1" value="" class="enlarge"></input>
-                            <label for="cat1">Hello</label><br>
-                            <input type="checkbox" name="cat" id="cat2" value="" class="enlarge"></input>
-                            <label for="cat2">Hello</label><br>
-                            <input type="checkbox" name="cat" id="cat3" value="" class="enlarge"></input>
-                            <label for="cat3">Hello</label><br>
-                            <input type="checkbox" name="cat" id="cat4" value="" class="enlarge"></input>
-                            <label for="cat4">Hello</label><br>
-                            <input type="checkbox" name="cat" id="cat5" value="" class="enlarge"></input>
-                            <label for="cat5">Hello</label><br>
-                            <input type="checkbox" name="cat" id="cat6" value="" class="enlarge"></input>
-                            <label for="cat6">Hello</label><br>
-                            <input type="checkbox" name="cat" id="cat7" value="" class="enlarge"></input>
-                            <label for="cat7">Hello</label><br>
-                            <input type="checkbox" name="cat" id="cat8" value="" class="enlarge"></input>
-                            <label for="cat8">Hello</label><br>
+                            <form action="" method="get">
+                                <input type="checkbox" name="category[0]" id="cat1" value="Breakfast" class="enlarge"></input>
+                                <label for="cat1">Breakfast</label><br>
+                                <input type="checkbox" name="category[1]" id="cat2" value="Lunch" class="enlarge"></input>
+                                <label for="cat2">Lunch</label><br>
+                                <input type="checkbox" name="category[2]" id="cat3" value="Supper" class="enlarge"></input>
+                                <label for="cat3">Supper</label><br>
+                            </form>
                         </div>  
                     </li>
                     
@@ -143,214 +79,23 @@
 
         <div id="second-container">
             <main id="meals">
-                
-                <div class="meal">
-                    <img src="public/img/pancakes.jpg" alt="pancakes with maple syroup and blueberries">
-                    
-                    <div class="meal-title">Pancakes with maple syroup and blueberries</div>
-                    
-                    <div class="meal-ingridients">
-                        <span class="ingridents">flour, milk, eggs</span>
-                    </div>
+                <?php foreach ($meals as $meal): ?>
+                    <section class="meal">
+                        <img src="public/uploads/<?= $meal->getImage(); ?>" alt="pancakes with maple syroup and blueberries">
 
-                    <a class="meal-information" href="./meal">read more...</a>
+                        <div class="meal-title"><?= $meal->getTitle(); ?></div>
 
-                    <button class="meal-add-button">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
+                        <div class="meal-ingridients">
+                            <span class="ingridents">flour, milk, eggs</span>
+                        </div>
 
-                <div class="meal">
-                    <img src="public/img/pancakes.jpg" alt="pancakes with maple syroup and blueberries">
-                    
-                    <div class="meal-title">Pancakes with maple syroup and blueberries</div>
-                    
-                    <div class="meal-ingridients">
-                        <span class="ingridents">flour, milk, eggs</span>
-                    </div>
+                        <a class="meal-information" href="./meal">read more...</a>
 
-                    <a class="meal-information" href="./meal">read more...</a>
-
-                    <button class="meal-add-button">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-
-                <div class="meal">
-                    <img src="public/img/pancakes.jpg" alt="pancakes with maple syroup and blueberries">
-                    
-                    <div class="meal-title">Pancakes with maple syroup and blueberries</div>
-                    
-                    <div class="meal-ingridients">
-                        <span class="ingridents">flour, milk, eggs</span>
-                    </div>
-
-                    <a class="meal-information" href="./meal">read more...</a>
-
-                    <button class="meal-add-button">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-
-                <div class="meal">
-                    <img src="public/img/pancakes.jpg" alt="pancakes with maple syroup and blueberries">
-                    
-                    <div class="meal-title">Pancakes with maple syroup and blueberries</div>
-                    
-                    <div class="meal-ingridients">
-                        <span class="ingridents">flour, milk, eggs</span>
-                    </div>
-
-                    <a class="meal-information" href="./meal">read more...</a>
-
-                    <button class="meal-add-button">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-
-                <div class="meal">
-                    <img src="public/img/pancakes.jpg" alt="pancakes with maple syroup and blueberries">
-                    
-                    <div class="meal-title">Pancakes with maple syroup and blueberries</div>
-                    
-                    <div class="meal-ingridients">
-                        <span class="ingridents">flour, milk, eggs</span>
-                    </div>
-
-                    <a class="meal-information" href="./meal">read more...</a>
-
-                    <button class="meal-add-button">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-
-                <div class="meal">
-                    <img src="public/img/pancakes.jpg" alt="pancakes with maple syroup and blueberries">
-                    
-                    <div class="meal-title">Pancakes with maple syroup and blueberries</div>
-                    
-                    <div class="meal-ingridients">
-                        <span class="ingridents">flour, milk, eggs</span>
-                    </div>
-
-                    <a class="meal-information" href="./meal">read more...</a>
-
-                    <button class="meal-add-button">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-
-                <div class="meal">
-                    <img src="public/img/pancakes.jpg" alt="pancakes with maple syroup and blueberries">
-                    
-                    <div class="meal-title">Pancakes with maple syroup and blueberries</div>
-                    
-                    <div class="meal-ingridients">
-                        <span class="ingridents">flour, milk, eggs</span>
-                    </div>
-
-                    <a class="meal-information" href="./meal">read more...</a>
-
-                    <button class="meal-add-button">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-
-                <div class="meal">
-                    <img src="public/img/pancakes.jpg" alt="pancakes with maple syroup and blueberries">
-                    
-                    <div class="meal-title">Pancakes with maple syroup and blueberries</div>
-                    
-                    <div class="meal-ingridients">
-                        <span class="ingridents">flour, milk, eggs</span>
-                    </div>
-
-                    <a class="meal-information" href="./meal">read more...</a>
-
-                    <button class="meal-add-button">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-
-                <div class="meal">
-                    <img src="public/img/pancakes.jpg" alt="pancakes with maple syroup and blueberries">
-                    
-                    <div class="meal-title">Pancakes with maple syroup and blueberries</div>
-                    
-                    <div class="meal-ingridients">
-                        <span class="ingridents">flour, milk, eggs</span>
-                    </div>
-
-                    <a class="meal-information" href="./meal">read more...</a>
-
-                    <button class="meal-add-button">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-
-                <div class="meal">
-                    <img src="public/img/pancakes.jpg" alt="pancakes with maple syroup and blueberries">
-                    
-                    <div class="meal-title">Pancakes with maple syroup and blueberries</div>
-                    
-                    <div class="meal-ingridients">
-                        <span class="ingridents">flour, milk, eggs</span>
-                    </div>
-
-                    <a class="meal-information" href="./meal">read more...</a>
-
-                    <button class="meal-add-button">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-
-                <div class="meal">
-                    <img src="public/img/pancakes.jpg" alt="pancakes with maple syroup and blueberries">
-                    
-                    <div class="meal-title">Pancakes with maple syroup and blueberries</div>
-                    
-                    <div class="meal-ingridients">
-                        <span class="ingridents">flour, milk, eggs</span>
-                    </div>
-
-                    <a class="meal-information" href="./meal">read more...</a>
-
-                    <button class="meal-add-button">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-
-                <div class="meal">
-                    <img src="public/img/pancakes.jpg" alt="pancakes with maple syroup and blueberries">
-                    
-                    <div class="meal-title">Pancakes with maple syroup and blueberries</div>
-                    
-                    <div class="meal-ingridients">
-                        <span class="ingridents">flour, milk, eggs</span>
-                    </div>
-
-                    <a class="meal-information" href="./meal">read more...</a>
-
-                    <button class="meal-add-button">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-
-                <div class="meal">
-                    <img src="public/img/pancakes.jpg" alt="pancakes with maple syroup and blueberries">
-                    
-                    <div class="meal-title">Pancakes with maple syroup and blueberries</div>
-                    
-                    <div class="meal-ingridients">
-                        <span class="ingridents">flour, milk, eggs</span>
-                    </div>
-
-                    <a class="meal-information" href="./meal">read more...</a>
-
-                    <button class="meal-add-button">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
+                        <button class="meal-add-button">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </section>
+                <?php endforeach; ?>
             </main>
 
             <aside id="meal-assigner">

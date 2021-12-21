@@ -14,79 +14,21 @@
 
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/home.css">
+    <link rel="stylesheet" type="text/css" href="public/css/hover.css">
 </head>
 
 <body>
     <div class="container">
         <nav class="navbar-top">
-            <a href="home">
-                <img class="navbar-logo" src="public/img/side_logo_transparent.png" alt="company's logo">
+            <a href="home" class="navbar-logo">
+                <img src="public/img/side_logo_transparent.png" alt="company's logo">
             </a>
             
             <a id="home-navbar-button" href="chooseMeals" class="raise">Start Composing Your Diet</a>
 
-            <div class="login-buttons">
-                <button class="text-button enlarge" onclick="openSignUp()">Sign up</button>
-                
-                <button class="text-button enlarge" onclick="openLogin()">Log in</button>
-                
-                <div class="overlay" id="overlay" onclick="hideLogins()"></div>
-                
-                <div id="log-in" class="login">
-                    <i class="fas fa-times" onclick="hideLogins()"></i>
-
-                    <h1>Log in to Your account</h1>
-
-                    <form action="loginHome" method="POST">
-                        <input name="email" type="text" placeholder="E-mail">
-                        <input name="password" type="password" placeholder="Password">
-                        <button class="login-button enlarge" type="submit">Login</button>
-                    </form>
-                    <div class="messages">
-                        <?php
-                            if(isset($messages)){
-                                foreach ($messages as $message){
-                                    echo $message;
-                                }
-                            }
-                        ?>
-                    </div>
-                    <div class="texts">
-                        Don't have an account yet?
-                        <span class="login-href-links" onclick="openSignUp()">Register now</span>
-                        <br>
-                        <a href="#" class="login-href-links">Can't log in?</a>
-                    </div>
-                </div>
-                
-                <div class="login signup" id="sign-up">
-                    <i class="fas fa-times" onclick="hideLogins()"></i>
-
-                    <h1>Create a new account</h1>
-
-                    <form>
-                        <input name="name" type="text" placeholder="Name">
-                        <input name="email" type="text" placeholder="E-mail">
-                        <input name="password" type="password" placeholder="Password">
-                        <input name="re-password" type="password" placeholder="Repeat password">
-                        <button class="login-button register-button enlarge">Register</button>
-                    </form>
-                    <div class="messages">
-                        <?php
-                        if(isset($messages)){
-                            foreach ($messages as $message){
-                                echo $message;
-                            }
-                        }
-                        ?>
-                    </div>
-                    <div class="texts">
-                        Already have an account?
-                        <span class="login-href-links">Log in now</span>
-                        <br>
-                    </div>
-                </div>
-            </div>
+            <?php
+                require("shared/login.php");
+            ?>
         </nav>
         
         <header> 
@@ -122,31 +64,9 @@
 
         <div class="spacer layer1"></div>
 
-        <footer>
-            <ul>
-                <p>Functionalities</p>
-                <li class="bold enlarge"><a href="addMeal">Add your own meal</a></li>
-                <li class="bold enlarge">2</li>
-                <li class="bold enlarge">3</li>
-                <li class="bold enlarge">4</li>
-            </ul>
-            <ul>
-                <p>Contact</p>
-                <li class="bold enlarge">1</li>
-                <li class="bold enlarge">2</li>
-                <li class="bold enlarge">3</li>
-                <li class="bold enlarge">4</li>
-            </ul>
-            <ul>
-                <p>Contact</p>
-                <li class="bold enlarge">1</li>
-                <li class="bold enlarge">2</li>
-                <li class="bold enlarge">3</li>
-                <li class="bold enlarge">4</li>
-            </ul>
-        </footer>
+        <?php
+            require("shared/footer.php");
+        ?>
     </div>
-
-    <script src="public/js/script.js"></script>
 </body>
 </html>

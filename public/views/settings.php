@@ -14,62 +14,20 @@
 
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/yourAccount.css">
-    <link rel="stylesheet" type="text/css" href="public/css/style_YourAccounts.css">
+    <link rel="stylesheet" type="text/css" href="public/css/styleYourAccounts.css">
+    <link rel="stylesheet" type="text/css" href="public/css/hover.css">
 </head>
 
 <body>
     <div class="container">
-        <nav class="navbar-top">
-            <a href="home">
-                <img class="navbar-logo" src="public/img/side_logo_transparent.png" alt="company's logo">
-            </a>
+        <?php
+        require("shared/navbarTopYourAccount.php");
+        ?>
 
-            <div class="login-buttons">
-                <a href="yourAccount"><button class="text-button enlarge">Your account</button></a>
-            </div>
-        </nav>
-
-        <aside>
-            <nav>
-                <ul class="side-navbar">
-                    <li class="side-navbar-item">
-                        <a class="side-navbar-link" href="public/views/information">
-                            <i class="fas fa-info"></i>
-                            <span class="side-navbar-link-text">Information</span>
-                        </a>
-                    </li>
-                    
-                    <li class="side-navbar-item">
-                        <a class="side-navbar-link" href="public/views/favourites">
-                            <i class="fas fa-heart"></i>
-                            <span class="side-navbar-link-text">Favourites</span>
-                        </a>
-                    </li>
-                    
-                    <li class="side-navbar-item">
-                        <a class="side-navbar-link" href="public/views/orderHistory">
-                            <i class="fas fa-history"></i>
-                            <span class="side-navbar-link-text">Order History</span>
-                        </a>
-                    </li>
-                    
-                    <li class="side-navbar-item">
-                        <a class="side-navbar-link active" href="public/views/settings">
-                            <i class="fas fa-cog"></i>
-                            <span class="side-navbar-link-text">Settings</span>
-                        </a>
-                    </li>
-                    
-                    <li class="side-navbar-item">
-                        <a class="side-navbar-link" href="public/views/yourAccount">
-                            <i class="fas fa-user"></i>
-                            <span class="side-navbar-link-text">Your account</span>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </nav>
-        </aside>
+        <?php
+        $activeSettings = "active";
+        require("shared/sideNavbarYourAccounts.php");
+        ?>
 
         <main>
 

@@ -18,58 +18,9 @@
 
 <body>
     <div class="container">
-        <nav class="navbar-top">
-            <a href="home">
-                <img class="navbar-logo" src="public/img/side_logo_transparent.png" alt="company's logo">
-            </a>
-
-            <div class="login-buttons">
-                <button class="text-button sign-up enlarge" onclick="openSignUp()">Sign up</button>
-                
-                <button class="text-button log-in enlarge" onclick="openLogin()">Log in</button>
-                   
-                <div class="overlay" id="overlay" onclick="hideLogins()"></div>
-            
-                <div class="login" id="log-in">
-                    <i class="fas fa-times exit-icon" onclick="hideLogins()"></i>
-
-                    <h1>Log in to Your account</h1>
-
-                    <form>
-                        <input name="email" type="text" placeholder="E-mail">
-                        <input name="password" type="password" placeholder="Password">
-                        <button class="login-button enlarge">Login</button>
-                    </form>
-
-                    <div class="texts">
-                        Don't have an account yet?
-                        <span class="login-href-links" onclick="hideLogins(), openSignUp()">Register now</span>
-                        <br>
-                        <span class="login-href-links">Can't log in?</span>
-                    </div>
-                </div>
-                
-                <div class="login signup" id="sign-up">
-                    <i class="fas fa-times exit-icon" onclick="hideLogins()"></i>
-
-                    <h1>Create a new account</h1>
-
-                    <form>
-                        <input name="name" type="text" placeholder="Name">
-                        <input name="email" type="text" placeholder="E-mail">
-                        <input name="password" type="password" placeholder="Password">
-                        <input name="re-password" type="password" placeholder="Repeat password">
-                        <button class="enlarge login-button register-button">Register</button>
-                    </form>
-
-                    <div class="texts">
-                        Already have an account?
-                        <span class="login-href-links" onclick="hideLogins(), openLogin()">Log in now</span>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <?php
+        require("shared/navbarTopYourAccount.php");
+        ?>
 
         <main id="secondary-container">
             <div class="ingridient">

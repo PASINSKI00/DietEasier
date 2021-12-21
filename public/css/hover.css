@@ -1,0 +1,26 @@
+.raise {
+    transition: all var(--transition-speed) ease;
+}
+
+.raise:hover,
+.raise:focus {
+    box-shadow: 0 0.5rem 0.5rem -0.4rem var(--chosen-black);
+    transform: translateY(-0.2rem);
+}
+
+.enlarge {
+    margin-right: 0.5rem;
+    transition: all var(--transition-speed) ease;
+}
+
+.enlarge:hover, .enlarge:focus {
+    transform: scale(1.1);
+}
+
+.bold {
+    transition: all var(--transition-speed) ease;
+}
+
+.bold:hover, .bold:focus {
+    font-weight: 700;
+}

@@ -43,56 +43,10 @@ body::-webkit-scrollbar-thumb {
     background-color: var(--chosen-white);
 }
 
-
-/* HOVER EFFECTS ----------------------------------------------------------------------------------*/
-.raise {
-    transition: all var(--transition-speed) ease;
-}
-
-.raise:hover,
-.raise:focus {
-  box-shadow: 0 0.5rem 0.5rem -0.4rem var(--chosen-black);
-  transform: translateY(-0.2rem);
-}
-
-.enlarge {
-    transition: all var(--transition-speed) ease;
-}
-
-.enlarge:hover, .enlarge:focus {
-    transform: scale(1.1);
-}
-
-.bold {
-    transition: all var(--transition-speed) ease;
-}
-
-.bold:hover, .bold:focus {
-    font-weight: 700;
-}
-
-
-/* ICONS -----------------------------------------------------------------------------*/
-.fa-times{
-    margin: 0;
-    padding: 1.2rem 1.2rem 0 0;
-    align-self: flex-end;
-    font-size: 1rem;
-}
-
-.fa-plus{
-}
-
-.exit-icon {
-    align-self: flex-end;
-}
-
 /* NAVBAR ------------------------------------------------------------------------------------ */
 a {
     text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: inherit;
 }
 
 .navbar-top {
@@ -109,28 +63,19 @@ a {
     background-color: var(--chosen-yellow);
 }
 
-.navbar-top a {
-    height: 100%;
+.navbar-logo{
+    height: 60%;
+    min-height: 50px;
+    padding-left: 1rem;
     margin-right: auto;
 }
 
-.navbar-logo{
-    height: 60%;
-    min-height: 60px;
-    padding-left: 1rem;
-}
-
-.login-buttons{
-    /*width: 20%;*/
-
-    /*display: flex;*/
-    /*justify-content: space-around;*/
+.navbar-logo img{
+    height: 100%;
 }
 
 .text-button {
     padding-left: 0;
-    padding-right: 0;
-    margin-right: 0.9rem;
     font-size: 1.4rem;
     background: none;
     border: none;
@@ -427,23 +372,10 @@ footer ul li a {
         top: -4.25rem;
         flex-flow: row wrap;
     }
-
-    .navbar-top a {
-        height: 4rem;
-        width: 50%;
-    }
-
-    .navbar-logo{
-        margin-right: auto;
-    }
-
-    .login-buttons{
-        width: 50%;
-        justify-content: flex-end;
-    }
     
     .text-button {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
+        padding-right: 0.7rem;
     }
 
     .side-navbar {
@@ -482,22 +414,12 @@ footer ul li a {
         top: -4rem;
     }
 
-    .navbar-top a {
-        height: 4rem;
-        width: 50%;
+    .text-button {
+        font-size: 1.3rem;
     }
 
     .navbar-logo {
-        width: 100%;
-        object-fit: scale-down;
-    }
-
-    .login-buttons{
-        width: 50%;
-    }
-
-    .text-button {
-        font-size: 1.4rem;
+        min-height: 40px;
     }
 
     .side-navbar-item{

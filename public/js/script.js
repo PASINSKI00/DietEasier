@@ -15,3 +15,4 @@ function hideLogins() {
     document.getElementById("sign-up").style.display = "none";    
     document.getElementById("overlay").style.display = "none";   
 }
+

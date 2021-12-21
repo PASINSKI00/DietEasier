@@ -2,18 +2,17 @@
 
 class Meal
 {
-    private $title;
-    private $author;
-    private $time;
-    private $recipe;
-    private $description;
-    private $image;
-    private $reviews = [];
+    private int $author;
+    private string $title;
+    private int $time;
+    private string $recipe;
+    private string $description;
+    private string $image;
 
-    public function __construct($title, $author, $time, $recipe, $description, $image)
+    public function __construct($author, $title, $time, $recipe, $description, $image)
     {
-        $this->title = $title;
         $this->author = $author;
+        $this->title = $title;
         $this->time = $time;
         $this->recipe = $recipe;
         $this->description = $description;
@@ -30,12 +29,12 @@ class Meal
         $this->title = $title;
     }
 
-    public function getAuthor() : string
+    public function getAuthor() : int
     {
         return $this->author;
     }
 
-    public function setAuthor(string $author)
+    public function setAuthor(int $author)
     {
         $this->author = $author;
     }
@@ -78,15 +77,5 @@ class Meal
     public function setImage(string $image)
     {
         $this->image = $image;
-    }
-
-    public function getReviews(): array
-    {
-        return $this->reviews;
-    }
-
-    public function setReviews(array $reviews)
-    {
-        $this->reviews = $reviews;
     }
 }

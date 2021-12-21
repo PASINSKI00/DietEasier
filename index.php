@@ -7,7 +7,7 @@ $path = parse_url($path, PHP_URL_PATH);
 
 Router::get('', 'DefaultController');
 Router::get('home', 'DefaultController');
-Router::get('chooseMeals', 'DefaultController');
+Router::get('chooseMeals', 'MealController');
 Router::get('favourites', 'DefaultController');
 Router::get('information', 'DefaultController');
 Router::get('meal', 'DefaultController');

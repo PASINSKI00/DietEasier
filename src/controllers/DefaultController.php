@@ -8,10 +8,6 @@ class DefaultController extends AppController {
         $this->render('home');
     }
 
-    public function chooseMeals() {
-        $this->render('chooseMeals');
-    }
-
     public function favourites() {
         $this->render('favourites');
     }
@@ -20,12 +16,12 @@ class DefaultController extends AppController {
         $this->render('information');
     }
 
-    public function meal() {
-        $this->render('meal');
-    }
-
     public function orderHistory() {
         $this->render('orderHistory');
+    }
+
+    public function meal() {
+        $this->render('meal');
     }
 
     public function settings() {
