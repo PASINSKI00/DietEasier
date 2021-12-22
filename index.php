@@ -20,6 +20,7 @@ Router::get('yourAccount', 'DefaultController');
 Router::post('loginHome', 'SecurityController');
 Router::post('loginChooseMeals', 'SecurityController');
 Router::post('addMeal', 'MealController');
+Router::post('search', 'MealController');
 
 
 Router::run($path);

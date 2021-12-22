@@ -2,29 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e5765f9-6c10-4657-9ff9-0fa54de35cdb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ae5ad183-66c7-4df0-a1e7-94ae34aceae9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ae5ad183-66c7-4df0-a1e7-94ae34aceae9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ae5ad183-66c7-4df0-a1e7-94ae34aceae9/storage_v2/_src_/database/d3htndsumt82uu.tJGw0A/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ae5ad183-66c7-4df0-a1e7-94ae34aceae9/storage_v2/_src_/database/d3htndsumt82uu.tJGw0A/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/chooseMeals.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/chooseMeals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/addMeal.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/addMeal.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views/chooseMeals.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/chooseMeals.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/favourites.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/favourites.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/information.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/information.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/orderHistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/orderHistory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/shoppingList.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/shoppingList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/whatYouChose.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/whatYouChose.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/yourAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/yourAccount.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/shared/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/shared/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/MealController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MealController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Meal.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Meal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/MealRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/MealRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +87,7 @@
       <workItem from="1639563378254" duration="75000" />
       <workItem from="1639565581507" duration="1255000" />
       <workItem from="1639583565055" duration="29000" />
+      <workItem from="1640103634542" duration="10769000" />
     </task>
     <task id="LOCAL-00001" summary="(#11)">
       <created>1637955994816</created>

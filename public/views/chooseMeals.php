@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/chooseMeals.css">
     <link rel="stylesheet" type="text/css" href="public/css/hover.css">
+    <script type="text/javascript" src="public/js/script.js" defer></script>
+    <script type="text/javascript" src="public/js/search.js" defer></script>
 </head>
 
 <body>
@@ -23,9 +25,8 @@
             <a href="home"  class="navbar-logo">
                 <img src="public/img/side_logo_transparent.png" alt="company's logo">
             </a>
-            
-            <input id="search-meal" class="enlarge" placeholder="Search..."></input>
 
+            <input id="search-meal" class="enlarge" placeholder="Search..."></input>
             <?php
             require("shared/login.php");
             ?>
@@ -81,7 +82,7 @@
             <main id="meals">
                 <?php foreach ($meals as $meal): ?>
                     <section class="meal">
-                        <img src="public/uploads/<?= $meal->getImage(); ?>" alt="pancakes with maple syroup and blueberries">
+                        <img src="public/uploads/<?= $meal->getImage(); ?>" alt="meal picture">
 
                         <div class="meal-title"><?= $meal->getTitle(); ?></div>
 
@@ -97,6 +98,24 @@
                     </section>
                 <?php endforeach; ?>
             </main>
+
+            <template id="meal-template">
+                <section class="meal">
+                    <img src="" alt="meal picture">
+
+                    <div class="meal-title">title</div>
+
+                    <div class="meal-ingridients">
+                        <span class="ingridents">ingridients</span>
+                    </div>
+
+                    <a class="meal-information" href="./meal">read more...</a>
+
+                    <button class="meal-add-button">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </section>
+            </template>
 
             <aside id="meal-assigner">
                 <div class="meal-assigner-title">Choosing for day...</div>
@@ -148,7 +167,5 @@
             </aside>
         </div>
     </div>
-
-    <script src="public/js/script.js"></script>
 </body>
 </html>

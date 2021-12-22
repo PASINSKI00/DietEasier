@@ -53,7 +53,7 @@
         <input name="confirmedPassword" type="password" placeholder="Repeat password">
         <button class="login-button register-button enlarge">Register</button>
     </form>
-    <div class="messages">
+    <div class="messages">git
         <?php
         if(isset($messages)){
             foreach ($messages as $message){

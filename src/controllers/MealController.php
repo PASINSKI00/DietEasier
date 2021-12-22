@@ -61,6 +61,20 @@ class MealController extends AppController
         $this->render('addMeal', ['messages' => $this->messages]);
     }
 
+    public function search(){
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode($this->mealRepository->searchMealsByTitle($decoded['search']));
+        }
+    }
+
     private function validate(array $image) : bool
     {
         if($image['size'] > self::MAX_FILE_SIZE) {
