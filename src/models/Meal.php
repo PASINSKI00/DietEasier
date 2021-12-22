@@ -8,8 +8,9 @@ class Meal
     private string $recipe;
     private string $description;
     private string $image;
+    private int $id;
 
-    public function __construct($author, $title, $time, $recipe, $description, $image)
+    public function __construct($author, $title, $time, $recipe, $description, $image, $id = null)
     {
         $this->author = $author;
         $this->title = $title;
@@ -17,6 +18,18 @@ class Meal
         $this->recipe = $recipe;
         $this->description = $description;
         $this->image = $image;
+        $this->id = $id;
+    }
+
+
+    public function getId(): mixed
+    {
+        return $this->id;
+    }
+
+    public function setId(mixed $id): void
+    {
+        $this->id = $id;
     }
 
     public function getTitle() : string

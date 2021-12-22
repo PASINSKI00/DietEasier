@@ -26,7 +26,8 @@ class MealRepository extends Repository
             $meal['time_to_prep'],
             $meal['recipe'],
             $meal['description'],
-            $meal['image']
+            $meal['image'],
+            $meal['id_meal']
         );
     }
 
@@ -66,7 +67,8 @@ class MealRepository extends Repository
                 $meal['time_to_prep'],
                 $meal['recipe'],
                 $meal['description'],
-                $meal['image']
+                $meal['image'],
+                $meal['id_meal']
             );
         }
 
@@ -81,6 +83,26 @@ class MealRepository extends Repository
         );
 
         $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getAllCategories() : array{
+        $stmt = $this->database->connect()->prepare('
+            SELECT name from categories
+        ');
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getAllIngredients() : array{
+        $stmt = $this->database->connect()->prepare('
+            SELECT name from ingredient
+        ');
+
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

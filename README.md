@@ -5,13 +5,15 @@
 - ~~Watch the 10th video~~
 - ~~Figure out how **not to** duplicate code in html pages~~
 - ~~Watch the 11th video~~
+- ~~Watch the 12th video~~
+- ~~Watch the 13th video~~
 - Modify addMeal page with adding ingredients
 - Modify addMeal page with adding authors ID
-- ~~Watch the 12th video~~
-- Watch the 13th video
+- Make chooseMeals page display meals with their ingridients
+- Make chooseMeals redirect to a particular Meal page
+- Make chooseMeals mealAssigner work
 - Figure out how to change **Navbar** properties after user has logged in
 - Login and registration systems working and finished
-- Figure out how to display ingridients
 
 ##Development Stages
 ###Stage 1 [Building a working app with mentioned below features]

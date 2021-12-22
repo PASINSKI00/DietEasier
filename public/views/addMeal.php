@@ -14,6 +14,8 @@
 
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/addMeal.css">
+    <script src="public/js/script.js" defer></script>
+    <script src="public/js/addMeal.js" defer></script>
 </head>
 
 <body>
@@ -36,6 +38,28 @@
                         </div>
                         <input name="name" type="text" placeholder="Meal name">
                         <input name="time" type="text" placeholder="Time to prepare">
+
+                        <div id="ingredients-form">
+                            <h4>Add ingredients:</h4>
+                            <div class="ingredients-form-inputs">
+                                <input list="ingredients" name="ingredient" id="ingredient" placeholder="Choose Ingredient">
+                                <input type="number" name="ingredient-weight" id="ingredient-weight" placeholder="Weight">
+                            </div>
+                            <datalist id="ingredients">
+
+                            </datalist>
+                        </div>
+                        <i class="fas fa-plus" id="ingredients-form-add"></i>
+
+                        <div id="categories-form">
+                            <h4>Add categories:</h4>
+                            <input list="categories" name="category" id="category" placeholder="Choose Category">
+                            <datalist id="categories">
+
+                            </datalist>
+                        </div>
+                        <i class="fas fa-plus" id="categories-form-add"></i>
+
                         <textarea name="recipe" rows="10" placeholder="Recipe"></textarea>
                         <textarea name="description" rows="4" placeholder="Description"></textarea>
                         <input type="file" name="image">
@@ -44,7 +68,5 @@
                 </main>
         </div>
     </div>
-
-    <script src="public/js/script.js"></script>
 </body>
 </html>

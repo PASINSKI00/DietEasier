@@ -75,6 +75,20 @@ class MealController extends AppController
         }
     }
 
+    public function getAllCategories(){
+        header('Content-type: application/json');
+        http_response_code(200);
+
+        echo json_encode($this->mealRepository->getAllCategories());
+    }
+
+    public function getAllIngredients(){
+        header('Content-type: application/json');
+        http_response_code(200);
+
+        echo json_encode($this->mealRepository->getAllIngredients());
+    }
+
     private function validate(array $image) : bool
     {
         if($image['size'] > self::MAX_FILE_SIZE) {

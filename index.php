@@ -16,6 +16,8 @@ Router::get('settings', 'DefaultController');
 Router::get('shoppingList', 'DefaultController');
 Router::get('whatYouChose', 'DefaultController');
 Router::get('yourAccount', 'DefaultController');
+Router::get('getAllCategories', 'MealController');
+Router::get('getAllIngredients', 'MealController');
 
 Router::post('loginHome', 'SecurityController');
 Router::post('loginChooseMeals', 'SecurityController');

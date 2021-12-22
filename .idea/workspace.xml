@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e5765f9-6c10-4657-9ff9-0fa54de35cdb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ae5ad183-66c7-4df0-a1e7-94ae34aceae9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ae5ad183-66c7-4df0-a1e7-94ae34aceae9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ae5ad183-66c7-4df0-a1e7-94ae34aceae9/storage_v2/_src_/database/d3htndsumt82uu.tJGw0A/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ae5ad183-66c7-4df0-a1e7-94ae34aceae9/storage_v2/_src_/database/d3htndsumt82uu.tJGw0A/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/chooseMeals.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/chooseMeals.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/shared/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/shared/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/addMeal.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/addMeal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/addMeal.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/addMeal.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/MealController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MealController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Meal.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Meal.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/MealRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/MealRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +59,16 @@
       <recent name="C:\Users\prywa\PhpstormProjects\DietEasier" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="MealRepository.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/src/repository/MealRepository.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.MealRepository.php" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -87,7 +101,7 @@
       <workItem from="1639563378254" duration="75000" />
       <workItem from="1639565581507" duration="1255000" />
       <workItem from="1639583565055" duration="29000" />
-      <workItem from="1640103634542" duration="10769000" />
+      <workItem from="1640103634542" duration="28307000" />
     </task>
     <task id="LOCAL-00001" summary="(#11)">
       <created>1637955994816</created>
