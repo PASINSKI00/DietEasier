@@ -155,7 +155,5 @@
 
         <a href="chooseMeals" class="return enlarge">Return</a>
     </div>
-
-    <script src="public/js/script.js"></script>
 </body>
 </html>

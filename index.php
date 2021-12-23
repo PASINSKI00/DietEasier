@@ -19,8 +19,7 @@ Router::get('yourAccount', 'DefaultController');
 Router::get('getAllCategories', 'MealController');
 Router::get('getAllIngredients', 'MealController');
 
-Router::post('loginHome', 'SecurityController');
-Router::post('loginChooseMeals', 'SecurityController');
+Router::post('login', 'SecurityController');
 Router::post('addMeal', 'MealController');
 Router::post('search', 'MealController');
 

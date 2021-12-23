@@ -6,9 +6,9 @@ require_once __DIR__.'/../repository/UserRepository.php';
 
 class SecurityController extends AppController
 {
-    public function loginHome() {
-        $userRepository = new UserRepository();
 
+    public function login() {
+        $userRepository = new UserRepository();
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
 
         if ($contentType === "application/json") {
@@ -17,56 +17,31 @@ class SecurityController extends AppController
         }
 
         if (!isset($decoded)){
-            return $this->render('login');
+            http_response_code(401);
         }
-
-//        $email = $_POST["email"];
-//        $password = $_POST["password"];
 
         $email = $decoded["email"];
         $password = $decoded["password"];
 
         $user = $userRepository->getUser($email);
 
-        if (!$user) {
-//            return $this->render('home', ['messages' => ["User doesn't exist!"]]);
+        if ($user == null) {
             header('Content-type: application/json');
             http_response_code(401);
+
+            die();
         }
 
-        if ($user->getEmail() !== $email || $user->getPassword() !== $password) {
-//            return $this->render('home', ['messages' => ["Wrong e-mail or password"]]);
+        else if ($user->getEmail() !== $email || $user->getPassword() !== $password) {
             header('Content-type: application/json');
             http_response_code(401);
+
+            die();
         }
 
-
-//        return $this->render('yourAccount');
-
-//        $url = "http://$_SERVER[HTTP_HOST]";
-//        header("Location: $url/home");
-
-        header('Content-type: application/json');
-        http_response_code(200);
-    }
-
-    public function loginChooseMeals() {
-        $user = new User('jon.snow@gmail.com', 'admin', 'John', 'Snow');
-
-        if (!$this->isPost()){
-            return $this->render('login');
+        if($user->getEmail() == $email && $user->getPassword() == $password) {
+            header('Content-type: application/json');
+            http_response_code(200);
         }
-
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-
-        if ($user->getEmail() !== $email || $user->getPassword() !== $password) {
-            return $this->render('chooseMeals', ['messages' => ["Wrong e-mail or password"]]);
-        }
-
-//        return $this->render('yourAccount');
-
-        $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: $url/meal");
     }
 }

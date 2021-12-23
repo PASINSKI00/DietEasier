@@ -4,7 +4,6 @@
 
     <script src="public/js/login.js" defer></script>
     <script src="public/js/register.js" defer></script>
-    <script src="public/js/script.js" defer></script>
 </head>
 
 <body>
@@ -20,18 +19,12 @@
     <h1>Log in to Your account</h1>
 
     <form id="login-form">
-        <input name="email" type="text" placeholder="E-mail">
+        <input name="email" type="text" placeholder="Email">
         <input name="password" type="password" placeholder="Password">
         <button class="login-button enlarge">Login</button>
     </form>
     <div class="messages">
-        <?php
-        if(isset($messages)){
-            foreach ($messages as $message){
-                echo $message;
-            }
-        }
-        ?>
+
     </div>
     <div class="texts">
         Don't have an account yet?

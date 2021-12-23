@@ -1,20 +1,18 @@
-const form = document.querySelector("#login-form");
+const loginForm = document.querySelector("#login-form");
 
-form.addEventListener('submit', function (e) {
+loginForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    //name=Agnieszka&surname=Kowalska&email=a.kowalska%40codecool.com
-    // const data = `email=${this.email.value}&password=${this.email.value}`;
     const data = {
         "email": this.email.value,
         "password": this.password.value
     }
-
-    console.log(data);
     login(data);
 });
 
 function login(data) {
-    fetch("/loginHome",
+    const messages = document.querySelector('.messages');
+
+    fetch("/login",
         {
             // mode: 'no-cors',
             method: "POST",
@@ -22,9 +20,33 @@ function login(data) {
             body: JSON.stringify(data)
         })
         .then(function (response) {
-            // console.log(response.status)
             if(response.status == 200){
-                window.location.href = "/home"
+                messages.style.color = "green";
+                messages.innerHTML = "Welcome back!";
+                window.setTimeout(function (){
+                    window.location.href = "/home"
+                }, 2000);
+            }
+            else {
+                messages.innerHTML = "Wrong email or password";
             }
         });
 }
+
+function openLogin() {
+    document.getElementById("log-in").style.display = "flex";
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("log-in").style.opacity = '1';
+}
+
+function openSignUp() {
+    document.getElementById("sign-up").style.display = "flex";
+    document.getElementById("overlay").style.display = "block";
+}
+
+function hideLogins() {
+    document.getElementById("log-in").style.display = "none";
+    document.getElementById("sign-up").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+}
+

@@ -15,7 +15,6 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/chooseMeals.css">
     <link rel="stylesheet" type="text/css" href="public/css/hover.css">
-    <script type="text/javascript" src="public/js/script.js" defer></script>
     <script type="text/javascript" src="public/js/search.js" defer></script>
 </head>
 

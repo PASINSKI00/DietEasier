@@ -14,7 +14,6 @@
 
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/addMeal.css">
-    <script src="public/js/script.js" defer></script>
     <script src="public/js/addMeal.js" defer></script>
 </head>
 

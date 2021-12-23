@@ -135,7 +135,5 @@
             <a href="shoppingList" class="continue enlarge">Continue</a>
         </div>
     </div>
-
-    <script src="public/js/script.js"></script>
 </body>
 </html>
