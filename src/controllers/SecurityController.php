@@ -18,6 +18,7 @@ class SecurityController extends AppController
 
         if (!isset($decoded)){
             http_response_code(401);
+            die();
         }
 
         $email = $decoded["email"];
@@ -28,20 +29,47 @@ class SecurityController extends AppController
         if ($user == null) {
             header('Content-type: application/json');
             http_response_code(401);
-
             die();
         }
 
         else if ($user->getEmail() !== $email || $user->getPassword() !== $password) {
             header('Content-type: application/json');
             http_response_code(401);
-
             die();
         }
 
-        if($user->getEmail() == $email && $user->getPassword() == $password) {
-            header('Content-type: application/json');
+        header('Content-type: application/json');
+        http_response_code(200);
+    }
+
+    public function register(){
+        $userRepository = new UserRepository();
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+        }
+
+        if (!isset($decoded)){
+            http_response_code(401);
+            die();
+        }
+
+        $name = $decoded["name"];
+        $email = $decoded["email"];
+        $password = $decoded["password"];
+
+        $user = new User($email,$password,$name);
+        header('Content-type: application/json');
+
+        if($userRepository->addUser($user)){
             http_response_code(200);
+            die();
+        }
+        else {
+            http_response_code(401);
+            die();
         }
     }
 }

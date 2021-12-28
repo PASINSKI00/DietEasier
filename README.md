@@ -8,11 +8,16 @@
 - ~~Watch the 12th video~~
 - ~~Watch the 13th video~~
 - ~~Modify addMeal page with adding ingredients and categories~~
-- Figure out how to change **Navbar** properties after user has logged in
 - Login and registration systems working and finished
+- ~~Check register's data~~
+- Redo Register email check if correct
+- Register check if email is taken
+- Register add more if's with messages
+- Figure out how to check if user's is logged in
+- Figure out how to change **Navbar** properties after user has logged in
 - Modify addMeal page with adding authors ID
 - Make addMeal work
-- Make chooseMeals page display meals with their ingridients
+- Make chooseMeals page display meals with their ingredients
 - Make chooseMeals redirect to a particular Meal page
 - Make chooseMeals mealAssigner work
 

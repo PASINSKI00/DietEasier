@@ -14,7 +14,6 @@ function login(data) {
 
     fetch("/login",
         {
-            // mode: 'no-cors',
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
@@ -24,8 +23,8 @@ function login(data) {
                 messages.style.color = "green";
                 messages.innerHTML = "Welcome back!";
                 window.setTimeout(function (){
-                    window.location.href = "/home"
-                }, 2000);
+                    window.location.href = window.location.pathname;
+                }, 3000);
             }
             else {
                 messages.innerHTML = "Wrong email or password";

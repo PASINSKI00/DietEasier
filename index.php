@@ -20,6 +20,7 @@ Router::get('getAllCategories', 'MealController');
 Router::get('getAllIngredients', 'MealController');
 
 Router::post('login', 'SecurityController');
+Router::post('register', 'SecurityController');
 Router::post('addMeal', 'MealController');
 Router::post('search', 'MealController');
 
