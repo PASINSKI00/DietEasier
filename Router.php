@@ -16,7 +16,8 @@ class Router {
     }
 
     public  static function run($url) {
-        $action = explode("/", $url)[0];
+        $urlParts = explode("/", $url);
+        $action = $urlParts[0];
 
         if(!array_key_exists($action, self::$routes)){
             die("Wrong url!");
@@ -27,6 +28,14 @@ class Router {
 
         if($action == "") $action="home";
 
-        $object->$action();
+        //TODO Check if correct value
+        $id = $urlParts[1] ?? '';
+        $id = intval($id);
+
+//        if($id == 1 && is_integer($id)){
+//            die("id is 1 and int");
+//        }
+
+        $object->$action($id);
     }
 }

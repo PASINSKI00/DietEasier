@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <link rel="stylesheet" type="text/css" href="public/css/meal.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/meal.css">
 </head>
 
 <body>
@@ -21,11 +21,12 @@
         <?php
         require("shared/navbarTopYourAccount.php");
         ?>
+
         <div id="secondary-container">
                 <div class="meal">
                     <div class="meal-title"><?= $meal->getTitle() ?></div>
 
-                    <img src="public/uploads/<?= $meal->getImage() ?>" alt="picture of a meal">
+                    <img src="/public/uploads/<?= $meal->getImage() ?>" alt="picture of a meal">
 
                     <ul class="meal-ingridients-list">
                         <li class="meal-ingridients-list-item">Flour: 150g</li>
@@ -64,7 +65,7 @@
                     
                     <div class="review">
                         <div class="review-author">
-                            <img src="public/img/account-profile-picture.jpg" alt="pancakes">
+                            <img src="/public/img/acoount-profile-picture.jpg" alt="pancakes">
                             <p class="review-author-name">Jack</p>
                         </div>
 
@@ -75,7 +76,7 @@
 
                     <div class="review">
                         <div class="review-author">
-                            <img src="public/img/account-profile-picture.jpg" alt="pancakes">
+                            <img src="/public/img/acoount-profile-picture.jpg" alt="pancakes">
                             <p class="review-author-name">Jack</p>
                         </div>
 
@@ -88,7 +89,7 @@
                 </div>
         </div>
 
-        <a href="chooseMeals" class="return enlarge">Return</a>
+        <a href="/chooseMeals" class="return enlarge">Return</a>
     </div>
 </body>
 </html>

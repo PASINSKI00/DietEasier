@@ -20,10 +20,6 @@ class DefaultController extends AppController {
         $this->render('orderHistory');
     }
 
-    public function meal() {
-        $this->render('meal');
-    }
-
     public function settings() {
         $this->render('settings');
     }

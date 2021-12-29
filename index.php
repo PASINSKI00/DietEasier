@@ -10,7 +10,7 @@ Router::get('home', 'DefaultController');
 Router::get('chooseMeals', 'MealController');
 Router::get('favourites', 'DefaultController');
 Router::get('information', 'DefaultController');
-Router::get('meal', 'DefaultController');
+Router::get('meal', 'MealController');
 Router::get('orderHistory', 'DefaultController');
 Router::get('settings', 'DefaultController');
 Router::get('shoppingList', 'DefaultController');

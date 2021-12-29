@@ -16,6 +16,9 @@
 - Register - encrypt password
 - ~~Figure out how to check if user's is logged in~~
 - ~~Figure out how to change **Navbar** properties after user has logged in~~
+- addMeal: Read ingredients with weights
+- addMeal: calculate macroElements
+- addMeal: Reviews System Working
 - Modify addMeal page with adding authors ID
 - Make addMeal work
 - Make chooseMeals page display meals with their ingredients
