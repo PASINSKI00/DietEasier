@@ -18,74 +18,9 @@
 
 <body>
     <div class="container">
-        <nav class="navbar-top">
-            <a href="home">
-                <img class="navbar-logo" src="public/img/side_logo_transparent.png" alt="company's logo">
-            </a>
-
-            <div class="login-buttons">
-                <button class="text-button sign-up enlarge" onclick="openSignUp()">Sign up</button>
-                
-                <button class="text-button log-in enlarge" onclick="openLogin()">Log in</button>
-                   
-                <div class="overlay" id="overlay" onclick="hideLogins()"></div>
-            
-                <div class="login" id="log-in">
-                    <i class="fas fa-times exit-icon" onclick="hideLogins()"></i>
-
-                    <h1>Log in to Your account</h1>
-
-                    <form action="loginMeal" method="POST">
-                        <input name="email" type="text" placeholder="E-mail">
-                        <input name="password" type="password" placeholder="Password">
-                        <button class="login-button enlarge" type="submit">Login</button>
-                    </form>
-                    <div class="messages">
-                        <?php
-                        if(isset($messages)){
-                            foreach ($messages as $message){
-                                echo $message;
-                            }
-                        }
-                        ?>
-                    </div>
-                    <div class="texts">
-                        Don't have an account yet?
-                        <span class="login-href-links" onclick="hideLogins(), openSignUp()">Register now</span>
-                        <br>
-                        <span class="login-href-links">Can't log in?</span>
-                    </div>
-                </div>
-                
-                <div class="login signup" id="sign-up">
-                    <i class="fas fa-times exit-icon" onclick="hideLogins()"></i>
-
-                    <h1>Create a new account</h1>
-
-                    <form>
-                        <input name="name" type="text" placeholder="Name">
-                        <input name="email" type="text" placeholder="E-mail">
-                        <input name="password" type="password" placeholder="Password">
-                        <input name="re-password" type="password" placeholder="Repeat password">
-                        <button class="enlarge login-button register-button">Register</button>
-                    </form>
-                    <div class="messages">
-                        <?php
-                        if(isset($messages)){
-                            foreach ($messages as $message){
-                                echo $message;
-                            }
-                        }
-                        ?>
-                    </div>
-                    <div class="texts">
-                        Already have an account?
-                        <span class="login-href-links" onclick="hideLogins(), openLogin()">Log in now</span>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <?php
+        require("shared/navbarTopYourAccount.php");
+        ?>
         <div id="secondary-container">
                 <div class="meal">
                     <div class="meal-title"><?= $meal->getTitle() ?></div>
@@ -97,7 +32,7 @@
                         <li class="meal-ingridients-list-item">Blueberries: 200g</li>
                         <li class="meal-ingridients-list-item">Eggs: 200g</li>
                         <li class="meal-ingridients-list-item">Milk: 500ml</li>
-                        <li class="meal-ingridients-list-item">Maple syroup: 50g</li>
+                        <li class="meal-ingridients-list-item">Maple syrup: 50g</li>
                     </ul> 
 
                     <ul class="meal-macros-list">
@@ -129,7 +64,7 @@
                     
                     <div class="review">
                         <div class="review-author">
-                            <img src="public/img/acoount-profile-picture.jpg" alt="pancakes">
+                            <img src="public/img/account-profile-picture.jpg" alt="pancakes">
                             <p class="review-author-name">Jack</p>
                         </div>
 
@@ -140,7 +75,7 @@
 
                     <div class="review">
                         <div class="review-author">
-                            <img src="public/img/acoount-profile-picture.jpg" alt="pancakes">
+                            <img src="public/img/account-profile-picture.jpg" alt="pancakes">
                             <p class="review-author-name">Jack</p>
                         </div>
 

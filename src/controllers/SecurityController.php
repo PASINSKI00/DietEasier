@@ -38,6 +38,12 @@ class SecurityController extends AppController
             die();
         }
 
+        session_start();
+        $_SESSION['loggedIn'] = true;
+        $_SESSION['userID'] = $user->getID();
+
+//        echo json_encode($_SESSION);
+
         header('Content-type: application/json');
         http_response_code(200);
     }
@@ -64,6 +70,9 @@ class SecurityController extends AppController
         header('Content-type: application/json');
 
         if($userRepository->addUser($user)){
+            session_start();
+            $_SESSION['loggedIn'] = true;
+            $_SESSION['userID'] = $user->getID();
             http_response_code(200);
             die();
         }
@@ -71,5 +80,6 @@ class SecurityController extends AppController
             http_response_code(401);
             die();
         }
+
     }
 }

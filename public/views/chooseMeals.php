@@ -27,7 +27,13 @@
 
             <input id="search-meal" class="enlarge" placeholder="Search..."></input>
             <?php
-            require("shared/login.php");
+            session_start();
+            if(isset($_SESSION['loggedIn'])){
+                require("shared/loggedIn.php");
+            }
+            else{
+                require("shared/login.php");
+            }
             ?>
         </nav>
 
@@ -89,7 +95,7 @@
                             <span class="ingridents">flour, milk, eggs</span>
                         </div>
 
-                        <a class="meal-information" href="./meal">read more...</a>
+                        <a class="meal-information" href="meal/<?= $meal->getId() ?>">read more...</a>
 
                         <button class="meal-add-button">
                             <i class="fas fa-plus"></i>

@@ -7,5 +7,13 @@
         <img src="public/img/side_logo_transparent.png" alt="company's logo">
     </a>
 
-    <a href="yourAccount" class="text-button enlarge">Your account</a>
+    <?php
+    session_start();
+    if(isset($_SESSION['loggedIn'])){
+        require("loggedIn.php");
+    }
+    else{
+        require("login.php");
+    }
+    ?>
 </nav>

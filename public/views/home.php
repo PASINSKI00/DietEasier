@@ -27,7 +27,13 @@
             <a id="home-navbar-button" href="chooseMeals" class="raise">Start Composing Your Diet</a>
 
             <?php
+            session_start();
+            if(isset($_SESSION['loggedIn'])){
+                require("shared/loggedIn.php");
+            }
+            else{
                 require("shared/login.php");
+            }
             ?>
         </nav>
         
