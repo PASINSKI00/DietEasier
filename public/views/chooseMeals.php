@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/chooseMeals.css">
     <link rel="stylesheet" type="text/css" href="public/css/hover.css">
     <script type="text/javascript" src="public/js/search.js" defer></script>
+    <script type="text/javascript" src="public/js/chooseMeals.js" defer></script>
 </head>
 
 <body>
@@ -92,7 +93,15 @@
                         <div class="meal-title"><?= $meal->getTitle(); ?></div>
 
                         <div class="meal-ingridients">
-                            <span class="ingridents">flour, milk, eggs</span>
+                            <?php
+//                                var_dump($ingredients[$meal->getId()]);
+                                foreach ($ingredients[$meal->getId()] as $key => $ingredient){
+                                    if (!($key === array_key_first($ingredients[$meal->getId()]))) {
+                                        echo ", ";
+                                    }
+                                    echo $ingredient["name"];
+                                }
+                            ?>
                         </div>
 
                         <a class="meal-information" href="meal/<?= $meal->getId() ?>">read more...</a>

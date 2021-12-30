@@ -22,12 +22,19 @@ class MealController extends AppController
 
     public function meal(int $id) {
         $meal = $this->mealRepository->getMeal($id);
+
         $this->render('meal', ['meal' => $meal]);
     }
 
     public function chooseMeals() {
         $meals = $this->mealRepository->getMeals();
-        $this->render('chooseMeals', ['meals' => $meals]);
+        $ingredients = array();
+
+        foreach ($meals as $meal) {
+            $ingredients[$meal->getId()] = $this->mealRepository->getIngredientsOfMeal($meal->getId());
+        }
+
+        $this->render('chooseMeals', ['meals' => $meals, 'ingredients' => $ingredients]);
     }
 
     public function getMeal(int $id) {

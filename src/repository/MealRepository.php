@@ -70,6 +70,7 @@ class MealRepository extends Repository
                 $meal['image'],
                 $meal['id_meal']
             );
+
         }
 
         return $result;
@@ -103,6 +104,18 @@ class MealRepository extends Repository
             SELECT name from ingredient
         ');
 
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getIngredientsOfMeal($id) : array{
+        $stmt = $this->database->connect()->prepare('
+            Select i.name from meal m join meal_ingredient mi on m.id_meal = mi.id_meal join ingredient i on mi.id_ingredient = i.id_ingredient where m.id_meal=:id
+        ');
+
+        $id = strval($id);
+        $stmt->bindParam(':id', $id, PDO::PARAM_STR);
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

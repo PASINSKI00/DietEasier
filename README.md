@@ -17,12 +17,13 @@
 - ~~Figure out how to check if user's is logged in~~
 - ~~Figure out how to change **Navbar** properties after user has logged in~~
 - addMeal: Read ingredients with weights
-- addMeal: calculate macroElements
-- addMeal: Reviews System Working
+- Meal: Reviews System Working
+- meal: display ingredients with weight
+- meal: display calculated macroelements
 - Modify addMeal page with adding authors ID
 - Make addMeal work
-- Make chooseMeals page display meals with their ingredients
-- Make chooseMeals redirect to a particular Meal page
+- ~~Make chooseMeals display meals with their ingredients~~
+- ~~Make chooseMeals redirect to a particular Meal page~~
 - Make chooseMeals mealAssigner work
 
 ##Development Stages
