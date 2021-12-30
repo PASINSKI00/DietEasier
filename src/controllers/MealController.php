@@ -22,8 +22,10 @@ class MealController extends AppController
 
     public function meal(int $id) {
         $meal = $this->mealRepository->getMeal($id);
+        $ingredients = $this->mealRepository->getIngredientsOfMeal($id);
+        $authorsName = $this->mealRepository->getAuthorsName($id);
 
-        $this->render('meal', ['meal' => $meal]);
+        $this->render('meal', ['meal' => $meal, 'ingredients' => $ingredients, 'authorsName' => $authorsName]);
     }
 
     public function chooseMeals() {

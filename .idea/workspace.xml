@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6e5765f9-6c10-4657-9ff9-0fa54de35cdb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/chooseMeals.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/chooseMeals.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/meal.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/meal.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/MealController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MealController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/MealRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/MealRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/UserRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +105,7 @@
       <workItem from="1639565581507" duration="1255000" />
       <workItem from="1639583565055" duration="29000" />
       <workItem from="1640103634542" duration="40946000" />
-      <workItem from="1640730740755" duration="25165000" />
+      <workItem from="1640730740755" duration="27643000" />
     </task>
     <task id="LOCAL-00001" summary="(#11)">
       <created>1637955994816</created>

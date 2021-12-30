@@ -111,7 +111,7 @@ class MealRepository extends Repository
 
     public function getIngredientsOfMeal($id) : array{
         $stmt = $this->database->connect()->prepare('
-            Select i.name from meal m join meal_ingredient mi on m.id_meal = mi.id_meal join ingredient i on mi.id_ingredient = i.id_ingredient where m.id_meal=:id
+            Select i.name, mi.weight, i.kcal, i.protein, i.carbohydrates, i.fats, i.fiber from meal m join meal_ingredient mi on m.id_meal = mi.id_meal join ingredient i on mi.id_ingredient = i.id_ingredient where m.id_meal=:id
         ');
 
         $id = strval($id);
@@ -119,5 +119,18 @@ class MealRepository extends Repository
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getAuthorsName(int $id): string{
+        $stat = $this->database->connect()->prepare('
+            Select u.name FROM "user" u join meal m on u.id_user=m.id_author WHERE m.id_meal = :id
+        ');
+
+        $stat->bindParam(':id', $id, PDO::PARAM_INT);
+        $stat->execute();
+
+        $userName = $stat->fetch(PDO::FETCH_ASSOC);
+
+        return $userName['name'];
     }
 }

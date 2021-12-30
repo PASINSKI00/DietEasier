@@ -29,19 +29,35 @@
                     <img src="/public/uploads/<?= $meal->getImage() ?>" alt="picture of a meal">
 
                     <ul class="meal-ingridients-list">
-                        <li class="meal-ingridients-list-item">Flour: 150g</li>
-                        <li class="meal-ingridients-list-item">Blueberries: 200g</li>
-                        <li class="meal-ingridients-list-item">Eggs: 200g</li>
-                        <li class="meal-ingridients-list-item">Milk: 500ml</li>
-                        <li class="meal-ingridients-list-item">Maple syrup: 50g</li>
+                        <?php
+                        foreach ($ingredients as $ingredient){
+                            echo '<li class="meal-ingridients-list-item">'.$ingredient['name'].": ".($ingredient['weight']*100)."g".'</li>';
+                        }
+                        ?>
                     </ul> 
 
                     <ul class="meal-macros-list">
-                        <li class="meal-macros-list-item">Calories: 500kcal</li>
-                        <li class="meal-macros-list-item">Carbohydrates: 80g</li>
-                        <li class="meal-macros-list-item">Fat: 15g</li>
-                        <li class="meal-macros-list-item">Protein: 20g</li>
-                        <li class="meal-macros-list-item">Fiber: 5g</li>
+                        <?php
+                        $array = array(
+                            "calories" => 0.0,
+                            "protein"  => 0.0,
+                            "carbs" => 0.0,
+                            "fats" => 0.0,
+                            "fiber" => 0.0
+                        );
+
+                        foreach ($ingredients as $ingredient){
+                            $array['calories'] += $ingredient['kcal']*$ingredient['weight'];
+                            $array['protein'] += $ingredient['protein']*$ingredient['weight'];
+                            $array['carbs'] += $ingredient['carbohydrates']*$ingredient['weight'];
+                            $array['fats'] += $ingredient['fats']*$ingredient['weight'];
+                            $array['fiber'] += $ingredient['fiber']*$ingredient['weight'];
+                        }
+
+                        foreach ($array as $key => $value){
+                            echo '<li class="meal-ingridients-list-item">'.$key.": ".$value.'</li>';
+                        }
+                        ?>
                     </ul>
                 </div>
 
@@ -54,7 +70,7 @@
                 <div class="additional-information">
                     <div class="additional-information-title">Additional Information</div>
                     <div class="additional-information-content">
-                        <h3>Author:</h3><p> <?= $meal->getAuthor() ?></p>
+                        <h3>Author:</h3><p> <?= $authorsName; ?></p>
                         <h3>Time to prepare:</h3><p><?= $meal->getTime() ?> min</p>
                         <h3>Description:</h3><p><?= $meal->getDescription() ?></p>
                     </div>
