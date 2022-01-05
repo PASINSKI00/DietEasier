@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/chooseMeals.css">
     <link rel="stylesheet" type="text/css" href="public/css/hover.css">
+
     <script type="text/javascript" src="public/js/search.js" defer></script>
     <script type="text/javascript" src="public/js/chooseMeals.js" defer></script>
 </head>
@@ -28,7 +29,9 @@
 
             <input id="search-meal" class="enlarge" placeholder="Search..."></input>
             <?php
-            session_start();
+            if(!isset($_SESSION)){
+                session_start();
+            }
             if(isset($_SESSION['loggedIn'])){
                 require("shared/loggedIn.php");
             }
@@ -122,10 +125,10 @@
                     <div class="meal-title">title</div>
 
                     <div class="meal-ingridients">
-                        <span class="ingridents">ingredients</span>
+<!--                        <span class="ingridents">ingredients</span>-->
                     </div>
 
-                    <a class="meal-information" href="./meal">read more...</a>
+                    <a class="meal-information" href="/meal">read more...</a>
 
                     <button class="meal-add-button">
                         <i class="fas fa-plus"></i>

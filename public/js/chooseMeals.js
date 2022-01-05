@@ -34,8 +34,7 @@ function activeButton(i){
 }
 
 function addMealToDay(id){
-    if(!mapDaysToArrays.get(currentlyActiveButton).includes(id))
-        mapDaysToArrays.get(currentlyActiveButton).push(id);
+    mapDaysToArrays.get(currentlyActiveButton).push(id);
 
     displayMeal(id);
 }

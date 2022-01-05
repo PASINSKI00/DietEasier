@@ -29,6 +29,8 @@
         require("shared/sideNavbarYourAccounts.php");
         ?>
 
+        <a href="/logout" class="log-out">Log out</a>
+
         <main class="main-your-account">
             <img class="profile-picture" src="public/img/acoount-profile-picture.jpg" alt="profile-picture">
             <div class="profile-content">

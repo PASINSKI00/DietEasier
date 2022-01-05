@@ -117,6 +117,15 @@ class MealController extends AppController
         echo json_encode($mealArr);
     }
 
+    public function getIngredientsOfAMeal($id){
+        header('Content-type: application/json');
+        http_response_code(200);
+
+        $ingredients = $this->mealRepository->getIngredientsOfMeal($id);
+
+        echo json_encode($ingredients);
+    }
+
     private function validate(array $image) : bool
     {
         if($image['size'] > self::MAX_FILE_SIZE) {

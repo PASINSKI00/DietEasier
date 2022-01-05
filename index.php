@@ -19,6 +19,8 @@ Router::get('yourAccount', 'DefaultController');
 Router::get('getAllCategories', 'MealController');
 Router::get('getAllIngredients', 'MealController');
 Router::get('getMealTitleAndImage', 'MealController');
+Router::get('logout', 'SecurityController');
+Router::get('getIngredientsOfAMeal', 'MealController');
 
 Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');

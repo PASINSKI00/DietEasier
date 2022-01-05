@@ -16,16 +16,23 @@
 - ~~meal: display calculated macroelements~~
 - ~~Make chooseMeals display meals with their ingredients~~
 - ~~Make chooseMeals redirect to a particular Meal page~~
+- ~~ChooseMeals: mealAssigner working~~
+- ~~ChooseMeals: search fetching and inserting all of the data~~
 - Register: Redo email check, if correct
 - Register: check if email is taken
 - Register: add more if's with messages
 - Register: encrypt password
+- Register&Login: Make it work on all of the pages
 - addMeal: read ingredients with weights
 - addMeal: Check if adding meals correctly
 - addMeal: Check if inputs correct
 - addMeal: Add authors ID
 - Meal: Reviews System Working
-- ChooseMeals: mealAssigner working
+- ChooseMeals: optimize or cut the number of fetches
+- ChooseMeals: add spinning wheel to meal assigner
+- ChooseMeals: for each day load meals once
+- ChooseMeals: implement deletion of meals 
+- ChooseMeals: implement choosing meals through side-bar 
 - Information: Collect and display users information
 - Information: Calculate users nourishment needs
 - Your account: Display users data
