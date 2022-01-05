@@ -10,21 +10,27 @@
 - ~~Modify addMeal page with adding ingredients and categories~~
 - ~~Login and registration systems working~~
 - ~~Check register's data~~
-- Redo Register email check if correct
-- Register check if email is taken
-- Register add more if's with messages
-- Register - encrypt password
 - ~~Figure out how to check if user's is logged in~~
 - ~~Figure out how to change **Navbar** properties after user has logged in~~
-- addMeal: Read ingredients with weights
-- Meal: Reviews System Working
-- meal: display ingredients with weight
-- meal: display calculated macroelements
-- Modify addMeal page with adding authors ID
-- Make addMeal work
+- ~~meal: display ingredients with weight~~
+- ~~meal: display calculated macroelements~~
 - ~~Make chooseMeals display meals with their ingredients~~
 - ~~Make chooseMeals redirect to a particular Meal page~~
-- Make chooseMeals mealAssigner work
+- Register: Redo email check, if correct
+- Register: check if email is taken
+- Register: add more if's with messages
+- Register: encrypt password
+- addMeal: read ingredients with weights
+- addMeal: Check if adding meals correctly
+- addMeal: Check if inputs correct
+- addMeal: Add authors ID
+- Meal: Reviews System Working
+- ChooseMeals: mealAssigner working
+- Information: Collect and display users information
+- Information: Calculate users nourishment needs
+- Your account: Display users data
+- Order History: Display users order history
+- Favourites: Display users favourites
 
 ##Development Stages
 ###Stage 1 [Building a working app with mentioned below features]

@@ -84,8 +84,10 @@
         </aside>
         
 
+
         <div id="second-container">
             <main id="meals">
+<!--                //TODO Change to fetch()-->
                 <?php foreach ($meals as $meal): ?>
                     <section class="meal">
                         <img src="public/uploads/<?= $meal->getImage(); ?>" alt="meal picture">
@@ -106,7 +108,7 @@
 
                         <a class="meal-information" href="meal/<?= $meal->getId() ?>">read more...</a>
 
-                        <button class="meal-add-button">
+                        <button class="meal-add-button" onclick="addMealToDay(<?= $meal->getId() ?>)">
                             <i class="fas fa-plus"></i>
                         </button>
                     </section>
@@ -120,7 +122,7 @@
                     <div class="meal-title">title</div>
 
                     <div class="meal-ingridients">
-                        <span class="ingridents">ingridients</span>
+                        <span class="ingridents">ingredients</span>
                     </div>
 
                     <a class="meal-information" href="./meal">read more...</a>
@@ -135,46 +137,16 @@
                 <div class="meal-assigner-title">Choosing for day...</div>
                 
                 <div id="day-numbers">
-                    <input id="select1" name="day" type="radio" checked/>
-                    <label for="select1">1</label>
-                    <input id="select2" name="day" type="radio"/>
-                    <label for="select2">2</label>
-                    <input id="select3" name="day" type="radio"/>
-                    <label for="select3">3</label>
+                    <button class="day-btn" id="add-day">
+                        <i class="fas fa-plus"></i>
+                    </button>
                 </div>
                 
                 <div class="chosen-meals">
                     <div class="chosen-meal">
                         <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
-                        <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
+                        <div class="chosen-meal-content">Pancakes with maple syrup and blueberries</div>
                     </div>
-
-                    <div class="chosen-meal">
-                        <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
-                        <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
-                    </div>
-
-                    <div class="chosen-meal">
-                        <div class="chosen-meal-img-or-i"><i class="fas fa-utensils"></i></div>
-                        <div class="chosen-meal-content">Choose your meal</div>
-                    </div>
-
-                    <div class="chosen-meal">
-                        <div class="chosen-meal-img-or-i"><i class="fas fa-utensils"></i></div>
-                        <div class="chosen-meal-content">Choose your meal</div>
-                    </div>
-
-                    <div class="chosen-meal">
-                        <div class="chosen-meal-img-or-i"><i class="fas fa-utensils"></i></div>
-                        <div class="chosen-meal-content">Choose your meal</div>
-                    </div>
-
-                    <div class="chosen-meal">
-                        <div class="chosen-meal-img-or-i"><i class="fas fa-utensils"></i></div>
-                        <div class="chosen-meal-content">Choose your meal</div>
-                    </div>
-
-
                 </div>
 
                 <a href="whatYouChose" class="meal-assigner-continue enlarge">Continue</a>

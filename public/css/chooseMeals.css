@@ -198,12 +198,8 @@
     justify-content: center;
     align-items: center;
 
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border-bottom: 1px solid var(--chosen-gray);
-}
-
-#day-numbers input{
-    display: none;
 }
 
 #day-numbers{
@@ -211,26 +207,27 @@
     grid-column: 1/4;
     grid-row: 2/3;
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
+    display: flex;
+    flex-flow: row nowrap;
 
     border-bottom: 1px solid var(--chosen-gray);
 }
 
-#day-numbers label{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#day-numbers input:checked + label{
-    background-color: var(--chosen-yellow);
-    color: var(--chosen-text-black);
-}
-#day-numbers label:last-child:hover{
-    margin-right: 5%;
+#day-numbers button{
+    width: 100%;
+
+    font-size: 1rem;
+    border: none;
+    background-color: white;
 }
 
+.btn-active{
+    background-color: var(--chosen-yellow) !important;
+}
+
+#add-day:hover{
+    background-color: lightgreen;
+}
 
 .chosen-meals {
     grid-column: 1/4;
@@ -251,11 +248,10 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
 
-    border-radius: 1rem;
+    border-radius: 0.7rem;
 }
 .chosen-meal:hover{
     background-color: var(--chosen-yellow);
-    font-weight: 700;
 }
 
 .chosen-meal-img-or-i {
@@ -285,7 +281,7 @@
 }
 
 .chosen-meal i{
-   font-size: 1.4rem;
+   font-size: 1.2rem;
 }
 
 .meal-assigner-continue{

@@ -40,7 +40,7 @@ function createMeal(meal) {
     const title = clone.querySelector(".meal-title");
     title.innerHTML = meal.title;
 
-    //TODO PLACE INGRIDIENTS
+    //TODO FINISH INSERTING VALUES
 
     mealContainer.appendChild(clone);
 }

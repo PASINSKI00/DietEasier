@@ -62,6 +62,7 @@
                         <textarea name="recipe" rows="10" placeholder="Recipe"></textarea>
                         <textarea name="description" rows="4" placeholder="Description"></textarea>
                         <input type="file" name="image">
+                        //TODO PREPARE AND SEND ALL OF THE DATA TO THE SYSTEM
                         <button type="submit">Send</button>
                     </form>
                 </main>
