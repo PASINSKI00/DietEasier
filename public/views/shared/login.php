@@ -1,6 +1,6 @@
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="/public/css/icons.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/icons.css"/>
 
     <script src="public/js/login.js" defer></script>
     <script src="public/js/register.js" defer></script>
@@ -51,7 +51,7 @@
 
     <div class="texts">
         Already have an account?
-        <span class="login-href-links">Log in now</span>
+        <span class="login-href-links" onclick="openLogin()">Log in now</span>
         <br>
     </div>
 </div>

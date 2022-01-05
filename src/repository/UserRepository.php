@@ -39,4 +39,19 @@ class UserRepository extends Repository
             $user->getName()
         ]);
     }
+
+    public function isEmailTaken($email): bool
+    {
+        $stat = $this->database->connect()->prepare('
+            SELECT email from "user" WHERE "email" = :email
+        ');
+
+         $stat->bindParam(':email', $email, PDO::PARAM_STR);
+         $stat->execute();
+
+         if($stat->rowCount() == 0)
+             return false;
+
+         return true;
+    }
 }

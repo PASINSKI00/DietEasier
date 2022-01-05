@@ -19,11 +19,14 @@ function login(data) {
             body: JSON.stringify(data)
         })
         .then(function (response) {
-            if(response.status == 200){
+            if(response.status === 200){
                 messages.style.color = "green";
                 messages.innerHTML = "Welcome back!";
                 window.setTimeout(function (){
-                    window.location.href = window.location.pathname;
+                    if(window.location.pathname !== "/logout")
+                        window.location.href =  window.location.pathname;
+                    else
+                        window.location.href = "/home";
                 }, 3000);
             }
             else {
@@ -33,12 +36,14 @@ function login(data) {
 }
 
 function openLogin() {
+    hideLogins();
     document.getElementById("log-in").style.display = "flex";
     document.getElementById("overlay").style.display = "block";
     document.getElementById("log-in").style.opacity = '1';
 }
 
 function openSignUp() {
+    hideLogins();
     document.getElementById("sign-up").style.display = "flex";
     document.getElementById("overlay").style.display = "block";
 }

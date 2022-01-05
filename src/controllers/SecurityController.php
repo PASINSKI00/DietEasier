@@ -6,8 +6,14 @@ require_once __DIR__.'/../repository/UserRepository.php';
 
 class SecurityController extends AppController
 {
+    private UserRepository $userRepository;
+
+    public function __construct()
+    {
+        $this->userRepository = new UserRepository();
+    }
+
     public function login() {
-        $userRepository = new UserRepository();
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
 
         if ($contentType === "application/json") {
@@ -23,7 +29,9 @@ class SecurityController extends AppController
         $email = $decoded["email"];
         $password = $decoded["password"];
 
-        $user = $userRepository->getUser($email);
+        $email = strtolower($email);
+
+        $user = $this->userRepository->getUser($email);
 
         if ($user == null) {
             header('Content-type: application/json');
@@ -31,7 +39,7 @@ class SecurityController extends AppController
             die();
         }
 
-        if ($user->getEmail() !== $email || $user->getPassword() !== $password) {
+        if ($user->getEmail() !== $email || !password_verify($password, $user->getPassword())) {
             header('Content-type: application/json');
             http_response_code(401);
             die();
@@ -46,7 +54,7 @@ class SecurityController extends AppController
     }
 
     public function register(){
-        $userRepository = new UserRepository();
+        http_response_code(401);
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
 
         if ($contentType === "application/json") {
@@ -55,7 +63,6 @@ class SecurityController extends AppController
         }
 
         if (!isset($decoded)){
-            http_response_code(401);
             die();
         }
 
@@ -63,10 +70,14 @@ class SecurityController extends AppController
         $email = $decoded["email"];
         $password = $decoded["password"];
 
-        $user = new User($email,$password,$name);
+        $email = strtolower($email);
+        $password = password_hash($password,PASSWORD_BCRYPT);
+
+        $user = new User($email,$password,$name,-1);
         header('Content-type: application/json');
 
-        if($userRepository->addUser($user)){
+        if($this->userRepository->addUser($user)){
+            $user = $this->userRepository->getUser($email);
             session_start();
             $_SESSION['loggedIn'] = true;
             $_SESSION['userID'] = $user->getID();
@@ -74,7 +85,6 @@ class SecurityController extends AppController
             die();
         }
 
-        http_response_code(401);
         die();
     }
 
@@ -102,5 +112,20 @@ class SecurityController extends AppController
         session_destroy();
 
         $this->render('home',['messages' => "You have been successfully logged out!"]);
+    }
+
+    public function isEmailTaken(){
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+        }
+
+        http_response_code(200);
+        if($this->userRepository->IsEmailTaken($decoded['email'])){
+            http_response_code(401);
+            die();
+        }
     }
 }

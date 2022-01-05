@@ -123,7 +123,7 @@ class MealRepository extends Repository
 
     public function getAuthorsName(int $id): string{
         $stat = $this->database->connect()->prepare('
-            Select u.name FROM "user" u join meal m on u.id_user=m.id_author WHERE m.id_meal = :id
+            Select name FROM "user" u join meal m on u.id_user=m.id_author WHERE m.id_meal = :id
         ');
 
         $stat->bindParam(':id', $id, PDO::PARAM_INT);

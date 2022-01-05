@@ -24,6 +24,7 @@ Router::get('getIngredientsOfAMeal', 'MealController');
 
 Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
+Router::post('isEmailTaken', 'SecurityController');
 Router::post('addMeal', 'MealController');
 Router::post('search', 'MealController');
 
