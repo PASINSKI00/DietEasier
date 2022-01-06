@@ -50,16 +50,6 @@
                             <span class="side-navbar-link-text">Sort by</span>
                         </a>
                         <div class="list sort-by-list">
-<!--                            <form action="/chooseMeals/1" method="get">-->
-<!--                                <input type="checkbox" name="sortBy[0]" id="sort1" value="Price" class="enlarge"></input>-->
-<!--                                <label for="sort1">Price</label><br>-->
-<!--                                <input type="checkbox" name="sortBy[1]" id="sort2" value="Protein" class="enlarge"></input>-->
-<!--                                <label for="sort2">Protein</label><br>-->
-<!--                                <input type="checkbox" name="sortBy[2]" id="sort3" value="Carbs" class="enlarge"></input>-->
-<!--                                <label for="sort3">Carbs</label><br>-->
-<!--                                <input type="checkbox" name="sortBy[3]" id="sort4" value="Fats" class="enlarge"></input>-->
-<!--                                <label for="sort4">Fats</label><br>-->
-<!--                            </form>-->
                             <button class="enlarge sort-button btn">Price</button>
                             <button class="enlarge sort-button btn">Price</button>
                         </div>

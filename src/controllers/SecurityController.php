@@ -73,7 +73,7 @@ class SecurityController extends AppController
         $email = strtolower($email);
         $password = password_hash($password,PASSWORD_BCRYPT);
 
-        $user = new User($email,$password,$name,-1);
+        $user = new User($email,$password,$name,"",-1);
         header('Content-type: application/json');
 
         if($this->userRepository->addUser($user)){
@@ -127,5 +127,29 @@ class SecurityController extends AppController
             http_response_code(401);
             die();
         }
+    }
+
+    public function yourAccount() {
+        session_start();
+        if(isset($_SESSION['userID'])){
+            $user = $this->userRepository->getUserById($_SESSION['userID']);
+            $this->render('yourAccount', ['user' => $user]);
+        }
+    }
+
+    public function favourites() {
+        $this->render('favourites');
+    }
+
+    public function information() {
+        $this->render('information');
+    }
+
+    public function orderHistory() {
+        $this->render('orderHistory');
+    }
+
+    public function settings() {
+        $this->render('settings');
     }
 }

@@ -43,7 +43,6 @@ function displayAllMeals(){
 
 function loadMeals(meals) {
     meals.forEach(async meal => {
-        console.log(meal);
         await createMeal(meal);
     });
 }
@@ -61,7 +60,6 @@ async function createMeal(meal) {
 
     const ingredients = clone.querySelector(".meal-ingridients");
     const mealIngredients = await getIngredientsOfAMeal(meal.id_meal);
-    console.log(mealIngredients);
     let i=0;
     let text = "";
     for (let ingredient of mealIngredients) {
@@ -114,14 +112,12 @@ let categories = new Set();
 function addCategory(id){
     document.querySelector('.category-button-'+id).classList.add('active-category');
     categories.add(id);
-    console.log(categories);
     executeCategory();
 }
 
 function removeCategory(id){
     document.querySelector('.category-button-'+id).classList.remove('active-category');
     categories.delete(id);
-    console.log(categories);
 
     if(categories.size === 0)
         displayAllMeals()

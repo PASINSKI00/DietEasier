@@ -21,6 +21,9 @@
 <body>
     <div class="container">
         <?php
+        if(!isset($_SESSION)){
+            session_start();
+        }
         require("shared/navbarTopYourAccount.php");
         ?>
 
@@ -32,11 +35,10 @@
         <a href="/logout" class="log-out">Log out</a>
 
         <main class="main-your-account">
-            <img class="profile-picture" src="public/img/acoount-profile-picture.jpg" alt="profile-picture">
+            <img class="profile-picture" src="/public/uploads/<?=$user->getImage()?>" alt="profile-picture">
             <div class="profile-content">
-                <p>Charlie</p>
-                <p>email@email.com</p>
-                <p>Kraków, 31-132, Szlak 71/102</p>
+                <p><?=$user->getName()?></p>
+                <p><?=$user->getEmail()?></p>
             </div>
         </main>
     </div>

@@ -24,6 +24,7 @@
 - ~~Register: encrypt password~~
 - ~~Register&Login: Make it work on all of the pages~~
 - ~~Meal: Fix problem of loading JS files~~
+- ~~ChooseMeals: implement choosing meals through categories~~
 - addMeal: read ingredients with weights
 - addMeal: Check if adding meals correctly
 - addMeal: Check if inputs correct
@@ -33,7 +34,6 @@
 - ChooseMeals: add spinning wheel to meal assigner
 - ChooseMeals: for each day load meals once
 - ChooseMeals: implement deletion of meals 
-- ChooseMeals: implement choosing meals through side-bar 
 - ChooseMeals: implement mobile version
 - Information: Collect and display users information
 - Information: Calculate users nourishment needs
