@@ -2,8 +2,8 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/icons.css"/>
 
-    <script src="public/js/login.js" defer></script>
-    <script src="public/js/register.js" defer></script>
+    <script src="/public/js/login.js" defer></script>
+    <script src="/public/js/register.js" defer></script>
 </head>
 
 <body>

@@ -1,10 +1,12 @@
-const search = document.querySelector('#search-meal');
+const searchInput = document.querySelector('#search-meal');
 const mealContainer = document.querySelector('#meals');
+const sortByList = document.querySelector('.sort-by-list');
+const categoriesList = document.querySelector('.categories-list');
 
-search.addEventListener('keyup', function (event){
+searchInput.addEventListener('keyup', function (event){
     if(event.key === "Enter") {
         event.preventDefault();
-        
+
         const data = {search: this.value};
 
         fetch("/search", {
@@ -21,6 +23,23 @@ search.addEventListener('keyup', function (event){
         }) ;
     }
 });
+
+function displayAllMeals(){
+    const data = {search: ""};
+
+    fetch("/search", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }).then(function (response) {
+        return response.json();
+    }).then(function (meals) {
+        mealContainer.innerHTML = "";
+        loadMeals(meals);
+    }) ;
+}
 
 function loadMeals(meals) {
     meals.forEach(async meal => {
@@ -66,4 +85,63 @@ async function createMeal(meal) {
 async function getIngredientsOfAMeal(mealId){
     const ingredients = await fetch('/getIngredientsOfAMeal/'+mealId);
     return ingredients.json();
+}
+
+async function getAllCategories(){
+    const response = await fetch('/getAllCategories');
+    const categories = await response.json();
+
+    for(let category of categories){
+        loadCategory(category);
+    }
+}
+
+function loadCategory(category){
+    categoriesList.insertAdjacentHTML("beforeend", "<button class=\"enlarge category-button-"+category.id_category+" btn\" onclick=\"actionCategory("+category.id_category+")\">"+category.name+"</button>");
+}
+
+function actionCategory(id){
+    if(document.querySelector('.category-button-'+id).classList.contains('active-category'))
+    {
+        removeCategory(id);
+        return;
+    }
+    addCategory(id);
+}
+
+let categories = new Set();
+
+function addCategory(id){
+    document.querySelector('.category-button-'+id).classList.add('active-category');
+    categories.add(id);
+    console.log(categories);
+    executeCategory();
+}
+
+function removeCategory(id){
+    document.querySelector('.category-button-'+id).classList.remove('active-category');
+    categories.delete(id);
+    console.log(categories);
+
+    if(categories.size === 0)
+        displayAllMeals()
+    else
+        executeCategory();
+}
+
+async function executeCategory(){
+    const categoryData = Array.from(categories);
+
+    fetch("/searchCategory", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(categoryData)
+    })
+    .then(function (response){return response.json()})
+    .then(function (meals) {
+    mealContainer.innerHTML = "";
+    loadMeals(meals);
+    });
 }

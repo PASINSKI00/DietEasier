@@ -42,32 +42,39 @@
     font-size: 1.2rem;
 }
 
-.list input{
-    display: none;
-}
-
-.list label, .list form button{
+.list button{
+    width: 40%;
     margin-left: 5rem;
     visibility: hidden;
     transition: none;
+    font-size: 1.2rem;
+    background: none;
+    color: white;
+    opacity: 0.8;
+    border: none;
 }
 
-.side-navbar:hover .list label,.side-navbar:hover .list form button{
+.active-category{
+    color: var(--chosen-red) !important;
+    opacity: 1 !important;
+}
+
+.side-navbar:hover .list button{
     visibility: visible;
 }
 
-:hover + label {
+.list button:hover {
     transform: scale(1.1);
     color: var(--chosen-red);
     opacity: 1;
 }
 
-:checked + label {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: var(--chosen-red);
-    opacity: 0.9;
-}
+/*.list button {*/
+/*    font-size: 1.4rem;*/
+/*    font-weight: bold;*/
+/*    color: var(--chosen-red);*/
+/*    opacity: 0.9;*/
+/*}*/
 
 .side-navbar-link:hover {
     color: var(--chosen-text-white);

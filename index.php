@@ -27,6 +27,7 @@ Router::post('register', 'SecurityController');
 Router::post('isEmailTaken', 'SecurityController');
 Router::post('addMeal', 'MealController');
 Router::post('search', 'MealController');
+Router::post('searchCategory', 'MealController');
 
 
 Router::run($path);

@@ -89,9 +89,30 @@ class MealRepository extends Repository
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function searchMealsByCategory($arr)
+    {
+        $stmt = $this->database->connect()->prepare(
+            'SELECT distinct meal.* FROM meal JOIN meal_categories mc on meal.id_meal = mc.id_meal WHERE mc.id_categories IN (?,?,?,?,?,?,?,?,?)'
+        );
+
+        $stmt->execute([
+            $arr[0],
+            $arr[1],
+            $arr[2],
+            $arr[3],
+            $arr[4],
+            $arr[5],
+            $arr[6],
+            $arr[7],
+            $arr[8],
+        ]);
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function getAllCategories() : array{
         $stmt = $this->database->connect()->prepare('
-            SELECT name from categories
+            SELECT name, id_category from categories
         ');
 
         $stmt->execute();

@@ -49,17 +49,19 @@
                             <i class="fas fa-sort"></i>
                             <span class="side-navbar-link-text">Sort by</span>
                         </a>
-                        <div class="list">
-                            <form action="/chooseMeals/1" method="get">
-                                <input type="checkbox" name="sortBy[0]" id="sort1" value="Price" class="enlarge"></input>
-                                <label for="sort1">Price</label><br>
-                                <input type="checkbox" name="sortBy[1]" id="sort2" value="Protein" class="enlarge"></input>
-                                <label for="sort2">Protein</label><br>
-                                <input type="checkbox" name="sortBy[2]" id="sort3" value="Carbs" class="enlarge"></input>
-                                <label for="sort3">Carbs</label><br>
-                                <input type="checkbox" name="sortBy[3]" id="sort4" value="Fats" class="enlarge"></input>
-                                <label for="sort4">Fats</label><br>
-                            </form>
+                        <div class="list sort-by-list">
+<!--                            <form action="/chooseMeals/1" method="get">-->
+<!--                                <input type="checkbox" name="sortBy[0]" id="sort1" value="Price" class="enlarge"></input>-->
+<!--                                <label for="sort1">Price</label><br>-->
+<!--                                <input type="checkbox" name="sortBy[1]" id="sort2" value="Protein" class="enlarge"></input>-->
+<!--                                <label for="sort2">Protein</label><br>-->
+<!--                                <input type="checkbox" name="sortBy[2]" id="sort3" value="Carbs" class="enlarge"></input>-->
+<!--                                <label for="sort3">Carbs</label><br>-->
+<!--                                <input type="checkbox" name="sortBy[3]" id="sort4" value="Fats" class="enlarge"></input>-->
+<!--                                <label for="sort4">Fats</label><br>-->
+<!--                            </form>-->
+                            <button class="enlarge sort-button btn">Price</button>
+                            <button class="enlarge sort-button btn">Price</button>
                         </div>
                     </li>
                     
@@ -68,16 +70,8 @@
                             <i class="fas fa-filter"></i>
                             <span class="side-navbar-link-text">Categories</span>
                         </a>
-                        <div class="list">
-                            <form action="" method="get">
-                                <input type="checkbox" name="category[0]" id="cat1" value="Breakfast" class="enlarge"></input>
-                                <label for="cat1">Breakfast</label><br>
-                                <input type="checkbox" name="category[1]" id="cat2" value="Lunch" class="enlarge"></input>
-                                <label for="cat2">Lunch</label><br>
-                                <input type="checkbox" name="category[2]" id="cat3" value="Supper" class="enlarge"></input>
-                                <label for="cat3">Supper</label><br>
-                            </form>
-                        </div>  
+                        <div class="list categories-list">
+                        </div>
                     </li>
                     
                     <li class="side-navbar-item">

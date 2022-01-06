@@ -8,6 +8,7 @@ let mapDaysToArrays = new Map();
 
 document.body.onload = function (){
         addDay();
+        getAllCategories();
     };
 
 function addDay(){
@@ -18,7 +19,6 @@ function addDay(){
         "<button class=\"day-btn btn-"+numberOfDays+"\" onclick=\"activeButton("+numberOfDays+")\">"+numberOfDays+"</button>"
     );
 
-    console.log(numberOfDays);
     currentlyActiveButton = numberOfDays;
     activeButton(currentlyActiveButton);
 }
