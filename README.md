@@ -25,6 +25,9 @@
 - ~~Register&Login: Make it work on all of the pages~~
 - ~~Meal: Fix problem of loading JS files~~
 - ~~ChooseMeals: implement choosing meals through categories~~
+- ~~Information: Collect and display users information~~
+- ~~Information: Calculate users nourishment needs~~
+- Information: finish updating data
 - addMeal: read ingredients with weights
 - addMeal: Check if adding meals correctly
 - addMeal: Check if inputs correct
@@ -35,8 +38,6 @@
 - ChooseMeals: for each day load meals once
 - ChooseMeals: implement deletion of meals 
 - ChooseMeals: implement mobile version
-- Information: Collect and display users information
-- Information: Calculate users nourishment needs
 - Your account: Display users data
 - Your account: Add logout button
 - Order History: Display users order history

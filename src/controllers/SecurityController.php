@@ -170,6 +170,7 @@ class SecurityController extends AppController
             http_response_code(200);
 
             $this->userRepository->updateInformationOfUser($_SESSION['userID'], $decoded);
+            $this->userRepository->updateUsersRatios($_SESSION['userID'], $decoded);
             $this->updateUsersTdee($_SESSION['userID']);
         }
     }

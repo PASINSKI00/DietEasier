@@ -21,7 +21,7 @@ class MealRepository extends Repository
         }
 
         return new Meal(
-            $meal['id_author'],
+            $meal['id_author']?:1,
             $meal['title'],
             $meal['time_to_prep'],
             $meal['recipe'],
@@ -62,7 +62,7 @@ class MealRepository extends Repository
 
         foreach ($meals as $meal){
             $result[] = new Meal(
-                $meal['id_author'],
+                $meal['id_author']?:1,
                 $meal['title'],
                 $meal['time_to_prep'],
                 $meal['recipe'],
@@ -152,6 +152,6 @@ class MealRepository extends Repository
 
         $userName = $stat->fetch(PDO::FETCH_ASSOC);
 
-        return $userName['name'];
+        return $userName['name']?:"unknown";
     }
 }

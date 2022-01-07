@@ -66,11 +66,15 @@
                 
                 <div class="information">
                     <span class="info-text">Gender</span>
-                    <input list="genders" name="genders" id="gender">
-                        <datalist id="genders">
-                            <option value="male"></option>
-                            <option value="female"></option>
-                        </datalist>
+<!--                    <input list="genders" name="genders" id="gender">-->
+<!--                        <datalist id="genders">-->
+<!--                            <option value="male"></option>-->
+<!--                            <option value="female"></option>-->
+<!--                        </datalist>-->
+                    <div class="activity-level-buttons">
+                        <button class="activity-level-button gender gender1" onclick="genderActive(1)">Male</button>
+                        <button class="activity-level-button gender gender2" onclick="genderActive(2)">Female</button>
+                    </div>
                 </div>
                 
                 <div class="information">
@@ -80,17 +84,40 @@
                 
                 <div class="information">
                     <span class="info-text">Work activity level</span>
-                    <input type="text" id="activity-work">
+                    <div class="activity-level-buttons">
+                        <button class="activity-level-button work work1" onclick="workActivityActive(1)">lightly active</button>
+                        <button class="activity-level-button work work2" onclick="workActivityActive(2)">moderately active</button>
+                        <button class="activity-level-button work work3" onclick="workActivityActive(3)">very active</button>
+                    </div>
                 </div>
                 
                 <div class="information">
                     <span class="info-text">Post-work activity level</span>
-                    <input type="text" id="activity-post-work">
+                    <div class="activity-level-buttons">
+                        <button class="activity-level-button post-work post-work1" onclick="postWorkActivityActive(1)">lightly active</button>
+                        <button class="activity-level-button post-work post-work2" onclick="postWorkActivityActive(2)">moderately active</button>
+                        <button class="activity-level-button post-work post-work3" onclick="postWorkActivityActive(3)">very active</button>
+                    </div>
                 </div>
 
                 <div class="information">
                     <span class="info-text">Additional calories [+/-]</span>
                     <input type="text" id="additional-calories">
+                </div>
+
+                <div class="information">
+                    <span class="info-text">Protein ratio</span>
+                    <input type="text" id="protein-ratio">
+                </div>
+
+                <div class="information">
+                    <span class="info-text">Carbs ratio</span>
+                    <input type="text" id="carbs-ratio">
+                </div>
+
+                <div class="information">
+                    <span class="info-text">Fats ratio</span>
+                    <input type="text" id="fats-ratio">
                 </div>
 
                 <button id="update-button">Submit changes</button>
