@@ -16,11 +16,16 @@
     <link rel="stylesheet" type="text/css" href="public/css/information.css">
     <link rel="stylesheet" type="text/css" href="public/css/styleYourAccounts.css">
     <link rel="stylesheet" type="text/css" href="public/css/hover.css">
+
+    <script src="/public/js/information.js" defer></script>
 </head>
 
 <body>
     <div class="container">
         <?php
+        if(!isset($_SESSION)){
+            session_start();
+        }
         require("shared/navbarTopYourAccount.php");
         ?>
 
@@ -30,83 +35,91 @@
         ?>
 
         <main class="main-informations">
-            <div class="goal">
+            <div class="information-goal">
                 <span class="goal-text">I want to</span>
 
-                <form>
-                    <input type="radio" name="goal" id="goal1" checked>
-                    <label for="goal1">lose</label>
+<!--                <form id="goals">-->
+<!--                    <input type="radio" name="goal" id="goal1" checked>-->
+<!--                    <label for="goal1">lose</label>-->
+<!---->
+<!--                    <input type="radio"  name="goal" id="goal2">-->
+<!--                    <label for="goal2">maintain</label>-->
+<!---->
+<!--                    <input type="radio"  name="goal" id="goal3">-->
+<!--                    <label for="goal3">gain</label>-->
+<!--                </form>-->
 
-                    <input type="radio"  name="goal" id="goal2">
-                    <label for="goal2">gain</label>
-                </form>
+                <div id="goals">
+                    <button class="goals-button goal1" onclick="goalButtonsActive(1)">lose</button>
+                    <button class="goals-button goal3" onclick="goalButtonsActive(3)">maintain</button>
+                    <button class="goals-button goal2" onclick="goalButtonsActive(2)">gain</button>
+                </div>
 
                 <span class="goal-text">weight</span>
             </div>
             
             <div class="informations">
                 <div class="information">
-                    <span class="info-text">Weight</span>
-                    <input type="text" placeholder="kg">
+                    <span class="info-text">Weight [kg]</span>
+                    <input type="text" id="weight">
                 </div>
                 
                 <div class="information">
-                    <span class="info-text">Height</span>
-                    <input type="text" placeholder="cm">
-                </div>
-                
-                <div class="information">
-                    <span class="info-text">Body fat</span>
-                    <input type="text" placeholder="%">
+                    <span class="info-text">Gender</span>
+                    <input list="genders" name="genders" id="gender">
+                        <datalist id="genders">
+                            <option value="male"></option>
+                            <option value="female"></option>
+                        </datalist>
                 </div>
                 
                 <div class="information">
                     <span class="info-text">Age</span>
-                    <input type="text" placeholder="years">
+                    <input type="text" id="age">
                 </div>
                 
                 <div class="information">
-                    <span class="info-text">Working-out / week</span>
-                    <input type="text" placeholder="hours">
+                    <span class="info-text">Work activity level</span>
+                    <input type="text" id="activity-work">
                 </div>
                 
-                <br>
-
                 <div class="information">
-                    <span class="info-text">Meals / day</span>
-                    <input type="text" placeholder="">
+                    <span class="info-text">Post-work activity level</span>
+                    <input type="text" id="activity-post-work">
                 </div>
 
                 <div class="information">
-                    <span class="info-text">Shopping for</span>
-                    <input type="text" placeholder="days">
+                    <span class="info-text">Additional calories [+/-]</span>
+                    <input type="text" id="additional-calories">
                 </div>
+
+                <button id="update-button">Submit changes</button>
             </div>
             
             <div class="calculations">
                 <div class="calculation">
                     <span class="info-text">Calories</span>
-                    <span class="calc-number">1000g</span>
+                    <span class="calc-number calories"></span>
                 </div>
                 
                 <div class="calculation">
                     <span class="info-text">Protein</span>
-                    <span class="calc-number">1000g</span>
+                    <span class="calc-number protein"></span>
                 </div>
 
                 <div class="calculation">
                     <span class="info-text">Carbs</span>
-                    <span class="calc-number">1000g</span>
+                    <span class="calc-number carbs"></span>
                 </div>
 
                 <div class="calculation">
                     <span class="info-text">Fats</span>
-                    <span class="calc-number">1000g</span>
+                    <span class="calc-number fats"></span>
                 </div>
 
                 <div class="calculation">
                     <span class="info-text">Fiber</span>
-                    <span class="calc-number">1000g</span>
+                    <span class="calc-number fiber"></span>
                 </div>
             </div>
         </main>

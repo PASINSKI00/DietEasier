@@ -21,6 +21,7 @@ Router::get('getAllIngredients', 'MealController');
 Router::get('getMealTitleAndImage', 'MealController');
 Router::get('logout', 'SecurityController');
 Router::get('getIngredientsOfAMeal', 'MealController');
+Router::get('getInformation', 'SecurityController');
 
 Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
@@ -28,6 +29,7 @@ Router::post('isEmailTaken', 'SecurityController');
 Router::post('addMeal', 'MealController');
 Router::post('search', 'MealController');
 Router::post('searchCategory', 'MealController');
+Router::post('updateInformation', 'SecurityController');
 
 Router::run($path);
 

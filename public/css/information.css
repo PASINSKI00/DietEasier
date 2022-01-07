@@ -8,42 +8,38 @@
 }
 
 
-.goal {
+.information-goal {
     width: 100%;
     margin: 0 auto;
     padding: 1rem 0;
 
-    font-size: 2rem;
-    text-align: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.6rem;
 }
 
-.goal form{
-    display: inline;
+#goals{
+    display: flex;
+    align-items: center;
 }
 
-.goal input{
-    display: none;
-}
+.goals-button{
+    margin: 0 0.5rem;
+    padding: 0.3rem;
 
-.goal label{
-    padding: 0.5rem;
-
-    opacity: 0;
-    border-radius: 0.5rem;
+    opacity: 0.7;
+    font-size: 1.6rem;
     background-color: var(--chosen-yellow);
+    border: none;
+    border-radius: 0.5rem;
 }
 
-.goal input + label{
-    opacity: 0.5;
-    padding: 0.2rem;
-}
-
-.goal input:checked + label{
-    padding: 0.5rem;
-    
-    font-weight: 700;
+.goals-button-active{
     opacity: 1;
-    color: var(--chosen-text-black);
+    padding: 0.6rem;
 }
 
 .informations {
@@ -112,10 +108,25 @@ input::placeholder {
 }
 
 .calc-number {
-    width: 20%;
     padding: 0.5rem;
 }
 
+#update-button{
+    width: 70%;
+    margin: 0.3rem;
+    padding: 0.3rem;
+
+    color: white;
+    background-color: var(--chosen-black);
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+#update-button:hover{
+    opacity: 1;
+}
 
 /* MEDIA ------------------------------------------------------------------------------------- */
 @media only screen and (max-width: 970px) {

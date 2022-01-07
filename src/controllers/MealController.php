@@ -66,7 +66,7 @@ class MealController extends AppController
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['image']['name']
             );
 
-            $meal = new Meal("1", $_POST['name'],  $_POST['time'], $_POST['recipe'], $_POST['description'], $_FILES['image']['name']);
+            $meal = new Meal(null, $_POST['name'],  $_POST['time'], $_POST['recipe'], $_POST['description'], $_FILES['image']['name']);
             $this->mealRepository->addMeal($meal);
 
             return $this->render('meal', ['meal' => $meal]);
