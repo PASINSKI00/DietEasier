@@ -27,11 +27,11 @@
 - ~~ChooseMeals: implement choosing meals through categories~~
 - ~~Information: Collect and display users information~~
 - ~~Information: Calculate users nourishment needs~~
-- Information: finish updating data
-- addMeal: read ingredients with weights
-- addMeal: Check if adding meals correctly
+- ~~Information: finish updating data~~
+- ~~addMeal: read ingredients with weights~~
+- ~~addMeal: Check if adding meals correctly~~
+- ~~addMeal: Add authors ID~~
 - addMeal: Check if inputs correct
-- addMeal: Add authors ID
 - Meal: Reviews System Working
 - ChooseMeals: optimize or cut the number of fetches
 - ChooseMeals: add spinning wheel to meal assigner

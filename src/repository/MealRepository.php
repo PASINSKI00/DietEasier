@@ -31,23 +31,48 @@ class MealRepository extends Repository
         );
     }
 
-    public function addMeal(Meal $meal) : void{
-        $date = new DateTime();
+    public function addMeal(Meal $meal) : array
+    {
         $statement = $this->database->connect()->prepare('
             INSERT INTO meal (id_author, title, time_to_prep, recipe, description, image)
-            VALUES (?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?, ?) RETURNING id_meal
         ');
 
-        //TODO get this from logged user
-        $idAuthor = 1;
         $statement->execute([
-            $idAuthor,
+            $meal->getAuthor(),
             $meal->getTitle(),
             $meal->getTime(),
             $meal->getRecipe(),
             $meal->getDescription(),
             $meal->getImage()]
         );
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function addIngredientToMeal(int $id_meal, int $id_ingredient, float $weight){
+        $statement = $this->database->connect()->prepare('
+            INSERT INTO meal_ingredient (id_meal, id_ingredient, weight)
+            VALUES (?, ?, ?)
+        ');
+
+        $statement->execute([
+            $id_meal,
+            $id_ingredient,
+            $weight
+        ]);
+    }
+
+    public function addCategoryToMeal(int $id_meal, int $id_category){
+        $statement = $this->database->connect()->prepare('
+            INSERT INTO meal_categories (id_meal, id_categories)
+            VALUES (?, ?)
+        ');
+
+        $statement->execute([
+            $id_meal,
+            $id_category
+        ]);
     }
 
     public function getMeals(): array {
@@ -122,7 +147,7 @@ class MealRepository extends Repository
 
     public function getAllIngredients() : array{
         $stmt = $this->database->connect()->prepare('
-            SELECT name from ingredient
+            SELECT name, id_ingredient from ingredient
         ');
 
         $stmt->execute();

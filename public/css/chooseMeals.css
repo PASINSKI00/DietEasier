@@ -314,12 +314,13 @@
 
 @media only screen and (max-width: 970px) {
     /* NAVBAR  --------------------------------- */
+    .navbar-top{
+        height: 4rem;
+        top: 0;
+    }
+
     #search-meal{
-        width: clamp(400px, 80%, 900px);
-        height: 45%;
-        margin: 0 auto;
-        
-        order: 2;
+        display: none;
     }
 
     .list {
@@ -327,24 +328,29 @@
     }
 
     .side-navbar-item{
-        width: 5rem;
+        display: none;
     }
 
     .side-navbar{
-        justify-content: center;
+        /*justify-content: center;*/
+        display: none;
     }
 
     #second-container {
         width: 100%;
+        /*height: calc(100% - 4rem);*/
         margin-left: 0;
+        grid-template-columns: repeat(5, 1fr);
     }
 
     #meals {
-        height: calc(100vh - 9rem);
+        height: calc(100vh - 4rem);
+        grid-column: 1/4;
     }
 
     #meal-assigner {
-        height: calc(100vh - 9rem);
+        height: calc(100vh - 4rem);
+        grid-column: 4/6;
     }
 
     .meal {

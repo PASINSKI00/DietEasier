@@ -30,6 +30,7 @@ Router::post('addMeal', 'MealController');
 Router::post('search', 'MealController');
 Router::post('searchCategory', 'MealController');
 Router::post('updateInformation', 'SecurityController');
+Router::post('postMeal', 'MealController');
 
 Router::run($path);
 

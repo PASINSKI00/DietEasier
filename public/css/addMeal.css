@@ -2,7 +2,7 @@
     width: 100%;
 }
 
-.return, button{
+.return, #submit-button{
     margin: 1rem;
     padding: 0.2rem 4rem;
 
@@ -20,7 +20,7 @@
     justify-content: center;
 }
 
-.addMeal>form{
+.addMeal>.add-meal-container{
     width: 80%;
     padding: 3rem;
 
@@ -28,7 +28,7 @@
     flex-flow: column nowrap;
 }
 
-.addMeal>form>input, .addMeal>form>textarea {
+.addMeal>.add-meal-container>input, .addMeal>.add-meal-container>textarea {
     margin: 0.5rem;
     padding: 0.5rem;
     padding-left: 1rem;
@@ -38,7 +38,7 @@
     border: 2px solid var(--chosen-black);
 }
 
-.addMeal>form>*::placeholder {
+.addMeal>.add-meal-container>*::placeholder {
     color: var(--chosen-text-black);
 }
 
@@ -103,4 +103,10 @@
     border-radius: 50%;
 }
 
+@media only screen and (max-width: 970px) {
+    .navbar-top{
+        height: 4rem;
+        top: 0;
+    }
+}
 

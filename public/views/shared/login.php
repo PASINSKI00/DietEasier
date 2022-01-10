@@ -1,6 +1,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/icons.css"/>
+    <link rel="stylesheet" type="text/css" href="/public/css/login.css"/>
 
     <script src="/public/js/login.js" defer></script>
     <script src="/public/js/register.js" defer></script>
@@ -8,8 +9,8 @@
 
 <body>
 <button class="text-button enlarge" onclick="openSignUp()">Sign up</button>
-
 <button class="text-button enlarge" onclick="openLogin()">Log in</button>
+<i class="fas fa-bars"></i>
 
 <div class="overlay" id="overlay" onclick="hideLogins()"></div>
 

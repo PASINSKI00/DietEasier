@@ -19,52 +19,53 @@
 
 <body>
     <div class="container">
-        <?php
-        require("shared/navbarTopYourAccount.php");
-        ?>
+        <nav class="navbar-top">
+            <a href="home"  class="navbar-logo">
+                <img src="public/img/side_logo_transparent.png" alt="company's logo">
+            </a>
+
+            <?php
+            if(!isset($_SESSION)){
+                session_start();
+            }
+            if(isset($_SESSION['loggedIn'])){
+                require("shared/loggedIn.php");
+            }
+            else{
+                require("shared/login.php");
+            }
+            ?>
+        </nav>
 
         <div id="secondary-container">
                 <main class="addMeal">
-                    <form action="addMeal" method="POST" ENCTYPE="multipart/form-data">
+                    <div class="add-meal-container">
                         <div class="messages">
-                            <?php
-                            if(isset($messages)){
-                                foreach ($messages as $message){
-                                    echo $message;
-                                }
-                            }
-                            ?>
                         </div>
+
                         <input name="name" type="text" placeholder="Meal name">
-                        <input name="time" type="text" placeholder="Time to prepare">
+                        <input name="time" type="number" min="0" placeholder="Time to prepare">
+
+                        <datalist id="ingredients">
+                        </datalist>
 
                         <div id="ingredients-form">
                             <h4>Add ingredients:</h4>
-                            <div class="ingredients-form-inputs">
-                                <input list="ingredients" name="ingredient" id="ingredient" placeholder="Choose Ingredient">
-                                <input type="number" name="ingredient-weight" id="ingredient-weight" placeholder="Weight">
-                            </div>
-                            <datalist id="ingredients">
-
-                            </datalist>
                         </div>
                         <i class="fas fa-plus" id="ingredients-form-add"></i>
 
+                        <datalist id="categories">
+                        </datalist>
                         <div id="categories-form">
                             <h4>Add categories:</h4>
-                            <input list="categories" name="category" id="category" placeholder="Choose Category">
-                            <datalist id="categories">
-
-                            </datalist>
                         </div>
                         <i class="fas fa-plus" id="categories-form-add"></i>
 
                         <textarea name="recipe" rows="10" placeholder="Recipe"></textarea>
                         <textarea name="description" rows="4" placeholder="Description"></textarea>
                         <input type="file" name="image">
-                        //TODO PREPARE AND SEND ALL OF THE DATA TO THE SYSTEM
-                        <button type="submit">Send</button>
-                    </form>
+                        <button id="submit-button">Send</button>
+                    </div>
                 </main>
         </div>
     </div>

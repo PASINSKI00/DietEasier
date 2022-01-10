@@ -37,18 +37,6 @@
         <main class="main-informations">
             <div class="information-goal">
                 <span class="goal-text">I want to</span>
-
-<!--                <form id="goals">-->
-<!--                    <input type="radio" name="goal" id="goal1" checked>-->
-<!--                    <label for="goal1">lose</label>-->
-<!---->
-<!--                    <input type="radio"  name="goal" id="goal2">-->
-<!--                    <label for="goal2">maintain</label>-->
-<!---->
-<!--                    <input type="radio"  name="goal" id="goal3">-->
-<!--                    <label for="goal3">gain</label>-->
-<!--                </form>-->
-
                 <div id="goals">
                     <button class="goals-button goal1" onclick="goalButtonsActive(1)">lose</button>
                     <button class="goals-button goal3" onclick="goalButtonsActive(3)">maintain</button>
@@ -66,11 +54,6 @@
                 
                 <div class="information">
                     <span class="info-text">Gender</span>
-<!--                    <input list="genders" name="genders" id="gender">-->
-<!--                        <datalist id="genders">-->
-<!--                            <option value="male"></option>-->
-<!--                            <option value="female"></option>-->
-<!--                        </datalist>-->
                     <div class="activity-level-buttons">
                         <button class="activity-level-button gender gender1" onclick="genderActive(1)">Male</button>
                         <button class="activity-level-button gender gender2" onclick="genderActive(2)">Female</button>

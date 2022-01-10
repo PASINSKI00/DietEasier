@@ -59,20 +59,61 @@ class MealController extends AppController
     }
 
     public function addMeal() {
-
-        if($this->isPost() && is_uploaded_file($_FILES['image']['tmp_name']) && $this->validate($_FILES['image'])) {
-            move_uploaded_file(
-                $_FILES['image']['tmp_name'],
-                dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['image']['name']
-            );
-
-            $meal = new Meal(null, $_POST['name'],  $_POST['time'], $_POST['recipe'], $_POST['description'], $_FILES['image']['name']);
-            $this->mealRepository->addMeal($meal);
-
-            return $this->render('meal', ['meal' => $meal]);
+        if(!isset($_SESSION)){
+            session_start();
         }
 
-        $this->render('addMeal', ['messages' => $this->messages]);
+//        if($this->isPost() && is_uploaded_file($_FILES['image']['tmp_name']) && $this->validate($_FILES['image'])) {
+//            move_uploaded_file(
+//                $_FILES['image']['tmp_name'],
+//                dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['image']['name']
+//            );
+//
+//            $meal = new Meal($_SESSION['userId']?:null, $_POST['name'],  $_POST['time'], $_POST['recipe'], $_POST['description'], $_FILES['image']['name']);
+//            $this->mealRepository->addMeal($meal, $_SESSION['userId']);
+//
+//            return $this->render('meal', ['meal' => $meal]);
+//        }
+
+        $this->render('addMeal');
+    }
+
+    public function postMeal(){
+        header('Content-type: application/json');
+        http_response_code(401);
+        if(!isset($_SESSION)){
+            session_start();
+        }
+
+        if(!isset($_SESSION['userID'])){
+            http_response_code(401);
+            die("You have to be logged in in order to post meals");
+        }
+
+        if($this->isPost() && is_uploaded_file($_FILES['image']['tmp_name']) && $this->validate($_FILES['image'])) {
+            if(!move_uploaded_file(
+                $_FILES['image']['tmp_name'],
+                dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['image']['name']
+            )){
+                die("couldn't transfer file");
+            }
+
+            $meal = new Meal($_SESSION['userID'],$_POST['title'],$_POST['time_to_prep'],$_POST['recipe'],$_POST['description'],$_FILES['image']['name'],0);
+            if($meal == null) die("Something went wrong..");
+            $id_meal = $this->mealRepository->addMeal($meal);
+
+            foreach ($_POST['ingredients_ids'] as $key => $value)
+                $this->mealRepository->addIngredientToMeal($id_meal[0]['id_meal'],intval($value), floatval($_POST['ingredients_weights'][$key]));
+
+            foreach ($_POST['categories_ids'] as $id)
+                $this->mealRepository->addCategoryToMeal($id_meal[0]['id_meal'], intval($id));
+
+            http_response_code(200);
+            echo json_encode("meal successfully added");
+        }
+        else{
+            echo json_encode("something went wrong");
+        }
     }
 
     public function search(){

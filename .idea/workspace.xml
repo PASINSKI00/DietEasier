@@ -4,10 +4,15 @@
     <list default="true" id="6e5765f9-6c10-4657-9ff9-0fa54de35cdb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/information.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/information.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/information.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/information.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/addMeal.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/addMeal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/chooseMeals.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/chooseMeals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/addMeal.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/addMeal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/addMeal.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/addMeal.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views/information.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/information.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/shared/loggedIn.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/shared/loggedIn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/shared/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/shared/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/MealController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MealController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/MealRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/MealRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +120,9 @@
       <workItem from="1641459518938" duration="20577000" />
       <workItem from="1641489724784" duration="384000" />
       <workItem from="1641490151986" duration="108000" />
-      <workItem from="1641543369173" duration="29153000" />
+      <workItem from="1641543369173" duration="47277000" />
+      <workItem from="1641761447391" duration="2196000" />
+      <workItem from="1641817095321" duration="10342000" />
     </task>
     <task id="LOCAL-00001" summary="(#11)">
       <created>1637955994816</created>
