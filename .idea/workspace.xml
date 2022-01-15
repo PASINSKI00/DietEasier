@@ -2,18 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e5765f9-6c10-4657-9ff9-0fa54de35cdb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ae5ad183-66c7-4df0-a1e7-94ae34aceae9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ae5ad183-66c7-4df0-a1e7-94ae34aceae9.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/Router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/addMeal.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/addMeal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/chooseMeals.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/chooseMeals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/addMeal.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/addMeal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/addMeal.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/addMeal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/information.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/information.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/shared/loggedIn.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/shared/loggedIn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/shared/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/shared/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chooseMeals.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chooseMeals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/whatYouChose.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/whatYouChose.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/MealController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MealController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/MealRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/MealRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +123,13 @@
       <workItem from="1641490151986" duration="108000" />
       <workItem from="1641543369173" duration="47277000" />
       <workItem from="1641761447391" duration="2196000" />
-      <workItem from="1641817095321" duration="10342000" />
+      <workItem from="1641817095321" duration="14012000" />
+      <workItem from="1642021731565" duration="2253000" />
+      <workItem from="1642082554638" duration="1762000" />
+      <workItem from="1642180545780" duration="1036000" />
+      <workItem from="1642186910226" duration="234000" />
+      <workItem from="1642192358194" duration="598000" />
+      <workItem from="1642248839018" duration="12376000" />
     </task>
     <task id="LOCAL-00001" summary="(#11)">
       <created>1637955994816</created>

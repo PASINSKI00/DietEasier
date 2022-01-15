@@ -9,7 +9,10 @@ let mapDaysToArrays = new Map();
 document.body.onload = function (){
         addDay();
         getAllCategories();
+        getLastUnconfirmedOrder();
     };
+
+window.onbeforeunload = updateOrder;
 
 function addDay(){
     mapDaysToArrays.set(++numberOfDays, new Array());
@@ -33,10 +36,10 @@ function activeButton(i){
     displayMeals();
 }
 
-function addMealToDay(id){
+async function addMealToDay(id){
     mapDaysToArrays.get(currentlyActiveButton).push(id);
 
-    displayMeal(id);
+    await displayMeal(id);
 }
 
 async function getMealInfo(id){
@@ -75,4 +78,35 @@ async function displayMeals(){
             "</div>"
         );
     }
+}
+
+function getLastUnconfirmedOrder(){
+    fetch('/getLastUnconfirmedOrder')
+        .then(response => { return response.json() })
+        .then(async data => {
+            console.log(data);
+            for(let i=2; i<=data[data.length-1]['day']; i++){
+                addDay();
+            }
+
+            data.forEach(function (arr) {
+                    console.log(arr);
+                    mapDaysToArrays.get(arr['day']).push(arr['id_meal'])
+                });
+
+            await displayMeals();
+        });
+}
+
+function updateOrder(){
+    fetch('/updateOrder', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(Array.from(mapDaysToArrays.entries()))
+    })
+        .then(response => {
+            return response.json();
+        });
 }

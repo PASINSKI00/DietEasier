@@ -31,17 +31,29 @@
 - ~~addMeal: read ingredients with weights~~
 - ~~addMeal: Check if adding meals correctly~~
 - ~~addMeal: Add authors ID~~
+- ~~ChooseMeals: Fetch last unConfirmed order~~
+- ~~ChooseMeals: On page leave update order~~
 - addMeal: Check if inputs correct
 - Meal: Reviews System Working
 - ChooseMeals: optimize or cut the number of fetches
 - ChooseMeals: add spinning wheel to meal assigner
 - ChooseMeals: for each day load meals once
+- ChooseMeals: change opacity when meal's selected to current day
 - ChooseMeals: implement deletion of meals 
 - ChooseMeals: implement mobile version
+- WhatYouChose: change to grid
+- WhatYouChose: Calculate weight ratios to fit energy needs
+- WhatYouChose: Add to order history
+- WhatYouChose: Calculate meals` multiplier
+- WhatYouChose: Allow users to modify multipliers
+- WhatYouChose: Change values after modifying multipliers
+- ShoppingList: display calculated shopping list
+- ShoppingList: allow user to modify it
 - Your account: Display users data
 - Your account: Add logout button
 - Order History: Display users order history
 - Favourites: Display users favourites
+- ERD: update diagram
 
 ##Development Stages
 ###Stage 1 [Building a working app with mentioned below features]
@@ -61,6 +73,8 @@
 - Home page should **explain**, in detail, **how does the app work**, with screenshots and animations
 - Applications Database should be filled with **different meals**
 - Every page should have a very **clear hierarchy**
+- Choosing the right brand colors
+- Choosing brands name
 
 ###Stage 3 [Releasing the website]
 - Choosing adequate **hosting** option

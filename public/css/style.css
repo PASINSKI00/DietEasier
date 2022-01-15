@@ -376,12 +376,7 @@ footer ul li a {
 /* MEDIA ------------------------------------------------------------------------------------- */
 @media only screen and (max-width: 970px) {
     /* NAVBAR ------------------------------------------------------------------------------------ */
-    .navbar-top {
-        height: 8.5rem;
-        
-        top: -4.25rem;
-        flex-flow: row wrap;
-    }
+
     
     .text-button {
         font-size: 1.6rem;
@@ -418,11 +413,7 @@ footer ul li a {
 
 @media only screen and (max-width: 420px) {
     /* NAVBAR ------------------------------------------------------------------------------------ */
-    .navbar-top {
-        height: 8rem;
-        
-        top: -4rem;
-    }
+
 
     .text-button {
         font-size: 1.3rem;

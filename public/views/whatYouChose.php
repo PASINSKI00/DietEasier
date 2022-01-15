@@ -132,7 +132,7 @@
 
         <div class="bottom-nav">
             <a href="chooseMeals" class="return enlarge">Return</a>
-            <a href="shoppingList" class="continue enlarge">Continue</a>
+            <a href="shoppingList" class="continue enlarge">Confirm</a>
         </div>
     </div>
 </body>

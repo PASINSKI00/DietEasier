@@ -110,6 +110,13 @@ header p::first-line {
 /* MEDIA ------------------------------------------------------------------------------------- */
 @media only screen and (max-width: 970px) {
     /* NAVBAR  ----------------------------------------------------------------------------------- */
+    .navbar-top {
+        height: 8.5rem;
+
+        top: -4.25rem;
+        flex-flow: row wrap;
+    }
+
     .navbar-logo {
         height: 40%;
         padding-left: 0.1rem;
@@ -147,6 +154,13 @@ header p::first-line {
 
 @media only screen and (max-width: 420px) {
       /* NAVBAR  ----------------------------------------------------------------------------------- */
+
+    .navbar-top {
+        height: 8rem;
+
+        top: -4rem;
+    }
+
     .navbar-logo{
         height: 35%;
     }

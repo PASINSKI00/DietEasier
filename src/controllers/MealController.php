@@ -12,7 +12,7 @@ class MealController extends AppController
     const UPLOAD_DIRECTORY = '/../public/uploads/';
 
     private $messages = [];
-    private $mealRepository;
+    private MealRepository $mealRepository;
 
     public function __construct()
     {
@@ -62,18 +62,6 @@ class MealController extends AppController
         if(!isset($_SESSION)){
             session_start();
         }
-
-//        if($this->isPost() && is_uploaded_file($_FILES['image']['tmp_name']) && $this->validate($_FILES['image'])) {
-//            move_uploaded_file(
-//                $_FILES['image']['tmp_name'],
-//                dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['image']['name']
-//            );
-//
-//            $meal = new Meal($_SESSION['userId']?:null, $_POST['name'],  $_POST['time'], $_POST['recipe'], $_POST['description'], $_FILES['image']['name']);
-//            $this->mealRepository->addMeal($meal, $_SESSION['userId']);
-//
-//            return $this->render('meal', ['meal' => $meal]);
-//        }
 
         $this->render('addMeal');
     }
