@@ -54,7 +54,7 @@ async function displayMeal(mealId){
 
     chosenMeals.insertAdjacentHTML(
         "beforeend",
-        "<div class=\"chosen-meal\">\n" +
+        "<div class=\"chosen-meal\" onclick=\"deleteMealFromDay(this)\">\n" +
         "    <div class=\"chosen-meal-img-or-i\"><img src=\"public/uploads/" + meal['image'] + "\" alt=\"pancakes\"></div>\n" +
         "    <div class=\"chosen-meal-content\">" + meal['title'] + "</div>\n" +
         "</div>"
@@ -72,7 +72,7 @@ async function displayMeals(){
 
         chosenMeals.insertAdjacentHTML(
             "beforeend",
-            "<div class=\"chosen-meal\">\n" +
+            "<div class=\"chosen-meal\" onclick=\"deleteMealFromDay(this)\">\n" +
             "    <div class=\"chosen-meal-img-or-i\"><img src=\"public/uploads/" + meal['image'] + "\" alt=\"pancakes\"></div>\n" +
             "    <div class=\"chosen-meal-content\">" + meal['title'] + "</div>\n" +
             "</div>"
@@ -84,13 +84,11 @@ function getLastUnconfirmedOrder(){
     fetch('/getLastUnconfirmedOrder')
         .then(response => { return response.json() })
         .then(async data => {
-            console.log(data);
             for(let i=2; i<=data[data.length-1]['day']; i++){
                 addDay();
             }
 
             data.forEach(function (arr) {
-                    console.log(arr);
                     mapDaysToArrays.get(arr['day']).push(arr['id_meal'])
                 });
 
@@ -109,4 +107,12 @@ function updateOrder(){
         .then(response => {
             return response.json();
         });
+}
+
+function deleteMealFromDay(meal){
+    const chosenMealsDOM = document.querySelectorAll('.chosen-meals > .chosen-meal');
+    const chosenMeals = [].slice.call(chosenMealsDOM,0)
+
+    mapDaysToArrays.get(currentlyActiveButton).splice(chosenMeals.indexOf(meal));
+    meal.remove();
 }

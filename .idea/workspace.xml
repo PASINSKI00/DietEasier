@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e5765f9-6c10-4657-9ff9-0fa54de35cdb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ae5ad183-66c7-4df0-a1e7-94ae34aceae9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ae5ad183-66c7-4df0-a1e7-94ae34aceae9.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/chooseMeals.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/chooseMeals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/hover.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/hover.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/chooseMeals.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/chooseMeals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/whatYouChose.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/whatYouChose.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/MealController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/MealController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/chooseMeals.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/chooseMeals.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +123,8 @@
       <workItem from="1642180545780" duration="1036000" />
       <workItem from="1642186910226" duration="234000" />
       <workItem from="1642192358194" duration="598000" />
-      <workItem from="1642248839018" duration="12376000" />
+      <workItem from="1642248839018" duration="13307000" />
+      <workItem from="1642275558548" duration="3658000" />
     </task>
     <task id="LOCAL-00001" summary="(#11)">
       <created>1637955994816</created>

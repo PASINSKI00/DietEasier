@@ -9,7 +9,6 @@
 }
 
 .enlarge {
-    margin-right: 0.5rem;
     transition: all var(--transition-speed) ease;
 }
 

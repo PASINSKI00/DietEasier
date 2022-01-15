@@ -33,14 +33,8 @@
 - ~~addMeal: Add authors ID~~
 - ~~ChooseMeals: Fetch last unConfirmed order~~
 - ~~ChooseMeals: On page leave update order~~
-- addMeal: Check if inputs correct
-- Meal: Reviews System Working
-- ChooseMeals: optimize or cut the number of fetches
-- ChooseMeals: add spinning wheel to meal assigner
-- ChooseMeals: for each day load meals once
-- ChooseMeals: change opacity when meal's selected to current day
-- ChooseMeals: implement deletion of meals 
-- ChooseMeals: implement mobile version
+- ~~ChooseMeals: implement mobile version~~
+- ~~ChooseMeals: implement deletion of meals~~ 
 - WhatYouChose: change to grid
 - WhatYouChose: Calculate weight ratios to fit energy needs
 - WhatYouChose: Add to order history
@@ -54,6 +48,11 @@
 - Order History: Display users order history
 - Favourites: Display users favourites
 - ERD: update diagram
+- fix your code
+- addMeal: Check if inputs correct
+- Meal: Reviews System Working
+- ChooseMeals: add spinning wheel to meal assigner
+- ChooseMeals: optimize or cut the number of fetches
 
 ##Development Stages
 ###Stage 1 [Building a working app with mentioned below features]

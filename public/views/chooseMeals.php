@@ -136,7 +136,9 @@
                     </div>
                 </div>
 
-                <a href="whatYouChose" class="meal-assigner-continue enlarge">Continue</a>
+                <div class="button-container">
+                    <a href="whatYouChose" class="meal-assigner-continue enlarge">Continue</a>
+                </div>
             </aside>
         </div>
     </div>
