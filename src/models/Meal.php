@@ -21,15 +21,14 @@ class Meal
         $this->id = $id;
     }
 
-
-    public function getId(): int
+    public function getAuthor() : int
     {
-        return $this->id;
+        return $this->author;
     }
 
-    public function setId(int $id): void
+    public function setAuthor(int $author)
     {
-        $this->id = $id;
+        $this->author = $author;
     }
 
     public function getTitle() : string
@@ -40,16 +39,6 @@ class Meal
     public function setTitle(string $title)
     {
         $this->title = $title;
-    }
-
-    public function getAuthor() : int
-    {
-        return $this->author;
-    }
-
-    public function setAuthor(int $author)
-    {
-        $this->author = $author;
     }
 
     public function getTime() : int
@@ -90,5 +79,15 @@ class Meal
     public function setImage(string $image)
     {
         $this->image = $image;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
 }

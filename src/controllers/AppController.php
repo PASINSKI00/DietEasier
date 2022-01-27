@@ -32,4 +32,12 @@ class AppController {
         print $output;
     }
 
+    protected function isAllowedToVisit(){
+        session_start();
+        if(isset($_SESSION['loggedIn']))
+            if($_SESSION['loggedIn'])
+                return ;
+
+        die("You have to be logged in in order to visit that page");
+    }
 }

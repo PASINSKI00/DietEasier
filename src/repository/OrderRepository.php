@@ -19,10 +19,10 @@ class OrderRepository extends Repository
         }
     }
 
-    public function getLastUnconfirmedOrder(){
-        if(!$this->checkIfLastOrderConfirmed()){
+    public function getLastUnconfirmedOrderIfExists(){
+        if(!$this->checkIfShouldCreateNewOrder()){
             $statement = $this->database->connect()->prepare('
-                    SELECT "day",id_meal from order_meal where id_order=?
+                    SELECT "day",id_meal,multiplier from order_meal where id_order=?
                 ');
 
             $statement->execute([
@@ -33,7 +33,7 @@ class OrderRepository extends Repository
         }
     }
 
-    private function checkIfLastOrderConfirmed() : bool{
+    private function checkIfShouldCreateNewOrder() : bool{
         $statement = $this->database->connect()->prepare('
             SELECT decide_if_should_create_new_order as decision from decide_if_should_create_new_order(?)
         ');
@@ -47,7 +47,7 @@ class OrderRepository extends Repository
     }
 
     public function createNewOrderIfNeeded(){
-        if($this->checkIfLastOrderConfirmed()){
+        if($this->checkIfShouldCreateNewOrder()){
             $statement = $this->database->connect()->prepare('
                 INSERT INTO "order"(id_user) VALUES (?) 
             ');

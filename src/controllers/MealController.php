@@ -21,41 +21,22 @@ class MealController extends AppController
     }
 
     public function meal(int $id) {
-        $meal = $this->mealRepository->getMeal($id);
-        $ingredients = $this->mealRepository->getIngredientsOfMeal($id);
-        $authorsName = $this->mealRepository->getAuthorsName($id);
+        $meal = $this->mealRepository->getMealById($id);
+        $ingredients = $this->mealRepository->getIngredientsOfMealById($id);
+        $authorsName = $this->mealRepository->getAuthorsNameFromId($id);
 
         $this->render('meal', ['meal' => $meal, 'ingredients' => $ingredients, 'authorsName' => $authorsName]);
     }
 
     public function chooseMeals() {
-        $meals = $this->mealRepository->getMeals();
+        $meals = $this->mealRepository->getAllMeals();
         $ingredients = array();
 
         foreach ($meals as $meal) {
-            $ingredients[$meal->getId()] = $this->mealRepository->getIngredientsOfMeal($meal->getId());
+            $ingredients[$meal->getId()] = $this->mealRepository->getIngredientsOfMealById($meal->getId());
         }
 
         $this->render('chooseMeals', ['meals' => $meals, 'ingredients' => $ingredients]);
-    }
-
-    public function getMeal(int $id) {
-        $mealRepository = new MealRepository();
-
-        if (!$this->isPost()){
-            return $this->render('chooseMeals');
-        }
-
-        $id = $_POST["id"];
-
-        $meal = $mealRepository->getMeal($id);
-
-        if (!$meal) {
-            return $this->render('chooseMeals', ['messages' => ["Meal not found"]]);
-        }
-
-        $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: $url/meal");
     }
 
     public function addMeal() {
@@ -74,8 +55,8 @@ class MealController extends AppController
         }
 
         if(!isset($_SESSION['userID'])){
-            http_response_code(401);
-            die("You have to be logged in in order to post meals");
+            echo json_encode("You have to be logged in in order to post meals");
+            die();
         }
 
         if($this->isPost() && is_uploaded_file($_FILES['image']['tmp_name']) && $this->validate($_FILES['image'])) {
@@ -87,7 +68,9 @@ class MealController extends AppController
             }
 
             $meal = new Meal($_SESSION['userID'],$_POST['title'],$_POST['time_to_prep'],$_POST['recipe'],$_POST['description'],$_FILES['image']['name'],0);
-            if($meal == null) die("Something went wrong..");
+            if($meal == null)
+                die("Something went wrong..");
+
             $id_meal = $this->mealRepository->addMeal($meal);
 
             foreach ($_POST['ingredients_ids'] as $key => $value)
@@ -136,7 +119,7 @@ class MealController extends AppController
         header('Content-type: application/json');
         http_response_code(200);
 
-        $meal = $this->mealRepository->getMeal($id);
+        $meal = $this->mealRepository->getMealById($id);
 
         $mealArr = [
             "title" => $meal->getTitle(),
@@ -150,7 +133,7 @@ class MealController extends AppController
         header('Content-type: application/json');
         http_response_code(200);
 
-        $ingredients = $this->mealRepository->getIngredientsOfMeal($id);
+        $ingredients = $this->mealRepository->getIngredientsOfMealById($id);
 
         echo json_encode($ingredients);
     }

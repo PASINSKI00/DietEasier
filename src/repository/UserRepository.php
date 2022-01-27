@@ -1,11 +1,13 @@
 <?php
 
+use JetBrains\PhpStorm\Pure;
+
 require_once 'Repository.php';
 require_once __DIR__.'/../models/User.php';
 
 class UserRepository extends Repository
 {
-    public function getUser(string $email) : ?User {
+    public function getUserByEmail(string $email) : ?User {
         $stat = $this->database->connect()->prepare('
             Select * FROM "user" WHERE "email" = :email
         ');
@@ -15,18 +17,7 @@ class UserRepository extends Repository
 
         $user = $stat->fetch(PDO::FETCH_ASSOC);
 
-        if ($user == false) {
-            //TODO try catch, returns exception error
-            return null;
-        }
-
-        return new User(
-            $user['email'],
-            $user['password'],
-            $user['name'],
-            $user['image'],
-            $user['id_user']
-            );
+        return $this->returnNewUser($user);
     }
 
     public function getUserById(int $id) : ?User {
@@ -39,18 +30,7 @@ class UserRepository extends Repository
 
         $user = $stat->fetch(PDO::FETCH_ASSOC);
 
-        if ($user == false) {
-            //TODO try catch, returns exception error
-            return null;
-        }
-
-        return new User(
-            $user['email'],
-            $user['password'],
-            $user['name'],
-            $user['image'] ?: "",
-            $user['id_user']
-        );
+        return $this->returnNewUser($user);
     }
 
     public function addUser(User $user): bool{
@@ -122,8 +102,6 @@ class UserRepository extends Repository
             WHERE id_user = ?;
         ');
 
-
-
         $stat->execute([
             intval($arr['weight']),
             intval($arr['id_gender']),
@@ -136,7 +114,6 @@ class UserRepository extends Repository
         ]);
     }
 
-    //TODO updateUsersTdee
     public function updateUsersTdee(int $id, int $tdee){
         $stat = $this->database->connect()->prepare('
             UPDATE user_diet_info SET tdee = ? where id_user=?;
@@ -150,11 +127,12 @@ class UserRepository extends Repository
 
     public function updateUsersRatios($id, $arr){
         $stat = $this->database->connect()->prepare('
-            UPDATE user_diet_info 
-                SET protein_ratio = ?,
+            UPDATE user_diet_info SET 
+                protein_ratio = ?,
                 carbs_ratio = ?,
                 fat_ratio = ?
-            where id_user=?;
+            where 
+                id_user=?;
         ');
 
         $stat->execute([
@@ -163,5 +141,20 @@ class UserRepository extends Repository
             intval($arr['fat_ratio']),
             $id
         ]);
+    }
+
+    private function returnNewUser($user): ?User{
+        if ($user == false) {
+            //TODO try catch, returns exception error
+            return null;
+        }
+
+        return new User(
+            $user['email'],
+            $user['password'],
+            $user['name'],
+            $user['image'] ?: "",
+            $user['id_user']
+        );
     }
 }

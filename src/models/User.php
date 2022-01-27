@@ -13,8 +13,38 @@ class User
         $this->email = $email;
         $this->password = $password;
         $this->name = $name;
-        $this->id = $id;
         $this->image = $image;
+        $this->id = $id;
+    }
+
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email)
+    {
+        $this->email = $email;
+    }
+
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password)
+    {
+        $this->password = $password;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name)
+    {
+        $this->name = $name;
     }
 
     public function getImage(): string
@@ -36,33 +66,8 @@ class User
     {
         $this->id = $id;
     }
-        public function getEmail(): string
-    {
-        return $this->email;
-    }
 
-        public function setEmail(string $email)
-    {
-        $this->email = $email;
-    }
 
-        public function getPassword(): string
-    {
-        return $this->password;
-    }
 
-        public function setPassword(string $password)
-    {
-        $this->password = $password;
-    }
 
-        public function getName(): string
-    {
-        return $this->name;
-    }
-
-        public function setName(string $name)
-    {
-        $this->name = $name;
-    }
 }

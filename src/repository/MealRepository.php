@@ -5,7 +5,7 @@ require_once __DIR__.'/../models/Meal.php';
 
 class MealRepository extends Repository
 {
-    public function getMeal(int $id) : ?Meal {
+    public function getMealById(int $id) : ?Meal {
         $stat = $this->database->connect()->prepare('
             Select * FROM public.meal WHERE id_meal= :id
         ');
@@ -75,7 +75,7 @@ class MealRepository extends Repository
         ]);
     }
 
-    public function getMeals(): array {
+    public function getAllMeals(): array {
         $result = [];
 
         $statement = $this->database->connect()->prepare('
@@ -101,7 +101,7 @@ class MealRepository extends Repository
         return $result;
     }
 
-    public function searchMealsByTitle(string $searchString) {
+    public function searchMealsByTitle(string $searchString): array {
         $searchString = '%'.strtolower($searchString).'%';
 
         $stmt = $this->database->connect()->prepare(
@@ -114,10 +114,14 @@ class MealRepository extends Repository
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function searchMealsByCategory($arr)
+    public function searchMealsByCategory($arr): array
     {
         $stmt = $this->database->connect()->prepare(
-            'SELECT distinct meal.* FROM meal JOIN meal_categories mc on meal.id_meal = mc.id_meal WHERE mc.id_categories IN (?,?,?,?,?,?,?,?,?)'
+            'SELECT distinct meal.* 
+                        FROM meal 
+                            JOIN meal_categories mc on meal.id_meal = mc.id_meal 
+                        WHERE mc.id_categories 
+                                  IN (?,?,?,?,?,?,?,?,?)'
         );
 
         $stmt->execute([
@@ -155,7 +159,7 @@ class MealRepository extends Repository
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getIngredientsOfMeal($id) : array{
+    public function getIngredientsOfMealById($id) : array{
         $stmt = $this->database->connect()->prepare('
             Select i.name, mi.weight, i.kcal, i.protein, i.carbohydrates, i.fats, i.fiber from meal m join meal_ingredient mi on m.id_meal = mi.id_meal join ingredient i on mi.id_ingredient = i.id_ingredient where m.id_meal=:id
         ');
@@ -167,7 +171,7 @@ class MealRepository extends Repository
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getAuthorsName(int $id): string{
+    public function getAuthorsNameFromId(int $id): string{
         $stat = $this->database->connect()->prepare('
             Select name FROM "user" u join meal m on u.id_user=m.id_author WHERE m.id_meal = :id
         ');

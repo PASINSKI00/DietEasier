@@ -26,7 +26,7 @@ class OrderController extends AppController
         header('Content-type: application/json');
         http_response_code(200);
 
-        echo json_encode($this->orderRepository->getLastUnconfirmedOrder());
+        echo json_encode($this->orderRepository->getLastUnconfirmedOrderIfExists());
 
     }
 
@@ -50,12 +50,13 @@ class OrderController extends AppController
             header('Content-type: application/json');
             http_response_code(200);
 
-            $this->orderRepository->cleanOrderFromMeals($this->orderRepository->getlastOrderId());
             $this->orderRepository->createNewOrderIfNeeded();
+            $this->orderRepository->cleanOrderFromMeals($this->orderRepository->getlastOrderId());
 
             foreach ($decoded as $value)
                 $this->orderRepository->updateOrder($value[0], $value[1]);
-        }
 
+            echo json_encode("success");
+        }
     }
 }

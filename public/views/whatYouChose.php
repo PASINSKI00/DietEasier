@@ -16,39 +16,115 @@
     <link rel="stylesheet" type="text/css" href="public/css/whatYouChose.css">
 </head>
 
+<template class="chosen-meal">
+    <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
+    <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
+    <ul>
+        <li>calories: 1789 kcal</li>
+        <li>protein: 789 g</li>
+        <li>carbs: 789 g</li>
+        <li>fats: 789 g</li>
+        <br>
+        Multiplier
+        <br>
+        <input type="number" min="0" step="0.01">
+    </ul>
+</template>
+
+<template id="meal-template">
+    <section class="meal">
+        <img src="" alt="meal picture">
+
+        <div class="meal-title">title</div>
+
+        <div class="meal-ingridients">
+            <!--                        <span class="ingridents">ingredients</span>-->
+        </div>
+
+        <a class="meal-information" href="/meal">read more...</a>
+
+        <button class="meal-add-button">
+            <i class="fas fa-plus"></i>
+        </button>
+    </section>
+</template>
+
 <body>
     <div class="container">
         <?php
-        require("shared/navbarTopYourAccount.php");
+            require("shared/navbarTopYourAccount.php");
         ?>
 
         <section class="big-text">
             Check out what you chose and make changes if necessary!
         </section>
 
-        <main id="secondary-container">
+        <main id="days-container">
             <section class="day">
                 <div class="chosen-meals">
+                    <h3>Day 1</h3>
                     <div class="chosen-meal">
                         <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
                         <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
+                        <ul>
+                            <li>calories: 1789 kcal</li>
+                            <li>protein: 789 g</li>
+                            <li>carbs: 789 g</li>
+                            <li>fats: 789 g</li>
+                            <br>
+                            Multiplier
+                            <br>
+                            <input type="number" min="0" step="0.01">
+                        </ul>
                     </div>
 
                     <div class="chosen-meal">
                         <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
                         <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
+                        <ul>
+                            <li>calories: 1789 kcal</li>
+                            <li>protein: 789 g</li>
+                            <li>carbs: 789 g</li>
+                            <li>fats: 789 g</li>
+                        </ul>
                     </div>
 
                     <div class="chosen-meal">
                         <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
                         <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
+                        <ul>
+                            <li>calories: 1789 kcal</li>
+                            <li>protein: 789 g</li>
+                            <li>carbs: 789 g</li>
+                            <li>fats: 789 g</li>
+                        </ul>
                     </div>
 
                     <div class="chosen-meal">
                         <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
                         <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
+                        <ul>
+                            <li>calories: 1789 kcal</li>
+                            <li>protein: 789 g</li>
+                            <li>carbs: 789 g</li>
+                            <li>fats: 789 g</li>
+                        </ul>
                     </div>
 
+                    <div class="day-summary">
+                        <ul>
+                            <li>calories: 1789 kcal</li>
+                            <li>protein: 789 g</li>
+                            <li>carbs: 789 g</li>
+                            <li>fats: 789 g</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="day">
+                <div class="chosen-meals">
+                    <h3>Day 2</h3>
                     <div class="chosen-meal">
                         <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
                         <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
@@ -63,65 +139,7 @@
 
             <section class="day">
                 <div class="chosen-meals">
-                    <div class="chosen-meal">
-                        <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
-                        <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
-                    </div>
-
-                    <div class="chosen-meal">
-                        <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
-                        <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
-                    </div>
-
-                    <div class="chosen-meal">
-                        <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
-                        <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
-                    </div>
-
-                    <div class="chosen-meal">
-                        <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
-                        <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
-                    </div>
-
-                    <div class="chosen-meal">
-                        <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
-                        <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
-                    </div>
-
-                    <div class="chosen-meal">
-                        <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
-                        <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="day">
-                <div class="chosen-meals">
-                    <div class="chosen-meal">
-                        <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
-                        <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
-                    </div>
-
-                    <div class="chosen-meal">
-                        <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
-                        <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
-                    </div>
-
-                    <div class="chosen-meal">
-                        <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
-                        <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
-                    </div>
-
-                    <div class="chosen-meal">
-                        <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
-                        <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
-                    </div>
-
-                    <div class="chosen-meal">
-                        <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
-                        <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>
-                    </div>
-
+                    <h3>Day 3</h3>
                     <div class="chosen-meal">
                         <div class="chosen-meal-img-or-i"><img src="public/img/pancakes.jpg" alt="pancakes"></div>
                         <div class="chosen-meal-content">Pancakes with maple syroup and blueberries</div>

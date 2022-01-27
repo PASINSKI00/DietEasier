@@ -53,6 +53,8 @@
 - Meal: Reviews System Working
 - ChooseMeals: add spinning wheel to meal assigner
 - ChooseMeals: optimize or cut the number of fetches
+- ChooseMeals: implement mobile version of meal-assigner and categories
+- ALL: implement mobile version of navbar scroll-downs
 
 ##Development Stages
 ###Stage 1 [Building a working app with mentioned below features]

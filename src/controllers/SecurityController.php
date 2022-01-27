@@ -31,7 +31,7 @@ class SecurityController extends AppController
 
         $email = strtolower($email);
 
-        $user = $this->userRepository->getUser($email);
+        $user = $this->userRepository->getUserByEmail($email);
 
         if ($user == null) {
             header('Content-type: application/json');
@@ -77,7 +77,7 @@ class SecurityController extends AppController
         header('Content-type: application/json');
 
         if($this->userRepository->addUser($user)){
-            $user = $this->userRepository->getUser($email);
+            $user = $this->userRepository->getUserByEmail($email);
             session_start();
             $_SESSION['loggedIn'] = true;
             $_SESSION['userID'] = $user->getID();
@@ -89,17 +89,11 @@ class SecurityController extends AppController
     }
 
     public function logout(){
-
-// Initialize the session.
-// If you are using session_name("something"), don't forget it now!
         if(!isset($_SESSION))
             session_start();
 
-// Unset all of the session variables.
         $_SESSION = array();
 
-// If it's desired to kill the session, also delete the session cookie.
-// Note: This will destroy the session, and not just the session data!
         if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
             setcookie(session_name(), '', time() - 42000,
@@ -108,7 +102,6 @@ class SecurityController extends AppController
             );
         }
 
-// Finally, destroy the session.
         session_destroy();
 
         $this->render('home',['messages' => "You have been successfully logged out!"]);
@@ -130,7 +123,7 @@ class SecurityController extends AppController
     }
 
     public function yourAccount() {
-        session_start();
+        $this->isAllowedToVisit();
         if(isset($_SESSION['userID'])){
             $user = $this->userRepository->getUserById($_SESSION['userID']);
             $this->render('yourAccount', ['user' => $user]);
@@ -138,10 +131,12 @@ class SecurityController extends AppController
     }
 
     public function favourites() {
+        $this->isAllowedToVisit();
         $this->render('favourites');
     }
 
     public function information() {
+        $this->isAllowedToVisit();
         $this->render('information');
     }
 
@@ -176,10 +171,12 @@ class SecurityController extends AppController
     }
 
     public function orderHistory() {
+        $this->isAllowedToVisit();
         $this->render('orderHistory');
     }
 
     public function settings() {
+        $this->isAllowedToVisit();
         $this->render('settings');
     }
 
@@ -228,7 +225,7 @@ class SecurityController extends AppController
             }
         }
         if(!isset($bmr)){
-            die("You've got to be older than 10 to use our applciation!");
+            die("You've got to be older than 10 to use our application!");
         }
         $bmr *= 239;
 
