@@ -1,5 +1,24 @@
 # DietEasier
 
+##Description
+Dieter is an application that creates personalised diets for users based on his preferences.
+User only needs to create an account and enter information about him.
+Then our algorithm will calculate his energetic needs. 
+Then the user needs to choose meals that he wants to include in his diet.
+In the end, user will obtain a diet covering his needs, containing his meals with recipes and a shopping list.
+
+
+##Information form
+###At the following page user will enter his information
+![](other/localhost_8080_information.png)
+
+#Choosing meals
+###At the following page user will choose preferred meals
+![](other/localhost_8080_chooseMeals.png)
+
+##Diagram ERD
+![](other/DietEasier-DBDiagram.drawio.png)
+
 ##//TODO
 - ~~Transfer DB ERD to the DB~~
 - ~~Watch the 10th video~~
@@ -35,7 +54,9 @@
 - ~~ChooseMeals: On page leave update order~~
 - ~~ChooseMeals: implement mobile version~~
 - ~~ChooseMeals: implement deletion of meals~~ 
-- WhatYouChose: change to grid
+- ~~WhatYouChose: change to grid~~
+- ~~ERD: update diagram~~
+- ~~fix your code~~
 - WhatYouChose: Calculate weight ratios to fit energy needs
 - WhatYouChose: Add to order history
 - WhatYouChose: Calculate meals` multiplier
@@ -47,8 +68,6 @@
 - Your account: Add logout button
 - Order History: Display users order history
 - Favourites: Display users favourites
-- ERD: update diagram
-- fix your code
 - addMeal: Check if inputs correct
 - Meal: Reviews System Working
 - ChooseMeals: add spinning wheel to meal assigner
