@@ -1,6 +1,6 @@
 # DietEasier
 
-##Description
+## Description
 Dieter is an application that creates personalised diets for users based on his preferences.
 User only needs to create an account and enter information about him.
 Then our algorithm will calculate his energetic needs. 
@@ -8,18 +8,18 @@ Then the user needs to choose meals that he wants to include in his diet.
 In the end, user will obtain a diet covering his needs, containing his meals with recipes and a shopping list.
 
 
-##Information form
-###At the following page user will enter his information
+## Information form
+### At the following page user will enter his information
 ![](other/localhost_8080_information.png)
 
-#Choosing meals
-###At the following page user will choose preferred meals
+# Choosing meals
+### At the following page user will choose preferred meals
 ![](other/localhost_8080_chooseMeals.png)
 
-##Diagram ERD
+## Diagram ERD
 ![](other/DietEasier-DBDiagram.drawio.png)
 
-##//TODO
+## //TODO
 - ~~Transfer DB ERD to the DB~~
 - ~~Watch the 10th video~~
 - ~~Figure out how **not to** duplicate code in html pages~~
@@ -75,8 +75,8 @@ In the end, user will obtain a diet covering his needs, containing his meals wit
 - ChooseMeals: implement mobile version of meal-assigner and categories
 - ALL: implement mobile version of navbar scroll-downs
 
-##Development Stages
-###Stage 1 [Building a working app with mentioned below features]
+## Development Stages
+### Stage 1 [Building a working app with mentioned below features]
 - Calculating users **actual energy needs**
 - Calculating users recommended **protein**, **carbohydrates**, **fats** and **fiber** intake
 - Allowing the user to **modify** calculated values
@@ -88,7 +88,7 @@ In the end, user will obtain a diet covering his needs, containing his meals wit
 - Preparing pdf-files for users orders containing **recipes** of chosen meals, with the right day and meal order
 - Users should have the option to **add Meals** to database, after checking their quality
 
-###Stage 2 [Re-designing the website for the best User Experience and filling with content]
+### Stage 2 [Re-designing the website for the best User Experience and filling with content]
 - Home page should have a great, **self-explanatory hero**
 - Home page should **explain**, in detail, **how does the app work**, with screenshots and animations
 - Applications Database should be filled with **different meals**
@@ -96,12 +96,12 @@ In the end, user will obtain a diet covering his needs, containing his meals wit
 - Choosing the right brand colors
 - Choosing brands name
 
-###Stage 3 [Releasing the website]
+### Stage 3 [Releasing the website]
 - Choosing adequate **hosting** option
 - Calculating maintenance **costs**
 - Fixing **loopholes** in the system
 
-###Stage 4 [Partnering with groceries delivery company like Glovo.com or Lisek.app]
+### Stage 4 [Partnering with groceries delivery company like Glovo.com or Lisek.app]
 - Preparing websites **presentation**
 - Preparing websites **traffic** charts
 - Preparing **business propositions**
