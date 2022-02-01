@@ -47,6 +47,7 @@ class MealRepository extends Repository
             $meal->getImage()]
         );
 
+        $this->logAction("Insert on meal");
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -61,6 +62,7 @@ class MealRepository extends Repository
             $id_ingredient,
             $weight
         ]);
+        $this->logAction("Update on meal_ingredient");
     }
 
     public function addCategoryToMeal(int $id_meal, int $id_category){
@@ -73,6 +75,7 @@ class MealRepository extends Repository
             $id_meal,
             $id_category
         ]);
+        $this->logAction("Insert on meal_categories");
     }
 
     public function getAllMeals(): array {

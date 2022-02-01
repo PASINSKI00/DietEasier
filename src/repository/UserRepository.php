@@ -43,6 +43,7 @@ class UserRepository extends Repository
             $user->getPassword(),
             $user->getName()
         ]);
+        $this->logAction("Insert on user");
     }
 
     public function isEmailTaken($email): bool
@@ -62,12 +63,9 @@ class UserRepository extends Repository
 
     public function getInformationOfUser(int $id){
         $stat = $this->database->connect()->prepare('
-            SELECT i.weight, i.age, g.gender, aw.level as activity_work, apw.level as activity_post_work, dt.type as diet_type, i.additional_calories from information i
-                LEFT JOIN gender g on i.id_gender = g.id_gender
-                Left Join activity aw on i.id_activity_work = aw.id_activity
-                Left JOIN activity apw on i.id_activity_post_work = apw.id_activity
-                Left JOIN diet_type dt on i.id_diet_type = dt.id_diet_type
-            where i.id_user=:id
+            select * 
+            from get_information_of_users
+            where id_user=:id
         ');
 
         $stat->bindParam(':id', $id);
@@ -112,6 +110,7 @@ class UserRepository extends Repository
             intval($arr['additional_calories']),
             $id
         ]);
+        $this->logAction("Update on information");
     }
 
     public function updateUsersTdee(int $id, int $tdee){
@@ -123,6 +122,7 @@ class UserRepository extends Repository
             $tdee,
             $id
         ]);
+        $this->logAction("Update on user_diet_info");
     }
 
     public function updateUsersRatios($id, $arr){
@@ -141,6 +141,7 @@ class UserRepository extends Repository
             intval($arr['fat_ratio']),
             $id
         ]);
+        $this->logAction("Update on user_diet_info");
     }
 
     private function returnNewUser($user): ?User{

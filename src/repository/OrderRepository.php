@@ -16,6 +16,7 @@ class OrderRepository extends Repository
                 $mealId,
                 $day
             ]);
+            $this->logAction("Insert on order_meal");
         }
     }
 
@@ -55,6 +56,8 @@ class OrderRepository extends Repository
             $statement->execute([
                 $_SESSION['userID']
             ]);
+
+            $this->logAction("Insert on order");
         }
     }
 
@@ -79,5 +82,6 @@ class OrderRepository extends Repository
         $statement->execute([
             $id
         ]);
+        $this->logAction("Delete on order_meal");
     }
 }
