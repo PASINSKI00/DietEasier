@@ -30,10 +30,13 @@ At the end, the user will be left with a complete diet including recipes and a s
 ### Information
 ![](other/info.png)
 
+### Add Meal
+![](other/localhost_8080_addMeal.png)
+
 ## Diagram ERD
 ![](other/DietEasier-DBDiagram.drawio.png)
 
-#Code
+# Code
 ## Frontend
 Almost 1000 lines of code in 8 JS files, providing many ajax functionalities. Views done in plain HTML and CSS.
 
